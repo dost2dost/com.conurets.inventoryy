@@ -1,0 +1,215 @@
+/* Variable color
+*****************/
+/* line 4, ../sass/main.scss */
+html,
+body {
+  overflow-x: hidden;
+  /* Prevent scroll on narrow devices */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* Branding
+*****************/
+/* line 15, ../sass/main.scss */
+.yellowColor {
+  color: #FAA91A;
+}
+
+/* Button color
+*****************/
+/* line 21, ../sass/main.scss */
+.btn-success {
+  background: #7D9E75;
+}
+/* line 24, ../sass/main.scss */
+.btn-success hover {
+  background: #28a745;
+}
+
+/* Font size
+*****************/
+/* line 32, ../sass/main.scss */
+h1, h2, h3, h4, h5, h6, a {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 38, ../sass/main.scss */
+h1 {
+  font-size: 36px;
+}
+
+/* line 42, ../sass/main.scss */
+h2 {
+  font-size: 30px;
+}
+
+/* line 46, ../sass/main.scss */
+h3 {
+  font-size: 24px;
+}
+
+/* line 50, ../sass/main.scss */
+h4 {
+  font-size: 18px;
+}
+
+/* line 54, ../sass/main.scss */
+h5 {
+  font-size: 14px;
+}
+
+/* line 58, ../sass/main.scss */
+h6 {
+  font-size: 12px;
+}
+
+/* line 62, ../sass/main.scss */
+a {
+  text-decoration: none;
+  transition: all 0.8s ease;
+  color: #FAA91A;
+}
+/* line 66, ../sass/main.scss */
+a:hover {
+  text-decoration: none;
+  outline: 0;
+  color: #FAA91A;
+}
+
+/* Header section
+*****************/
+/* line 81, ../sass/main.scss */
+.header {
+  background: #354052;
+  padding: 10px 0px;
+}
+/* line 87, ../sass/main.scss */
+.header span {
+  font-size: 18px;
+}
+/* line 90, ../sass/main.scss */
+.header .menu {
+  margin-top: 5px;
+}
+/* line 92, ../sass/main.scss */
+.header .menu .btn {
+  font-size: 12px;
+}
+/* line 95, ../sass/main.scss */
+.header .menu a {
+  font-size: 15px;
+  padding: 0px 10px;
+  text-transform: uppercase;
+  color: #a0acbe;
+}
+/* line 100, ../sass/main.scss */
+.header .menu a:hover {
+  color: #ffc107;
+}
+
+/* Form left panel section
+*****************/
+/* line 112, ../sass/main.scss */
+.left-panel-form {
+  position: fixed;
+  width: 300px;
+  top: 50px;
+  bottom: 0px;
+  overflow: auto;
+  background: #293241;
+  padding: 10px 0px;
+}
+/* line 121, ../sass/main.scss */
+.left-panel-form h5 i {
+  font-size: 20px;
+}
+/* line 126, ../sass/main.scss */
+.left-panel-form .nav-item a {
+  padding: 15px;
+  background: #354052;
+  margin: 4px 0px;
+}
+/* line 131, ../sass/main.scss */
+.left-panel-form .nav-item .btn-left-panel-form {
+  background: #7D9E75;
+  color: #fff;
+}
+/* line 138, ../sass/main.scss */
+.left-panel-form .menu-list .active {
+  background: #FAA91A;
+  color: #354052;
+}
+
+/* line 146, ../sass/main.scss */
+.hide-left-panel-form {
+  left: -250px;
+}
+
+/* line 150, ../sass/main.scss */
+.show-left-panel-form {
+  left: 0px !important;
+}
+
+/* content form
+*****************/
+/* line 157, ../sass/main.scss */
+.content .tab-content {
+  padding-left: 50px;
+}
+/* line 160, ../sass/main.scss */
+.content .title {
+  font-size: 36px;
+  background: #f9f9f9;
+  color: #444443;
+  text-align: center;
+  padding: 15px;
+  margin-left: 50px;
+}
+
+@media (min-width: 1200px) {
+  /* line 171, ../sass/main.scss */
+  .form-add-margin {
+    margin-left: 250px;
+  }
+}
+@media (max-width: 1200px) {
+  /* line 177, ../sass/main.scss */
+  .form-add-margin {
+    position: relative;
+    left: 250px;
+  }
+}
+/* footer
+*****************/
+/* line 185, ../sass/main.scss */
+.footer {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin-top: 25px;
+  color: #aaaaaa;
+}
+
+/* Login form
+*****************/
+/* line 196, ../sass/main.scss */
+.login {
+  position: fixed;
+  top: 30%;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 0px;
+  right: 0px;
+}
+/* line 203, ../sass/main.scss */
+.login .row {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px 0px;
+  color: #fff;
+}

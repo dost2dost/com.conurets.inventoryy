@@ -1,0 +1,531 @@
+<!doctype html >
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Conure Telecom Services</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/inventory/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/inventory/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- datepicker-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
+
+</head>
+<body>
+
+<!-- Start header -->
+<section class="header">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <a href="javascript:void(0);" class="text-white"><img src="/inventory/images/logo.png" class="mr-1"/><span>Conure Inventory Management System</span></a>
+            </div>
+            <div class="col-lg-8">
+                <div class="float-right menu">
+                    <a href="/inventory/form"><i class="fas fa-file-alt mr-2"></i>Form</a>
+                    <a href="/inventory/reports" class="text-warning"><i class="fas fa-file-excel mr-2"></i>Reports</a>
+                    <a href="javascript:void(0);"><i class="fas fa-user-tie mr-2"></i>User</a>
+                    <a href="/inventory/login" class="btn btn-danger text-white">Log Out<i
+                            class="fas fa-sign-out-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End header -->
+
+<!-- Start left panel -->
+<section class="left-panel-form hide-left-panel-form">
+    <ul class="nav flex-column">
+        <li class="nav-item ">
+            <a class="nav-link btn-left-panel-form  " data-toggle="pill" href="javascript:void(0);"><h5>Menu Item <i
+                    class="fas fa-arrows-alt-h float-right"></i></h5></a>
+        </li>
+    </ul>
+
+    <ul class="nav flex-column menu-list" role="tablist">
+
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#basic-info" title="BASIC INFORMATION"><h5>BASIC
+                INFORMATION <i class="fas fa-info-circle float-right"></i></h5></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#Spare-Useage" title="SPARE USEAGE"><h5>SPARE USEAGE <i
+                    class="fas fa-database float-right"></i></h5></a>
+        </li>
+
+    </ul>
+
+
+</section>
+<!-- End left panel -->
+
+<!-- start content -->
+<section class="content">
+    <div class="title "><i class="fas fa-file-alt mr-2"></i>Reports</div>
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <!-- start Basic info -->
+        <div id="basic-info" class="tab-pane active"><br>
+            <div class="container-fluid">
+                <div class="col-12">
+                    <div class="row ">
+                        <div class="col-xl-4 mt-2">
+                            <h4 class="mt-2 "><i class="fas fa-info-circle mr-2"></i>BASIC INFORMATION </h4>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="input-group mb-3 ">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i
+                                            class="fas fa-calendar-alt mr-1"></i>Date Range</span>
+                                </div>
+                                <input type="text" name="daterange" class="form-control"
+                                       value="01/01/2018 - 01/15/2018"/>
+                            </div>
+
+
+                        </div>
+                        <div class="col-xl-4">
+
+                            <div class="float-right">
+                                <span class="dropdown ">
+                                    <button type="button" class="btn btn-warning dropdown-toggle"
+                                            data-toggle="dropdown">
+                                      <i class="fas fa-pencil-alt mr-1"></i>  Edit Col
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Date </div>
+                                           <div class="dropdown-item"><input type="checkbox"
+                                                                             class="mr-1"/> Location</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Venue</div>
+                                           <div class="dropdown-item"><input type="checkbox"
+                                                                             class="mr-1"/> User Name</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Company Name</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Item Description</div>
+                                           <div class="dropdown-item"><input type="checkbox"
+                                                                             class="mr-1"/> Item Id</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Serial Number</div>
+                                        <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Qty Used</div>
+
+
+                                    </div>
+                                </span>
+                                <button class="btn  btn-success "><i class="fas fa-file-excel"></i> Excel</button>
+                                <button class="btn  btn-success "><i class="fas fa-file-pdf"></i> PDF</button>
+                                <button class="btn  btn-success"><i class="fas fa-at"></i> Email</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="border-bottom mb-4"></div>
+
+
+                    <table id="basic-info-data" class="display table " style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Venue</th>
+                            <th>User Name</th>
+                            <th>Company Name</th>
+                            <th>Item Description</th>
+                            <th>Item Id</th>
+                            <th>Serial Number</th>
+                            <th>Qty Used</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>3/11/2019</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>Ali</td>
+                            <td>Conure Telecom</td>
+                            <td>Lorem Ipsum</td>
+                            <td>61</td>
+                            <td>4324324</td>
+                            <td>34</td>
+
+                        </tr>
+                        <tr>
+                            <td>3/11/2019</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>Ali</td>
+                            <td>Conure Telecom</td>
+                            <td>Lorem Ipsum</td>
+                            <td>61</td>
+                            <td>4324324</td>
+                            <td>34</td>
+
+                        </tr>
+                        <tr>
+                            <td>3/11/2019</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>Ali</td>
+                            <td>Conure Telecom</td>
+                            <td>Lorem Ipsum</td>
+                            <td>61</td>
+                            <td>4324324</td>
+                            <td>34</td>
+
+                        </tr>
+                        <tr>
+                            <td>3/11/2019</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>Ali</td>
+                            <td>Conure Telecom</td>
+                            <td>Lorem Ipsum</td>
+                            <td>61</td>
+                            <td>4324324</td>
+                            <td>34</td>
+
+                        </tr>
+                        <tr>
+                            <td>3/11/2019</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>Ali</td>
+                            <td>Conure Telecom</td>
+                            <td>Lorem Ipsum</td>
+                            <td>61</td>
+                            <td>4324324</td>
+                            <td>34</td>
+
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <!-- End  Basic Info -->
+
+        <!-- start Storage Info -->
+        <div id="Spare-Useage" class="tab-pane "><br>
+            <div class="container-fluid">
+
+
+                <div class="col-12">
+                    <div class="row ">
+                        <div class="col-xl-4 mt-2">
+                            <h4 class=" mt-2"><i class="fas fa-database mr-2"></i>SPARE USEAGE</h4>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="input-group mb-3 ">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i
+                                            class="fas fa-calendar-alt mr-1"></i>Date Range</span>
+                                </div>
+                                <input type="text" name="daterange" class="form-control"
+                                       value="01/01/2018 - 01/15/2018"/>
+                            </div>
+
+
+                        </div>
+                        <div class="col-xl-4">
+
+                            <div class="float-right">
+                                <span class="dropdown ">
+                                    <button type="button" class="btn btn-warning dropdown-toggle"
+                                            data-toggle="dropdown">
+                                      <i class="fas fa-pencil-alt mr-1"></i>  Edit Col
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Reason For Using the Spare</div>
+                                        <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Location Where The Spare Will Be Used</div>
+
+                                    </div>
+                                </span>
+                                <button class="btn  btn-success "><i class="fas fa-file-excel"></i> Excel
+                                </button>
+                                <button class="btn  btn-success "><i class="fas fa-file-pdf"></i> PDF</button>
+                                <button class="btn  btn-success"><i class="fas fa-at"></i> Email</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="border-bottom mb-4"></div>
+
+
+                    <table id="Spare-Useage-data" class="display table " style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Reason For Using the Spare</th>
+                            <th>Location Where The Spare Will Be Used</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Lorem ipsum is dummy text.</td>
+                            <td>Lorem ipsum is dummy text.</td>
+
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum is dummy text.</td>
+                            <td>Lorem ipsum is dummy text.</td>
+
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum is dummy text.</td>
+                            <td>Lorem ipsum is dummy text.</td>
+
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum is dummy text.</td>
+                            <td>Lorem ipsum is dummy text.</td>
+
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum is dummy text.</td>
+                            <td>Lorem ipsum is dummy text.</td>
+
+                        </tr>
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End  Storage Info -->
+
+    </div>
+
+
+</section>
+<!-- End  content -->
+
+<!-- start footer -->
+<section>
+    <div class=" footer "><h5>© 2019 Conure Inventory Management System</h5></div>
+</section>
+<!-- End  footer -->
+
+<!-- The Modal delete -->
+<div class="modal" id="report-data-delete">
+    <div class="modal-dialog">
+
+
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+
+            <div class="text-center ">
+                <div class="mb-3"><strong>!</strong> Are You sure to delete data.</div>
+                <button type="button" class="btn btn-sm btn-danger" data-dismiss="alert">Yes</button>
+                <button type="button" class="btn btn-sm btn-primary" data-dismiss="alert">No</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- The Modal Edit-->
+<div class="modal" id="report-data-edit">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content ">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"><i class="fas fa-edit mr-2"></i>Edit BASIC INFORMATION</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Date</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>User Name</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Venue</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Location</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Company Name</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Item Description</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Item Id</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Serial Number</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Qty</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Manufacturer</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <buttton class="btn btn-outline-secondary" data-dismiss="modal"><i class="fas fa-times mr-1"></i>Cancel
+                    </buttton>
+                    <buttton class="btn btn-warning" data-dismiss="modal"><i class="fas fa-check mr-1"></i>Submit
+                    </buttton>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal Edit-->
+<div class="modal" id="report-Spare-Useage-edit">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content ">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"><i class="fas fa-edit mr-2"></i>Edit STORAGE INFORMATION</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Reason For Using the Spare</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <span>Location Where The Spare Will Be Used</span>
+                            <input type="text" class="form-control"/>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <buttton class="btn btn-outline-secondary" data-dismiss="modal"><i class="fas fa-times mr-1"></i>Cancel
+                    </buttton>
+                    <buttton class="btn btn-warning" data-dismiss="modal"><i class="fas fa-check mr-1"></i>Submit
+                    </buttton>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<!-- Optional datatable -->
+<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+<!-- Optional Datepicker-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.btn-left-panel-form').click(function () {
+            $('.left-panel-form ').toggleClass("show-left-panel-form");
+            $('.content ').toggleClass("form-add-margin");
+
+        });
+
+        $('#basic-info-data').DataTable();
+        $('#Spare-Useage-data').DataTable();
+
+    });
+
+</script>
+<script>
+    $(function () {
+        $('input[name="daterange"]').daterangepicker({
+            opens: 'left'
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
+    });
+</script>
+</body>
+
+
+</html>

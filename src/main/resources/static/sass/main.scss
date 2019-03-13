@@ -1,0 +1,209 @@
+@import "compass/css3";
+@import "main/_variables.scss";
+
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* Branding
+*****************/
+.yellowColor {
+  color: $yellowColor;
+}
+
+/* Button color
+*****************/
+.btn-success {
+  background: $greenColor;
+
+  & hover {
+    background: #28a745;
+
+  }
+}
+
+/* Font size
+*****************/
+h1, h2, h3, h4, h5, h6, a {
+  padding: 0px;
+  margin: 0px;
+
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.8s ease;
+  color: $yellowColor;
+  &:hover {
+    text-decoration: none;
+    outline: 0;
+    color: $yellowColor;
+
+  }
+}
+
+table th, table td {
+  //font-size: 14px !important;
+  //font-weight: bold;
+}
+
+/* Header section
+*****************/
+.header {
+  background: $bgheaderColor;
+  padding: 10px 0px;
+  & a {
+
+  }
+  & span {
+    font-size: 18px;
+  }
+  .menu {
+    margin-top: 5px;
+    .btn {
+      font-size: 12px;
+    }
+    & a {
+      font-size: 15px;
+      padding: 0px 10px;
+      text-transform: uppercase;
+      color: #a0acbe;
+      &:hover {
+        color: #ffc107;
+
+      }
+    }
+
+  }
+
+}
+
+/* Form left panel section
+*****************/
+.left-panel-form {
+  position: fixed;
+  width: 300px;
+  top: 50px;
+  bottom: 0px;
+  overflow: auto;
+  background: #293241;
+  padding: 10px 0px;
+  & h5 {
+    & i {
+      font-size: 20px;
+    }
+  }
+  .nav-item {
+    & a {
+      padding: 15px;
+      background: $bgheaderColor;
+      margin: 4px 0px;
+    }
+    .btn-left-panel-form {
+      background: $greenColor;
+      color: #fff;
+    }
+
+  }
+  .menu-list {
+    .active {
+      background: $yellowColor;
+      color: $bgheaderColor;
+    }
+  }
+
+}
+
+.hide-left-panel-form {
+  left: -250px;
+}
+
+.show-left-panel-form {
+  left: 0px !important;
+}
+
+/* content form
+*****************/
+.content {
+  .tab-content {
+    padding-left: 50px;
+  }
+  .title {
+    font-size: 36px;
+    background: $lightGray;
+    color: #444443;
+    text-align: center;
+    padding: 15px;
+    margin-left:50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-add-margin {
+    margin-left: 250px;
+  }
+}
+
+@media (max-width: 1200px) {
+    .form-add-margin {
+      position: relative;
+      left: 250px;
+    }
+}
+
+/* footer
+*****************/
+.footer {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin-top: 25px;
+  color: #aaaaaa;
+}
+
+/* Login form
+*****************/
+.login{
+  position: fixed;
+  top: 30%;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 0px;
+  right: 0px;
+  .row{
+    width:500px;
+    margin: 0 auto;
+    padding: 30px 0px;
+    color: #fff;
+  }
+}
