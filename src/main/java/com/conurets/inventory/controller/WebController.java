@@ -24,7 +24,67 @@ public class WebController {
     }
 
     @GetMapping(value = "/reports")
-    public String index() {
+    public String reports() {
         return "reports";
+    }
+
+    @GetMapping(value = "/footer")
+    public String Footer() {
+        return "footer";
+    }
+
+    @GetMapping(value = "/header")
+    public String Header() {
+        return "header";
+    }
+
+    @GetMapping(value = "/form-left-panel")
+    public String formLeftPanel() {
+        return "form-left-panel";
+    }
+
+    @GetMapping(value = "/basic-info")
+    public String basicInfo() {
+        return "basic-info";
+    }
+
+    @GetMapping(value = "/storage-info")
+    public String storageInfo() {
+        return "storage-info";
+    }
+
+    @GetMapping(value = "/report-left-panel")
+    public String reportLeftPanel() {
+        return "report-left-panel";
+    }
+
+    @GetMapping(value = "/report-basic-info")
+    public String reportBasicInfo() {
+        return "report-basic-info";
+    }
+
+    @GetMapping(value = "/spare-useage")
+    public String spareUseage() {
+        return "spare-useage";
+    }
+
+    @GetMapping(value = "/item-handling")
+    public String itemHandling() {
+        return "item-handling";
+    }
+
+    @GetMapping(value = "/caliration")
+    public String Caliration() {
+        return "caliration";
+    }
+
+    @GetMapping(value = "/item-conition")
+    public String itemConition() {
+        return "item-conition";
+    }
+
+    @GetMapping(value = "/supplier-info")
+    public String supplierInfo() {
+        return "supplier-info";
     }
 }
