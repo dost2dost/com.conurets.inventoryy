@@ -1,14 +1,97 @@
-<!doctype html>
+<!doctype html >
 <html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Inventory Management</title>
-</head>
 
-<body>
-<div>Hello World....</div>
+    <title>Conure Telecom Services</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/inventory/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="/inventory/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+</head>
+<body ng-app="CIMS" >
+
+<!--directive Header -->
+<!-- Start header -->
+<section class="header">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <a href="javascript:void(0);" class="text-white"><img src="/inventory/images/logo.png" class="mr-1"/><span>Conure Inventory Management System</span></a>
+            </div>
+            <div class="col-lg-8">
+                <div class="float-right menu">
+                    <a href="#/!" class="text-warning"><i class="fas fa-file-alt mr-2"></i>Form</a>
+                    <a href="#!reports"><i class="fas fa-file-excel mr-2"></i>Reports</a>
+                    <a href="javascript:void(0);"><i class="fas fa-user-tie mr-2"></i>User</a>
+                    <a href="/inventory/login" class="btn btn-danger text-white">Log Out<i
+                            class="fas fa-sign-out-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End header -->
+
+<!--  Routing   -->
+<div ng-view></div>
+
+
+<section>
+    <div class=" footer "><h5>© 2019 Conure Inventory Management System</h5></div>
+</section>
+<!-- End  footer -->
+
+<!-- Optional JavaScript Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="/inventory/js/main.js"></script>
+<script src="/inventory/js/directive.js"></script>
+
+<!-- Optional JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+
+
+
 </body>
+<script >
+
+    $(document).ready(function(){
+        $('.btn-left-panel-form').click(function () {
+            $('.left-panel-form ').toggleClass("show-left-panel-form");
+            $('.content ').toggleClass("form-add-margin");
+        });
+
+    });
+
+</script>
+
 </html>

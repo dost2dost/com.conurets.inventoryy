@@ -1,0 +1,99 @@
+<!-- start Basic info -->
+<br>
+<div class="container-fluid">
+    <div class="col-12">
+        <div class="row ">
+            <div class="col-xl-4 mt-2">
+                <h4 class="mt-2 "><i class="fas fa-info-circle mr-2"></i>BASIC INFORMATION </h4>
+            </div>
+            <div class="col-xl-4">
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                                    <span class="input-group-text"><i
+                                            class="fas fa-calendar-alt mr-1"></i>Date Range</span>
+                    </div>
+                    <input type="text" name="daterange" class="form-control"
+                           value="01/01/2018 - 01/15/2018"/>
+                </div>
+
+
+            </div>
+            <div class="col-xl-4">
+
+                <div class="float-right">
+                                <span class="dropdown ">
+                                    <button type="button" class="btn btn-warning dropdown-toggle"
+                                            data-toggle="dropdown">
+                                      <i class="fas fa-pencil-alt mr-1"></i>  Edit Col
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Date </div>
+                                           <div class="dropdown-item"><input type="checkbox"
+                                                                             class="mr-1"/> Location</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Venue</div>
+                                           <div class="dropdown-item"><input type="checkbox"
+                                                                             class="mr-1"/> User Name</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Company Name</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Item Description</div>
+                                           <div class="dropdown-item"><input type="checkbox"
+                                                                             class="mr-1"/> Item Id</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Serial Number</div>
+                                        <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Qty Used</div>
+
+
+                                    </div>
+                                </span>
+                    <button class="btn  btn-success "><i class="fas fa-file-excel"></i> Excel</button>
+                    <button class="btn  btn-success "><i class="fas fa-file-pdf"></i> PDF</button>
+                    <button class="btn  btn-success"><i class="fas fa-at"></i> Email</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="border-bottom mb-4"></div>
+
+        <div ng-controller="ctrl1">
+            <table id="basic-info-data" class="table table-bordered bordered table-striped table-condensed datatable"
+                   ui-jq="dataTable">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Venue</th>
+                    <th>User Name</th>
+                    <th>Company Name</th>
+                    <th>Item Description</th>
+                    <th>Item Id</th>
+                    <th>Serial Number</th>
+                    <th>Qty Used</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="n in data">
+                    <td>{{n[0]}}</td>
+                    <td>{{n[1]}}</td>
+                    <td>{{n[2]}}</td>
+                    <td>{{n[3]}}</td>
+                    <td>{{n[4]}}</td>
+                    <td>{{n[5]}}</td>
+                    <td>{{n[6]}}</td>
+                    <td>{{n[7]}}</td>
+                    <td>{{n[8]}}</td>
+
+                </tr>
+
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- End  Basic Info -->

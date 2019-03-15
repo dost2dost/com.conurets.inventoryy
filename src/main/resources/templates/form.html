@@ -23,601 +23,61 @@
 
 
 </head>
-<body>
-
-<!-- Start header -->
-<section class="header">
-    <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <a href="javascript:void(0);" class="text-white"><img src="/inventory/images/logo.png" class="mr-1"/><span>Conure Inventory Management System</span></a>
-            </div>
-            <div class="col-lg-8">
-                <div class="float-right menu">
-                    <a href="/inventory/form" class="text-warning"><i class="fas fa-file-alt mr-2"></i>Form</a>
-                    <a href="/inventory/reports"><i class="fas fa-file-excel mr-2"></i>Reports</a>
-                    <a href="javascript:void(0);"><i class="fas fa-user-tie mr-2"></i>User</a>
-                    <a href="/inventory/login" class="btn btn-danger text-white">Log Out<i
-                            class="fas fa-sign-out-alt ml-1"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-<!-- End header -->
-
-<!-- Start left panel -->
-<section class="left-panel-form hide-left-panel-form">
-    <ul class="nav flex-column">
-        <li class="nav-item ">
-            <a class="nav-link btn-left-panel-form  " data-toggle="pill" href="javascript:void(0);"><h5>Menu Item <i
-                    class="fas fa-arrows-alt-h float-right"></i></h5></a>
-        </li>
-    </ul>
-
-    <ul class="nav flex-column menu-list" role="tablist">
+<body ng-app="CIMS" ng-controller="form">
 
 
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#basic-info" title="BASIC INFORMATION"><h5>BASIC
-                INFORMATION <i
-                        class="fas fa-info-circle float-right"></i></h5></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#storage-info" title="STORAGE INFORMATION"><h5>STORAGE
-                INFORMATION <i
-                        class="fas fa-database float-right"></i></h5></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#item-handling" title="ITEM HANDLING"><h5>ITEM HANDLING <i
-                    class="fas fa-list-ul float-right"></i></h5></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#caliration" title="CALIBRATION"><h5>CALIBRATION <i
-                    class="fas fa-weight float-right"></i></h5></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#item-conition" title="ITEM CONDITION"><h5>ITEM CONDITION <i
-                    class="fas fa-asterisk float-right"></i></h5></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#supplier_info" title="SUPPLIER INFORMATION"><h5>SUPPLIER
-                INFORMATION <i class="fas fa-phone float-right"></i></h5></a>
-        </li>
-    </ul>
+<div ng-include="'header'"></div>
 
-
-</section>
-<!-- End left panel -->
+<form-left-panel></form-left-panel>
 
 <!-- start content -->
 <section class="content">
     <div class="title"><i class="fas fa-file-alt mr-2"></i>Form</div>
     <!-- Tab panes -->
     <div class="tab-content">
-        <!-- start Basic info -->
-        <div id="basic-info" class="tab-pane active"><br>
-            <div class="container">
-
-                <div class="row ">
-                    <div class="col-xl-6 mt-2">
-                        <h4 class="mt-2"><i class="fas fa-info-circle mr-2"></i>BASIC INFORMATION</h4>
-                    </div>
-
-                    <div class="col-xl-6">
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="border-bottom mb-4"></div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Date</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>User Name</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Venue</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Location</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <span>Company Name</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <span>Item Description</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Item Id</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Serial Number</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Qty</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Manufacturer</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="bottom">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <input type="file"/>
-
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="float-right">
-                                <buttton class="btn btn-outline-secondary"><i class="fas fa-times mr-1"></i>Cancel
-                                </buttton>
-                                <buttton class="btn btn-danger"><i class="fas fa-pencil-alt mr-1"></i>Edit</buttton>
-                                <buttton class="btn btn-warning"><i class="fas fa-check mr-1"></i>Submit</buttton>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div id="basic-info" class="tab-pane active">
+             <basic-info></basic-info>
         </div>
-        <!-- End  Basic Info -->
 
-        <!-- start Storage Info -->
-        <div id="storage-info" class="tab-pane "><br>
-            <div class="container">
-
-
-                <div class="row ">
-                    <div class="col-xl-6 mt-2">
-                        <h4 class="mt-2"><i class="fas fa-database mr-2"></i>STORAGE INFORMATION</h4>
-                    </div>
-
-                    <div class="col-xl-6">
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="border-bottom mb-4"></div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Storage Location</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Stored On Shelf</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Shelf / Bay Number</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Stored In Cabinet</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Cabinet Shelf No</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <hr>
-                <div class="bottom">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <input type="file"/>
-
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="float-right">
-                                <buttton class="btn btn-outline-secondary"><i class="fas fa-times mr-1"></i>Cancel
-                                </buttton>
-                                <buttton class="btn btn-danger"><i class="fas fa-pencil-alt mr-1"></i>Edit</buttton>
-                                <buttton class="btn btn-warning"><i class="fas fa-check mr-1"></i>Submit</buttton>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div id="storage-info" class="tab-pane ">
+             <storage-info></storage-info>
         </div>
-        <!-- End  Storage Info -->
-
-        <!-- start ITEM HANDLING  -->
-        <div id="item-handling" class="tab-pane "><br>
-            <div class="container">
 
 
-
-                <div class="row ">
-                    <div class="col-xl-6 mt-2">
-                        <h4 class="mt-2"><i class="fas fa-list-ul mr-2"></i>ITEM HANDLING</h4>
-                    </div>
-
-                    <div class="col-xl-6">
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="border-bottom mb-4"></div>
-
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Special Handling Required</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Special Handling Notes</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Approx Weight</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <hr>
-                <div class="bottom">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <input type="file"/>
-
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="float-right">
-                                <buttton class="btn btn-outline-secondary"><i class="fas fa-times mr-1"></i>Cancel
-                                </buttton>
-                                <buttton class="btn btn-danger"><i class="fas fa-pencil-alt mr-1"></i>Edit</buttton>
-                                <buttton class="btn btn-warning"><i class="fas fa-check mr-1"></i>Submit</buttton>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div id="item-handling" class="tab-pane ">
+            <item-handling></item-handling>
         </div>
-        <!-- End  ITEM HANDLING  -->
 
-        <!-- start CALIBRATION   -->
-        <div id="caliration" class="tab-pane "><br>
-            <div class="container">
-
-
-                <div class="row ">
-                    <div class="col-xl-6 mt-2">
-                        <h4 class="mt-2"><i class="fas fa-weight mr-2"></i>CALIBRATION</h4>
-                    </div>
-
-                    <div class="col-xl-6">
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="border-bottom mb-4"></div>
-
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Calibration Required</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Date Calibrated</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Validity Of Calibration</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Calibration Due Date</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <hr>
-                <div class="bottom">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <input type="file"/>
-
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="float-right">
-                                <buttton class="btn btn-outline-secondary"><i class="fas fa-times mr-1"></i>Cancel
-                                </buttton>
-                                <buttton class="btn btn-danger"><i class="fas fa-pencil-alt mr-1"></i>Edit</buttton>
-                                <buttton class="btn btn-warning"><i class="fas fa-check mr-1"></i>Submit</buttton>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div id="caliration" class="tab-pane ">
+            <caliration></caliration>
         </div>
-        <!-- End  CALIBRATION   -->
 
-        <!-- start ITEM CONDITION    -->
-        <div id="item-conition" class="tab-pane "><br>
-            <div class="container">
-
-
-                <div class="row ">
-                    <div class="col-xl-6 mt-2">
-                        <h4 class="mt-2"><i class="fas fa-asterisk mr-2"></i>ITEM CONDITION</h4>
-                    </div>
-
-                    <div class="col-xl-6">
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="border-bottom mb-4"></div>
-
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>New</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Used</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Reconditioned</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Useable</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <hr>
-                <div class="bottom">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <input type="file"/>
-
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="float-right">
-                                <buttton class="btn btn-outline-secondary"><i class="fas fa-times mr-1"></i>Cancel
-                                </buttton>
-                                <buttton class="btn btn-danger"><i class="fas fa-pencil-alt mr-1"></i>Edit</buttton>
-                                <buttton class="btn btn-warning"><i class="fas fa-check mr-1"></i>Submit</buttton>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div id="item-conition" class="tab-pane ">
+            <item-conition></item-conition>
         </div>
-        <!-- End  ITEM CONDITION    -->
 
-        <!-- start SUPPLIER INFORMATION   -->
-        <div id="supplier_info" class="tab-pane "><br>
-            <div class="container">
-
-
-                <div class="row ">
-                    <div class="col-xl-6 mt-2">
-                        <h4 class="mt-2"><i class="fas fa-phone mr-2"></i>SUPPLIER INFORMATION</h4>
-                    </div>
-
-                    <div class="col-xl-6">
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="border-bottom mb-4"></div>
-
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Supplier</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Supplier Representative</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Supplier Representative Mobile</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <span>Supplier Representative Email</span>
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <hr>
-                <div class="bottom">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <input type="file"/>
-
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="float-right">
-                                <buttton class="btn btn-outline-secondary"><i class="fas fa-times mr-1"></i>Cancel
-                                </buttton>
-                                <buttton class="btn btn-danger"><i class="fas fa-pencil-alt mr-1"></i>Edit</buttton>
-                                <buttton class="btn btn-warning"><i class="fas fa-check mr-1"></i>Submit</buttton>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div id="supplier-info" class="tab-pane ">
+            <supplier-info></supplier-info>
         </div>
-        <!-- End  SUPPLIER INFORMATION   -->
 
 
     </div>
 </section>
 <!-- End  content -->
 
-<!-- start footer -->
-<section>
-    <div class=" footer "><h5>© 2019 Conure Inventory Management System</h5></div>
-</section>
-<!-- End  footer -->
+<div ng-include="'footer'"></div>
+
+
+<!-- Optional JavaScript Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.angularjs.org/1.7.5/angular.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js'></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>-->
+<script src="/inventory/js/main.js"></script>
+<script src="/inventory/js/directive.js"></script>
 
 <!-- Optional JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -626,21 +86,26 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+<!--  Datatable js-->
+<script src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
 
-<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('.btn-left-panel-form').click(function () {
-            $('.left-panel-form ').toggleClass("show-left-panel-form");
-            $('.content ').toggleClass("form-add-margin");
 
-        });
-    });
+
+
+</body>
+<script >
+
+//    $(document).ready(function(){
+//        $('.btn-left-panel-form').click(function () {
+//            $('.left-panel-form ').toggleClass("show-left-panel-form");
+//            $('.content ').toggleClass("form-add-margin");
+//        });
+//
+//    });
 
 
 </script>
-</body>
-
 
 </html>
+

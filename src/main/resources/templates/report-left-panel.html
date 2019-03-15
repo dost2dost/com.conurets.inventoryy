@@ -1,0 +1,36 @@
+<!-- Start left panel -->
+<section class="left-panel-form hide-left-panel-form">
+    <ul class="nav flex-column">
+        <li class="nav-item ">
+            <a class="nav-link btn-left-panel-form  " data-toggle="pill" href="javascript:void(0);"><h5>Menu Item <i
+                    class="fas fa-arrows-alt-h float-right"></i></h5></a>
+        </li>
+    </ul>
+
+    <ul class="nav flex-column menu-list" role="tablist">
+
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#report-basic-info" title="BASIC INFORMATION"><h5>BASIC
+                INFORMATION <i class="fas fa-info-circle float-right"></i></h5></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#spare-useage" title="SPARE USEAGE"><h5>SPARE USEAGE <i
+                    class="fas fa-database float-right"></i></h5></a>
+        </li>
+
+    </ul>
+
+
+</section>
+<!-- End left panel -->
+
+<script>
+    $(document).ready(function(){
+        $('.btn-left-panel-form').click(function () {
+            $('.left-panel-form ').toggleClass("show-left-panel-form");
+            $('.content ').toggleClass("form-add-margin");
+        });
+        $('#basic-info-data').DataTable();
+        $('#Spare-Useage-data').DataTable();
+    });
+</script>
