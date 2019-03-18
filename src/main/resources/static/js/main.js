@@ -1,16 +1,27 @@
 var app = angular.module("CIMS", ['ui.utils']);
 
 
-
 app.controller("form", function ($scope) {
 
 });
 
 
+app.controller('ctrl1', function ($scope) {
 
-app.controller('ctrl1', function($scope) {
+    $scope.checkboxModel = {
+        date: true,
+        location: true,
+        venue: true,
+        userName: true,
+        companyName: true,
+        itemDescription: true,
+        itemID: true,
+        serialNum: true,
+        qtyUsed: true,
 
-    $scope.data=[
+    };
+
+    $scope.data = [
         [
             "3/11/2019",
             "System Architect",
@@ -73,9 +84,9 @@ app.controller('ctrl1', function($scope) {
 
 });
 
-app.controller('ctrl2', function($scope) {
+app.controller('ctrl2', function ($scope) {
 
-    $scope.data2=[
+    $scope.data2 = [
         [
             "3/11/2019",
             "System Architect",
@@ -101,7 +112,6 @@ app.controller('ctrl2', function($scope) {
             "System Architect",
 
         ],
-
 
 
     ]

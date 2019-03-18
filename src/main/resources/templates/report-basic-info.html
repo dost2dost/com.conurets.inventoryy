@@ -1,6 +1,6 @@
 <!-- start Basic info -->
 <br>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="ctrl1">
     <div class="col-12">
         <div class="row ">
             <div class="col-xl-4 mt-2">
@@ -27,18 +27,16 @@
                                       <i class="fas fa-pencil-alt mr-1"></i>  Edit Col
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                        <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Date </div>
-                                           <div class="dropdown-item"><input type="checkbox"
-                                                                             class="mr-1"/> Location</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Venue</div>
-                                           <div class="dropdown-item"><input type="checkbox"
-                                                                             class="mr-1"/> User Name</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Company Name</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Item Description</div>
-                                           <div class="dropdown-item"><input type="checkbox"
-                                                                             class="mr-1"/> Item Id</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Serial Number</div>
-                                        <div class="dropdown-item"><input type="checkbox" class="mr-1"/> Qty Used</div>
+
+                                            <div class="dropdown-item"><input type="checkbox" class="mr-1"  ng-model="checkboxModel.date" /> Date </div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.location" /> Location</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.venue"/> Venue</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.userName"/> User Name</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.companyName"/> Company Name</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.itemDescription"/> Item Description</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.itemID"/> Item Id</div>
+                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.serialNum"/> Serial Number</div>
+                                             <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.qtyUsed"/> Qty Used</div>
 
 
                                     </div>
@@ -52,38 +50,37 @@
         </div>
         <div class="border-bottom mb-4"></div>
 
-        <div ng-controller="ctrl1">
+        <div >
             <table id="basic-info-data" class="table table-bordered bordered table-striped table-condensed datatable"
                    ui-jq="dataTable">
                 <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Venue</th>
-                    <th>User Name</th>
-                    <th>Company Name</th>
-                    <th>Item Description</th>
-                    <th>Item Id</th>
-                    <th>Serial Number</th>
-                    <th>Qty Used</th>
+                    <th ng-show="checkboxModel.date">Date</th>
+                    <th ng-show="checkboxModel.location">Location</th>
+                    <th ng-show="checkboxModel.venue">Venue</th>
+                    <th ng-show="checkboxModel.userName">User Name</th>
+                    <th ng-show="checkboxModel.companyName">Company Name</th>
+                    <th ng-show="checkboxModel.itemDescription">Item Description</th>
+                    <th ng-show="checkboxModel.itemID">Item Id</th>
+                    <th ng-show="checkboxModel.serialNum">Serial Number</th>
+                    <th ng-show="checkboxModel.qtyUsed">Qty Used</th>
 
 
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="n in data">
-                    <td>{{n[0]}}</td>
-                    <td>{{n[1]}}</td>
-                    <td>{{n[2]}}</td>
-                    <td>{{n[3]}}</td>
-                    <td>{{n[4]}}</td>
-                    <td>{{n[5]}}</td>
-                    <td>{{n[6]}}</td>
-                    <td>{{n[7]}}</td>
-                    <td>{{n[8]}}</td>
+                    <td ng-show="checkboxModel.date">{{n[0]}}</td>
+                    <td ng-show="checkboxModel.location">{{n[1]}}</td>
+                    <td ng-show="checkboxModel.venue">{{n[2]}}</td>
+                    <td ng-show="checkboxModel.userName">{{n[3]}}</td>
+                    <td ng-show="checkboxModel.companyName">{{n[4]}}</td>
+                    <td ng-show="checkboxModel.itemDescription">{{n[5]}}</td>
+                    <td ng-show="checkboxModel.itemID">{{n[6]}}</td>
+                    <td ng-show="checkboxModel.serialNum">{{n[7]}}</td>
+                    <td ng-show="checkboxModel.qtyUsed">{{n[8]}}</td>
 
                 </tr>
-
 
 
                 </tbody>
