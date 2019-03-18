@@ -24,7 +24,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"com.conurets.marta.inventory.*"})
+@ComponentScan(basePackages = {"com.conurets.inventory.*"})
 public class DatabaseConfiguration {
     protected static Logger logger = LoggerFactory.getLogger(DatabaseConfiguration.class);
 
