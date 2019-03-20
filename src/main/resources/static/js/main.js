@@ -1,5 +1,16 @@
 var app = angular.module("CIMS", ['ui.utils']);
 
+app.directive("datepicker", function () {
+    return {
+        restrict: "A",
+        link: function (scope, el, attr) {
+            el.datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        }
+    };
+});
+
 
 app.controller("form", function ($scope) {
 
