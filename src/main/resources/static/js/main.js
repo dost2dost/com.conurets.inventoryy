@@ -14,6 +14,22 @@ app.directive("datepicker", function () {
 
 app.controller("form", function ($scope) {
 
+
+
+    $scope.show_val = function() {
+
+        console.log(
+            [
+                $scope.storageLocation,
+                $scope.storedShelf,
+                $scope.shelfNumber,
+                $scope.storedCabinet,
+                $scope.cabinetShelf
+
+            ]
+        );
+
+    }
 });
 
 

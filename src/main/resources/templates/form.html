@@ -24,7 +24,7 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
 
 </head>
-<body ng-app="CIMS" ng-controller="form">
+<body ng-app="CIMS" >
 
 
 <div ng-include="'header'"></div>
@@ -32,7 +32,7 @@
 <form-left-panel></form-left-panel>
 
 <!-- start content -->
-<section class="content">
+<section class="content" ng-controller="form">
     <div class="title"><i class="fas fa-file-alt mr-2"></i>Form</div>
     <!-- Tab panes -->
     <div class="tab-content">
