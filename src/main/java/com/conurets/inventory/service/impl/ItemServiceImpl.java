@@ -1,13 +1,13 @@
 package com.conurets.inventory.service.impl;
 
-import com.conurets.inventory.converter.UserConverter;
-import com.conurets.inventory.exception.InventoryException;
+import com.conurets.inventory.converter.ItemConverter;
 import com.conurets.inventory.dao.factory.DAOFactory;
+import com.conurets.inventory.entity.Item;
 import com.conurets.inventory.entity.User;
+import com.conurets.inventory.exception.InventoryException;
 import com.conurets.inventory.service.ItemService;
-import com.conurets.inventory.util.InventoryConstants;
 import com.conurets.inventory.util.InventoryHelper;
-import com.conurets.inventory.vo.UserVO;
+import com.conurets.inventory.vo.ItemVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,55 +28,57 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
     private DAOFactory daoFactory;
     @Autowired
-    private UserConverter userConverter;
+    private ItemConverter itemConverter;
 
     @PostConstruct
     public void checkConfiguration() {
         InventoryHelper.checkConfiguration(daoFactory, "daoFactory");
-        InventoryHelper.checkConfiguration(userConverter, "userConverter");
+        InventoryHelper.checkConfiguration(itemConverter, "itemConverter");
     }
 
-    public List<UserVO> findAll() throws InventoryException {
-        List<User> userList = daoFactory.getUserDAO().findAll();
+    public List<ItemVO> findAll() throws InventoryException {
 
-        if (userList == null) {
-            InventoryHelper.checkNullOrEmpty(userList, "list");
+        List<Item> itemList = daoFactory.getItemDAO().findAll() ;
+
+        if (itemList == null) {
+            InventoryHelper.checkNullOrEmpty(itemList, "list");
         }
 
-        List<UserVO> userVOList = userList.stream()
-                .map(userObject -> userConverter.toController(userObject))
+        List<ItemVO> itemVOList = itemList.stream()
+                .map(itemObject -> itemConverter.toController(itemObject))
                 .collect(Collectors.toList());
 
-        return userVOList;
+        return itemVOList;
     }
 
-    public UserVO findById(long id) throws InventoryException {
-        User user = daoFactory.getUserDAO().findById(id);
+    public ItemVO findById(long id) throws InventoryException {
 
-        if (user == null) {
-            InventoryHelper.checkNull(user, "entity");
+        Item item = daoFactory.getItemDAO().findById(id);
+
+        if (item == null) {
+            InventoryHelper.checkNull(item, "entity");
         }
 
-        return userConverter.toController(user);
+        return itemConverter.toController(item);
     }
 
     public void save(com.conurets.inventory.model.User model) throws InventoryException {
-        User user = daoFactory.getUserDAO().findByKeyValue("username", model.getUsername());
+     /*   User user = daoFactory.getUserDAO().findByKeyValue("username", model.getUsername());
 
         if (user == null) {
-            User entity = userConverter.fromController(model);
+            User entity = itemConverter.fromController(model);
 
             daoFactory.getUserDAO().save(entity);
         } else {
             InventoryHelper.handleInventoryException(InventoryConstants.STATUS_CODE_USER_ALREADY_EXISTS,
                     InventoryConstants.STATUS_MSG_USER_ALREADY_EXISTS);
-        }
+        }*/
     }
 
     public void update(com.conurets.inventory.model.User model) throws InventoryException {
-        User entity = userConverter.fromController(model);
+        /*User entity = userConverter.fromController(model);
 
-        daoFactory.getUserDAO().update(entity);
+        daoFactory.getUserDAO().update(entity);*/
     }
 
     public void delete(long id) throws InventoryException {
@@ -85,37 +87,37 @@ public class ItemServiceImpl implements ItemService {
         daoFactory.getUserDAO().delete(user);
     }
 
-    public UserVO findByKeyValue(String key, Object value) throws InventoryException {
-        User user = daoFactory.getUserDAO().findByKeyValue(key, value);
+    public ItemVO findByKeyValue(String key, Object value) throws InventoryException {
+        Item item = daoFactory.getItemDAO().findByKeyValue(key, value);
 
-        if (user == null) {
-            InventoryHelper.checkNull(user, "entity");
+        if (item == null) {
+            InventoryHelper.checkNull(item, "entity");
         }
 
-        return userConverter.toController(user);
+        return itemConverter.toController(item);
     }
 
-    public List<UserVO> findAllByKeyValue(String key, Object value) throws InventoryException {
-        List<User> userList = daoFactory.getUserDAO().findAllByKeyValue(key, value);
+    public List<ItemVO> findAllByKeyValue(String key, Object value) throws InventoryException {
+        List<Item> itemList = daoFactory.getItemDAO().findAllByKeyValue(key, value);
 
-        if (userList == null) {
-            InventoryHelper.checkNullOrEmpty(userList, "list");
+        if (itemList == null) {
+            InventoryHelper.checkNullOrEmpty(itemList, "list");
         }
 
-        List<UserVO> userVOList = userList.stream()
-                .map(userObject -> userConverter.toController(userObject))
+        List<ItemVO> itemVOList = itemList.stream()
+                .map(userObject -> itemConverter.toController(userObject))
                 .collect(Collectors.toList());
 
-        return userVOList;
+        return itemVOList;
     }
 
-    public UserVO findByName(String firstName, String lastName) throws InventoryException {
-        User user = daoFactory.getUserDAO().findByName(firstName, lastName);
+    public ItemVO findByName(String firstName, String lastName) throws InventoryException {
+        /*User user = daoFactory.getUserDAO().findByName(firstName, lastName);
 
         if (user == null) {
             InventoryHelper.checkNull(user, "entity");
-        }
+        }*/
 
-        return userConverter.toController(user);
+        return itemConverter.toController(null);
     }
 }

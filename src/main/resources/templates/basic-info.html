@@ -1,6 +1,8 @@
 <!-- start Basic info -->
 <br>
-    <div class="container">
+    <div ng-form="basicForm" class="container"  ng-controller="basicInfoCtrl"  ng-init="initializeBasicInfo();">
+
+
 
         <div class="row ">
             <div class="col-xl-6 mt-2">
@@ -13,8 +15,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Search">
-
+                    <input type="text" ng-model="basicInfo.searchName" class="form-control" placeholder="Search">
                 </div>
 
 
@@ -26,34 +27,47 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <span>Date</span>
-                    <input type="text" class="form-control"  datepicker ng-model="date2" />
+                    <input type="text" name="entryDate" ng-model="basicInfo.entryDate" required class="form-control"/>
+                    <div role="alert">
+                        <span class="error" ng-show="basicForm.entryDate.$error.required">Date is Required!</span>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
                     <span>User Name</span>
-                    <input type="text" class="form-control"/>
+                    <input type="text" ng-model="basicInfo.userName" readonly class="form-control"/>
                 </div>
 
             </div>
-            <div class="col-lg-6">
+          <!--  <div class="col-lg-6">
                 <div class="form-group">
                     <span>Venue</span>
-                    <input type="text" class="form-control"/>
+                    <input type="text"  ng-model="basicInfo.venue" class="form-control"/>
                 </div>
 
-            </div>
+            </div>-->
             <div class="col-lg-6">
                 <div class="form-group">
                     <span>Location</span>
-                    <input type="text" class="form-control"/>
+<!--                    <input type="text" class="form-control"/>-->
+                    <select  ng-model="basicInfo.locationId" required class="form-control" >
+                        <option value="">---Please Select---</option>
+                        <option ng-repeat="x in locationDAOs" value={{x.loginUserId}}>{{x.location}}</option>
+                    </select>
                 </div>
 
             </div>
             <div class="col-lg-12">
                 <div class="form-group">
                     <span>Company Name</span>
-                    <input type="text" class="form-control"/>
+                    <input type="text" ng-model="basicInfo.company" readonly class="form-control"/>
+                    <!--
+                    <select ng-model="basicInfo.company" class="form-control" ng-change="changeItem(basicInfo.company);">
+                        <option value="">-&#45;&#45;Please Select-&#45;&#45;</option>
+                        <option ng-repeat="x in companyDAOs" value={{x.id}}>{{x.company}}</option>
+                    </select>
+                    -->
                 </div>
             </div>
         </div>
@@ -62,31 +76,41 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <span>Item Description</span>
-                    <input type="text" class="form-control"/>
+                    <select ng-model="basicInfo.itemId" required class="form-control" >
+                        <option value="">---Please Select---</option>
+                        <option ng-repeat="x in itemDAOs" value={{x.id}}>{{x.itemDescription}}</option>
+                    </select>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <span>Item Id</span>
-                    <input type="text" class="form-control"/>
-                </div>
-            </div>
+
             <div class="col-lg-6">
                 <div class="form-group">
                     <span>Serial Number</span>
-                    <input type="text" class="form-control"/>
+                    <input type="number" name="serialNo" ng-model="basicInfo.serialNo" required  class="form-control"/>
+                    <div role="alert">
+                        <span class="error" ng-show="basicForm.serialNo.$error.required">
+                            SerialNo is Required!</span>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
                     <span>Qty</span>
-                    <input type="text" class="form-control"/>
+                    <input type="number" name="qty" ng-model="basicInfo.qty" required class="form-control"/>
+                    <div role="alert">
+                        <span class="error" ng-show="basicForm.qty.$error.required">
+                            Qty is Required!</span>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
                     <span>Manufacturer</span>
-                    <input type="text" class="form-control"/>
+                    <input type="text" name="manufacturer" ng-model="basicInfo.manufacturer" readonly class="form-control"/>
+                    <div role="alert">
+                        <span class="error" ng-show="basicForm.manufacturer.$error.required">
+                            Manufacturer is Required!</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,10 +123,9 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="float-right">
-                        <buttton class="btn btn-outline-secondary"><i class="fas fa-times mr-1"></i>Cancel
-                        </buttton>
+                        <buttton class="btn btn-outline-secondary"><i class="fas fa-times mr-1"></i>Cancel</buttton>
                         <buttton class="btn btn-danger"><i class="fas fa-pencil-alt mr-1"></i>Edit</buttton>
-                        <buttton class="btn btn-warning"><i class="fas fa-check mr-1"></i>Submit</buttton>
+                        <buttton class="btn btn-warning"  ng-click="saveBasicInformation();" ng-disabled="basicForm.$invalid" ><i class="fas fa-check mr-1"></i>Submit</buttton>
                     </div>
                 </div>
             </div>

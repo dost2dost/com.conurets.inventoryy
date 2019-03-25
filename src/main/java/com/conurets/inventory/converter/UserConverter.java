@@ -37,7 +37,10 @@ public class UserConverter {
     }
 
     public UserVO toController(User entity) {
+
         UserVO userVO = new UserVO();
+
+        userVO.setUserId(entity.getUserId());
         userVO.setUsername(entity.getUsername());
         userVO.setEmail(entity.getEmail());
         userVO.setCompanyName(entity.getCompanyId().getCompany());

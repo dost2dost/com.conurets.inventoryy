@@ -1,35 +1,8 @@
 var app = angular.module("CIMS", ['ui.utils']);
 
-app.directive("datepicker", function () {
-    return {
-        restrict: "A",
-        link: function (scope, el, attr) {
-            el.datepicker({
-                dateFormat: 'yy-mm-dd'
-            });
-        }
-    };
-});
-
 
 app.controller("form", function ($scope) {
 
-
-
-    $scope.show_val = function() {
-
-        console.log(
-            [
-                $scope.storageLocation,
-                $scope.storedShelf,
-                $scope.shelfNumber,
-                $scope.storedCabinet,
-                $scope.cabinetShelf
-
-            ]
-        );
-
-    }
 });
 
 

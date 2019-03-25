@@ -51,6 +51,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public UserVO findById(long id) throws InventoryException {
+
         User user = daoFactory.getUserDAO().findById(id);
 
         if (user == null) {

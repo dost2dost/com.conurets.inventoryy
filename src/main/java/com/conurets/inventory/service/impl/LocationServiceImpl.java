@@ -118,4 +118,5 @@ public class LocationServiceImpl implements LocationService {
 
         return userConverter.toController(user);
     }
+
 }

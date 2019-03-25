@@ -7,4 +7,6 @@ import com.conurets.inventory.entity.Location;
  */
 
 public interface LocationDAO extends BaseDAO<Location> {
+
+
 }

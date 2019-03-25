@@ -33,7 +33,9 @@ public class CompanyConverter {
     }
 
     public CompanyVO toController(com.conurets.inventory.entity.Company entity) {
+
         CompanyVO companyVO = new CompanyVO();
+        companyVO.setId(entity.getCompanyId());
         companyVO.setCompany(entity.getCompany());
         companyVO.setRepresentative(entity.getRepresentative());
         companyVO.setEmail(entity.getEmail());

@@ -7,9 +7,19 @@ import java.io.Serializable;
  */
 
 public class UserVO implements Serializable {
+
+    private Long userId;
     private String username;
     private String email;
     private String companyName;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
     public String getUsername() {
         return username;

@@ -18,7 +18,7 @@ public class WebController {
         return "form";
     }
 
-    @GetMapping(value = "/login")
+    @GetMapping(value = "/")
     public String login() {
         return "login";
     }

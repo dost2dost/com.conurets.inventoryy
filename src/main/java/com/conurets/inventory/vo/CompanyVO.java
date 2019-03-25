@@ -7,7 +7,8 @@ import java.io.Serializable;
  */
 
 public class CompanyVO implements Serializable {
-    private Long companyId;
+
+    private Long id;
     private String company;
     private String representative;
     private String mobile;
@@ -15,12 +16,12 @@ public class CompanyVO implements Serializable {
     private String phone;
     private String active;
 
-    public Long getCompanyId() {
-        return companyId;
+    public Long getId() {
+        return id;
     }
 
-    public void setCompanyId(Long companyId) {
-        this.companyId = companyId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCompany() {

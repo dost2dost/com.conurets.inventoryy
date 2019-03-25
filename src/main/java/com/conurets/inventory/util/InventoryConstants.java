@@ -123,6 +123,7 @@ public interface InventoryConstants {
 
     public static final int STATUS_CODE_USER_ALREADY_EXISTS = 101;
     public static final String STATUS_MSG_USER_ALREADY_EXISTS = "Username already exists";
+    public static final String STATUS_MSG_BASIC_INFO_ALREADY_EXISTS = "Basic Information already exists";
 
     public static final int STATUS_CODE_INVALID_INPUT_DATA = 120;
     public static final String STATUS_MSG_INVALID_INPUT_DATA = "Invalid input data";

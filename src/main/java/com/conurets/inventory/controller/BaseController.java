@@ -1,7 +1,6 @@
 package com.conurets.inventory.controller;
 
-import com.conurets.inventory.service.CompanyService;
-import com.conurets.inventory.service.UserService;
+import com.conurets.inventory.service.*;
 import com.conurets.inventory.util.InventoryHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,10 +19,22 @@ public class BaseController {
     protected UserService userService;
     @Autowired
     protected CompanyService companyService;
+    @Autowired
+    protected LoginUserService loginUserService;
+    @Autowired
+    protected ItemService itemService;
+    @Autowired
+    protected LocationService locationService;
+    @Autowired
+    protected BasicInfoService basicInfoService;
 
     @PostConstruct
     public void checkConfiguration() {
         InventoryHelper.checkConfiguration(userService, "userService");
         InventoryHelper.checkConfiguration(companyService, "companyService");
+        InventoryHelper.checkConfiguration(loginUserService, "loginUserService");
+        InventoryHelper.checkConfiguration(itemService, "itemService");
+        InventoryHelper.checkConfiguration(locationService, "locationService");
+        InventoryHelper.checkConfiguration(basicInfoService, "basicInfoService");
     }
 }
