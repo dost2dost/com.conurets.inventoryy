@@ -51,10 +51,14 @@
                 <div class="form-group">
                     <span>Location</span>
 <!--                    <input type="text" class="form-control"/>-->
-                    <select  ng-model="basicInfo.locationId" required class="form-control" >
+                    <select  name="locationId" ng-model="basicInfo.locationId" required class="form-control" >
                         <option value="">---Please Select---</option>
                         <option ng-repeat="x in locationDAOs" value={{x.loginUserId}}>{{x.location}}</option>
                     </select>
+
+                    <div role="alert">
+                        <span class="error" ng-show="basicForm.locationId.$error.required">Location is Required!</span>
+                    </div>
                 </div>
 
             </div>
@@ -76,10 +80,14 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <span>Item Description</span>
-                    <select ng-model="basicInfo.itemId" required class="form-control" >
+                    <select name="itemId" ng-model="basicInfo.itemId" required class="form-control" >
                         <option value="">---Please Select---</option>
                         <option ng-repeat="x in itemDAOs" value={{x.id}}>{{x.itemDescription}}</option>
                     </select>
+
+                    <div role="alert">
+                        <span class="error" ng-show="basicForm.itemId.$error.required">Item is Required!</span>
+                    </div>
                 </div>
             </div>
 
