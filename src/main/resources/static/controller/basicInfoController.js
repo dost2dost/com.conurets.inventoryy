@@ -24,6 +24,19 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     $scope.companyInfo.representative ='';
     $scope.companyInfo.repEmail = ''
 
+    $scope.checkboxModel = {
+        date: true,
+        location: true,
+        venue: true,
+        userName: true,
+        companyName: true,
+        itemDescription: true,
+        itemID: true,
+        serialNum: true,
+        qtyUsed: true,
+
+    };
+
     $scope.initializeBasicInfo = function(){
 
         LocationService.getAllLocations();
@@ -41,6 +54,30 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
         BasicInfoService.saveInfoDAO($scope.basicInfo) ;
     };
 
+
+    $scope.fetchBasicInfoDate = function() {
+
+        //$scope.basicInfoRp = [];
+
+        $scope.fromToDate = {
+            startDate: moment().subtract(1, "days"),
+            endDate: moment(),
+            locale: {
+                format: 'YYYY-M-DD'
+            }
+
+        };
+
+        $scope.fetchBasicInfoRp();
+    }
+
+    $scope.fetchBasicInfoRp = function(){
+
+        console.log(daterange2);
+
+        BasicInfoService.fetchInfoRpDAO('');
+
+    }
 
 
 });

@@ -1,6 +1,7 @@
 <!-- start Basic info -->
 <br>
-<div class="container-fluid" ng-controller="ctrl1">
+<div class="container-fluid" ng-controller="basicInfoCtrl" ng-init="fetchBasicInfoDate();" >
+    kkkk
     <div class="col-12">
         <div class="row ">
             <div class="col-xl-4 mt-2">
@@ -12,11 +13,15 @@
                                     <span class="input-group-text"><i
                                             class="fas fa-calendar-alt mr-1"></i>Date Range</span>
                     </div>
-                    <input type="text" name="daterange" class="form-control"
-                           value="01/01/2018 - 01/15/2018"/>
+                   <!-- <input type="text" class="form-control" ng-model="frmToDate" name="daterange" value="2019-03-01 to 2019-03-05" />
+                   --> <input date-range-picker id="daterange2" ng-model="fromToDate" name="daterange2"
+                              class="form-control date-picker" type="text"  required/>
                 </div>
 
+                <div>
+                    <buttton class="btn btn-warning"  ng-click="fetchBasicInfoRp();"  ><i class="fas fa-check mr-1"></i>Search</buttton>
 
+                </div>
             </div>
             <div class="col-xl-4">
 
@@ -57,7 +62,7 @@
                 <tr>
                     <th ng-show="checkboxModel.date">Date</th>
                     <th ng-show="checkboxModel.location">Location</th>
-                    <th ng-show="checkboxModel.venue">Venue</th>
+                    <!--<th ng-show="checkboxModel.venue">Venue</th>-->
                     <th ng-show="checkboxModel.userName">User Name</th>
                     <th ng-show="checkboxModel.companyName">Company Name</th>
                     <th ng-show="checkboxModel.itemDescription">Item Description</th>
@@ -69,16 +74,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="n in data">
-                    <td ng-show="checkboxModel.date">{{n[0]}}</td>
-                    <td ng-show="checkboxModel.location">{{n[1]}}</td>
-                    <td ng-show="checkboxModel.venue">{{n[2]}}</td>
-                    <td ng-show="checkboxModel.userName">{{n[3]}}</td>
-                    <td ng-show="checkboxModel.companyName">{{n[4]}}</td>
-                    <td ng-show="checkboxModel.itemDescription">{{n[5]}}</td>
-                    <td ng-show="checkboxModel.itemID">{{n[6]}}</td>
-                    <td ng-show="checkboxModel.serialNum">{{n[7]}}</td>
-                    <td ng-show="checkboxModel.qtyUsed">{{n[8]}}</td>
+                <tr ng-repeat="n in basicInfoRp">
+                    <td ng-show="checkboxModel.date">{{n.entryDate}}</td>
+                    <td ng-show="checkboxModel.location">{{n.locationName}}</td>
+                    <!--<td ng-show="checkboxModel.venue">{{n[2]}}</td>-->
+                    <td ng-show="checkboxModel.userName">{{n.userName}}</td>
+                    <td ng-show="checkboxModel.companyName">{{n.companyName}}</td>
+                    <td ng-show="checkboxModel.itemDescription">{{n.itemName}}</td>
+                    <td ng-show="checkboxModel.itemID">{{n.itemId}}</td>
+                    <td ng-show="checkboxModel.serialNum">{{n.serialNumber}}</td>
+                    <td ng-show="checkboxModel.qtyUsed">{{n.qty}}</td>
 
                 </tr>
 

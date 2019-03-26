@@ -5,6 +5,7 @@ app.controller("form", function ($scope) {
 
 });
 
+/*
 
 app.controller('ctrl1', function ($scope) {
 
@@ -83,6 +84,7 @@ app.controller('ctrl1', function ($scope) {
 
 
 });
+*/
 
 app.controller('ctrl2', function ($scope) {
 

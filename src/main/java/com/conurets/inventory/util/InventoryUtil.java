@@ -8,6 +8,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.stream.Collectors;
 
 /**
@@ -130,5 +133,44 @@ public class InventoryUtil {
                 .collect(Collectors.toList()));
 
         return response;
+    }
+
+    public static Timestamp convertStringToTimestamp(String date){
+
+
+        java.util.Date dt = null;
+        java.sql.Date sqlTimeIn = null;
+        java.sql.Timestamp timeStampDate = null;
+
+        try{
+
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            dt = df.parse(date);
+            sqlTimeIn = new java.sql.Date(dt.getTime());
+            timeStampDate = new Timestamp(sqlTimeIn.getTime());
+
+        }catch(ParseException ex){
+
+            ex.printStackTrace();
+        }
+
+        return timeStampDate;
+    }
+
+    public static Date convertFromStringToDate(String date){
+
+        java.util.Date dt =null;
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+        try {
+
+            dt = df.parse(date);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return dt;
     }
 }

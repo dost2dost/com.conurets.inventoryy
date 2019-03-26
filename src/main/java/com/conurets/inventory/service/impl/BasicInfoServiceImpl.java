@@ -7,12 +7,14 @@ import com.conurets.inventory.exception.InventoryException;
 import com.conurets.inventory.service.BasicInfoService;
 import com.conurets.inventory.util.InventoryConstants;
 import com.conurets.inventory.util.InventoryHelper;
+import com.conurets.inventory.vo.BasicInfoVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 /**
  * Created by Iraj on 03/20/19.
@@ -64,5 +66,13 @@ public class BasicInfoServiceImpl implements BasicInfoService {
 
         daoFactory.getBasicInfoDAO().delete(basicInfo);
     }
+
+    public List<BasicInfoVO> fetchBasicInfoReport(String frmDate,String toDate ) throws InventoryException {
+
+        List<BasicInfoVO> basicInfoVOList = daoFactory.getBasicInfoDAO().fetchBasicInfoReport(frmDate,toDate);
+
+        return basicInfoVOList;
+    }
+
 
 }

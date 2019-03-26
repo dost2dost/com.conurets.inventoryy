@@ -5,10 +5,14 @@ import com.conurets.inventory.entity.BasicInformation;
 import com.conurets.inventory.exception.InventoryException;
 import com.conurets.inventory.util.InventoryConstants;
 import com.conurets.inventory.util.InventoryUtil;
+import com.conurets.inventory.vo.BasicInfoVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Iraj on 03/20/19.
@@ -39,13 +43,35 @@ public class BasicInfoConverter {
 
         return entity;
     }
-/*
-    public Basic toController(User entity) {
-        UserVO userVO = new UserVO();
-        userVO.setUsername(entity.getUsername());
-        userVO.setEmail(entity.getEmail());
-        userVO.setCompanyName(entity.getCompanyId().getCompany());
 
-        return userVO;
-    }*/
+    public List<BasicInfoVO> toReportController(List<BasicInformation> entity) {
+
+        List<BasicInfoVO> basicInfoVOList = null;
+
+        if(entity!=null){
+
+            basicInfoVOList = new ArrayList<>();
+
+            for(int i=0; i<entity.size();i++){
+
+                BasicInfoVO basicVO = new BasicInfoVO();
+
+                basicVO.setEntryDate(entity.get(i).getEntryDate());
+                basicVO.setUserName(daoFactory.getUserDAO().findById(entity.get(i).getUserId().getUserId()).getUsername());
+                basicVO.setLocationName(daoFactory.getLocationDAO().findById(entity.get(i).getLocationId().getLoginUserId()).getLocation()) ;
+                basicVO.setCompanyName(daoFactory.getCompanyDAO().findById(entity.get(i).getCompanyId().getCompanyId()).getCompany());
+                basicVO.setItemName(daoFactory.getItemDAO().findById(entity.get(i).getItemId().getItemId()).getItemDescription()) ;
+                basicVO.setItemId(daoFactory.getItemDAO().findById(entity.get(i).getItemId().getItemId()).getItemId());
+
+                basicVO.setSerialNumber(entity.get(i).getSerialNumber());
+                basicVO.setQty(entity.get(i).getQty());
+
+                basicInfoVOList.add(basicVO);
+            }
+
+
+        }
+
+        return basicInfoVOList;
+    }
 }
