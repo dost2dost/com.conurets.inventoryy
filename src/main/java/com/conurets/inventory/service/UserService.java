@@ -1,5 +1,6 @@
 package com.conurets.inventory.service;
 
+import com.conurets.inventory.entity.UserRole;
 import com.conurets.inventory.exception.InventoryException;
 import com.conurets.inventory.model.User;
 import com.conurets.inventory.vo.UserVO;
@@ -25,5 +26,5 @@ public interface UserService {
 
     List<UserVO> findAllByKeyValue(String key, Object value) throws InventoryException;
 
-    UserVO findByName(String firstName, String lastName) throws InventoryException;
+    UserRole findUserRoleByUserId(long userId) throws InventoryException;
 }

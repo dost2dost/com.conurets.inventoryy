@@ -18,7 +18,11 @@ app.service('CompanyService', ['$rootScope', '$http', function($rootScope, $http
                 method: 'GET',
                 url: '/inventory-management/findAllCompanies',
                 dataType: 'json',
-                contentType: "application/json"
+                headers : {
+                    'Accept' : 'application/json',
+                    'Content-Type' : 'application/json',
+                    'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                },
             }).then(function (response) {
 
                 $rootScope.companyDAOs = response.data.data;
@@ -38,6 +42,11 @@ app.service('CompanyService', ['$rootScope', '$http', function($rootScope, $http
                     method: 'POST',
                     url: '/inventory-management/findByCompanyId',
                     data : JSON.stringify(_companyObject),
+                    headers : {
+                        'Accept' : 'application/json',
+                        'Content-Type' : 'application/json',
+                        'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                    },
                 }).then(function (response)
                 {
 

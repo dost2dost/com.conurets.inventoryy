@@ -8,8 +8,5 @@ import com.conurets.inventory.exception.InventoryException;
  */
 
 public interface LoginUserDAO extends BaseDAO<LoginUser> {
-
-    LoginUser findByEmail(String emailId) throws InventoryException;
-/*
-    LoginUser login(LoginUser loginUser) throws InventoryException;*/
+    LoginUser findByUserId(long userId) throws InventoryException;
 }

@@ -14,26 +14,26 @@ import javax.annotation.PostConstruct;
 
 @Service
 public class DAOFactoryImpl implements DAOFactory {
-
     @Autowired
     private UserDAO userDAO;
-
     @Autowired
     private CompanyDAO companyDAO;
-
     @Autowired
     private LoginUserDAO loginUserDAO;
-
     @Autowired
     private ItemDAO itemDAO;
-
-
     @Autowired
     private LocationDAO locationDAO;
-
     @Autowired
     private BasicInformationDAO basicInfoDAO;
+    @Autowired
+    private RoleDAO roleDAO;
+    @Autowired
+    private UserRoleDAO userRoleDAO;
 
+    /**
+     * Checking @Autowired object
+     */
 
     @PostConstruct
     public void checkConfiguration() {
@@ -43,6 +43,8 @@ public class DAOFactoryImpl implements DAOFactory {
         InventoryHelper.checkConfiguration(itemDAO, "itemDAO");
         InventoryHelper.checkConfiguration(locationDAO, "locationDAO");
         InventoryHelper.checkConfiguration(basicInfoDAO, "basicInfoDAO");
+        InventoryHelper.checkConfiguration(roleDAO, "roleDAO");
+        InventoryHelper.checkConfiguration(userRoleDAO, "userRoleDAO");
     }
 
     public UserDAO getUserDAO() {
@@ -93,4 +95,19 @@ public class DAOFactoryImpl implements DAOFactory {
         this.basicInfoDAO = basicInfoDAO;
     }
 
+    public RoleDAO getRoleDAO() {
+        return roleDAO;
+    }
+
+    public void setRoleDAO(RoleDAO roleDAO) {
+        this.roleDAO = roleDAO;
+    }
+
+    public UserRoleDAO getUserRoleDAO() {
+        return userRoleDAO;
+    }
+
+    public void setUserRoleDAO(UserRoleDAO userRoleDAO) {
+        this.userRoleDAO = userRoleDAO;
+    }
 }

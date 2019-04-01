@@ -8,7 +8,7 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     $scope.basicInfo ={};
     $scope.basicInfo.entryDate ='';
     $scope.basicInfo.userName ='Iraj Khan';
-    $scope.basicInfo.userId= 1
+    $scope.basicInfo.userId= 1;
     $scope.basicInfo.location ='';
     $scope.basicInfo.company ='';
     $scope.basicInfo.companyId = 1;
@@ -22,7 +22,7 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     $scope.companyInfo.companyId = 1 ;
     $scope.companyInfo.companyName = '';
     $scope.companyInfo.representative ='';
-    $scope.companyInfo.repEmail = ''
+    $scope.companyInfo.repEmail = '';
 
     $scope.checkboxModel = {
         date: true,
@@ -38,7 +38,6 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     };
 
     $scope.initializeBasicInfo = function(){
-
         LocationService.getAllLocations();
 
         //$scope.basicInfo.companyId =1;

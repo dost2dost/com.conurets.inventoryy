@@ -1,9 +1,13 @@
 package com.conurets.inventory.controller;
 
+import com.conurets.inventory.util.InventoryUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.security.Principal;
 
 /**
  * @author MSA
@@ -13,14 +17,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebController {
     private static final Logger logger = LoggerFactory.getLogger(WebController.class);
 
-    @GetMapping(value = "/form")
-    public String form() {
-        return "form";
-    }
-
     @GetMapping(value = "/")
     public String login() {
         return "login";
+    }
+
+    @GetMapping(value = "/form")
+    public String form(Model model) {
+        model.addAttribute("userRole", InventoryUtil.getUserRole());
+        return "form";
     }
 
     @GetMapping(value = "/reports")

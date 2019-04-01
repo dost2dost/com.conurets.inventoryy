@@ -27,6 +27,12 @@ public class BaseController {
     protected LocationService locationService;
     @Autowired
     protected BasicInfoService basicInfoService;
+    @Autowired
+    protected CustomUserDetailsService customUserDetailsService;
+
+    /**
+     * Checking @Autowired object
+     */
 
     @PostConstruct
     public void checkConfiguration() {
@@ -36,5 +42,6 @@ public class BaseController {
         InventoryHelper.checkConfiguration(itemService, "itemService");
         InventoryHelper.checkConfiguration(locationService, "locationService");
         InventoryHelper.checkConfiguration(basicInfoService, "basicInfoService");
+        InventoryHelper.checkConfiguration(customUserDetailsService, "customUserDetailsService");
     }
 }

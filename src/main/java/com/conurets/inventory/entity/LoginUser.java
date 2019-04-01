@@ -14,11 +14,9 @@ public class LoginUser extends BaseEntity {
     @Column(name = "id")
     private Long loginUserId;
 
-    @Column(name = "user_id")
-    private Integer userId;
-
-    @Column(name = "email")
-    private String email;
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column(name = "password")
     private String password;
@@ -31,20 +29,12 @@ public class LoginUser extends BaseEntity {
         this.loginUserId = loginUserId;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getPassword() {

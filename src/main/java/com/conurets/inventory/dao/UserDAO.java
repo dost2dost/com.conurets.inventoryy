@@ -8,5 +8,5 @@ import com.conurets.inventory.entity.User;
  */
 
 public interface UserDAO extends BaseDAO<User> {
-    User findByName(String firstName, String lastName) throws InventoryException;
+    User findByName(String username, String email) throws InventoryException;
 }

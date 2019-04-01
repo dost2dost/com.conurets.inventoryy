@@ -22,7 +22,7 @@ public class User extends BaseEntity {
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "company_id")
-    private Company companyId;
+    private Company company;
 
     @Column(name = "is_active")
     private Boolean active;
@@ -51,12 +51,12 @@ public class User extends BaseEntity {
         this.email = email;
     }
 
-    public Company getCompanyId() {
-        return companyId;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCompanyId(Company companyId) {
-        this.companyId = companyId;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public Boolean getActive() {

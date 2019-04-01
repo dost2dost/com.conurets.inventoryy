@@ -52,6 +52,11 @@ app.service('BasicInfoService', ['$rootScope', '$http', function($rootScope, $ht
                 method: 'POST',
                 url: '/inventory-management/saveBasicInfo',
                 data: JSON.stringify(_dataObject),
+                headers : {
+                    'Accept' : 'application/json',
+                    'Content-Type' : 'application/json',
+                    'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                },
             }).then(function (response) {
 
                 if (response.data.code == 0) {
@@ -81,7 +86,11 @@ app.service('BasicInfoService', ['$rootScope', '$http', function($rootScope, $ht
                 method: 'GET',
                 url: '/inventory-management/fetchBasicInfoReport/?fromDate=2019-03-21&toDate=2019-03-22', //+$scope.toDt ,
                 dataType: 'json',
-                contentType: "application/json"
+                headers : {
+                    'Accept' : 'application/json',
+                    'Content-Type' : 'application/json',
+                    'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                },
             }).then(function (rsp) {
 
                 console.log(rsp);

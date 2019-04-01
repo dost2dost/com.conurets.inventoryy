@@ -123,14 +123,34 @@ public interface InventoryConstants {
 
     public static final int STATUS_CODE_USER_ALREADY_EXISTS = 101;
     public static final String STATUS_MSG_USER_ALREADY_EXISTS = "Username already exists";
+
+    public static final int STATUS_CODE_NO_USER_FOUND = 102;
+    public static final String STATUS_MSG_NO_USER_FOUND = "No user found";
+
+    public static final int STATUS_CODE_NO_CREDENTIAL_FOUND = 103;
+    public static final String STATUS_MSG_NO_CREDENTIAL_FOUND = "No credential found";
+
+    public static final int STATUS_CODE_INVALID_USER_DETAIL = 104;
+    public static final String STATUS_MSG_INVALID_USER_DETAIL = "Invalid user details";
+
+    public static final int STATUS_CODE_BASIC_INFO_ALREADY_EXISTS = 105;
     public static final String STATUS_MSG_BASIC_INFO_ALREADY_EXISTS = "Basic Information already exists";
 
-    public static final int STATUS_CODE_INVALID_INPUT_DATA = 120;
+    public static final int STATUS_CODE_INVALID_INPUT_DATA = 201;
     public static final String STATUS_MSG_INVALID_INPUT_DATA = "Invalid input data";
 
-    public static final int STATUS_CODE_INVALID_DATA = 121;
+    public static final int STATUS_CODE_INVALID_DATA = 202;
     public static final String STATUS_MSG_INVALID_DATA = "Invalid data";
 
     public static final int STATUS_CODE_UNKONWN = 9995;
     public static final String STATUS_MSG_UNKONWN = "Unknown error";
+
+    public static final int STATUS_CODE_INVALID_TOKEN = 506;
+    public static final String STATUS_MSG_INVALID_TOKEN = "Invalid token";
+
+    public static final int STATUS_CODE_JWT_INVALID_SIGNATURE = 501;
+    public static final int STATUS_CODE_JWT_MALFORMED = 502;
+    public static final int STATUS_CODE_JWT_EXPIRED = 503;
+    public static final int STATUS_CODE_JWT_UNSUPPORTED = 504;
+    public static final int STATUS_CODE_JWT_ILLEGAL_ARGUMENT = 505;
 }

@@ -1,5 +1,8 @@
 package com.conurets.inventory.dao.factory;
 
+import com.conurets.inventory.dao.CompanyDAO;
+import com.conurets.inventory.dao.LoginUserDAO;
+import com.conurets.inventory.dao.UserDAO;
 import com.conurets.inventory.dao.*;
 
 /**
@@ -7,7 +10,6 @@ import com.conurets.inventory.dao.*;
  */
 
 public interface DAOFactory {
-
     UserDAO getUserDAO();
 
     CompanyDAO getCompanyDAO();
@@ -20,5 +22,7 @@ public interface DAOFactory {
 
     BasicInformationDAO getBasicInfoDAO();
 
+    RoleDAO getRoleDAO();
 
+    UserRoleDAO getUserRoleDAO();
 }

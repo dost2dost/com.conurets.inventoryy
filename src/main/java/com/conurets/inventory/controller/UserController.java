@@ -5,10 +5,13 @@ import com.conurets.inventory.model.User;
 import com.conurets.inventory.util.InventoryConstants;
 import com.conurets.inventory.util.InventoryUtil;
 import com.conurets.inventory.vo.BaseResponse;
+import com.conurets.inventory.vo.LoginUserVO;
 import com.conurets.inventory.vo.UserVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.List;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -28,7 +30,31 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class UserController extends BaseController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @RequestMapping(value = "/addUser", method = POST, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    /**
+     * Verify user credentials and set user details
+     * @param model
+     * @return token, user id, user name, company id, company name
+     * @throws InventoryException
+     */
+
+    @RequestMapping(value = "/api/login", method = POST)
+    public ResponseEntity<?> login(@RequestBody User model) throws InventoryException {
+        LoginUserVO loginUserVO = customUserDetailsService.login(model.getUsername(), model.getPassword());
+
+        BaseResponse<Object> baseResponse = InventoryUtil.setBaseResponse(InventoryConstants.STATUS_CODE_SUCCESS,
+                InventoryConstants.STATUS_MSG_SUCCESS, loginUserVO);
+
+        return ResponseEntity.ok(baseResponse);
+    }
+
+    /**
+     * Add new user
+     * @param model
+     * @return status
+     * @throws InventoryException
+     */
+
+    @RequestMapping(value = "/api/addUser", method = POST)
     public ResponseEntity<?> addUser(@Valid @RequestBody User model) throws InventoryException {
         userService.save(model);
 
@@ -38,7 +64,13 @@ public class UserController extends BaseController {
         return ResponseEntity.ok(baseResponse);
     }
 
-    @RequestMapping(value = "/findAllUsers", method = GET, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    /**
+     * fetch all users
+     * @return user list
+     * @throws InventoryException
+     */
+
+    @RequestMapping(value = "/api/findAllUsers", method = GET)
     public ResponseEntity<?> findAll() throws InventoryException {
         List<UserVO> userVOList = userService.findAll();
 
@@ -48,15 +80,13 @@ public class UserController extends BaseController {
         return ResponseEntity.ok(baseResponse);
     }
 
-    @RequestMapping(value = "/findByUserId", method = POST )
-    public ResponseEntity<?> findByUserId(@Valid @RequestBody User model) throws InventoryException {
-
-        UserVO userVO = userService.findById(model.getUserId()) ;
+    @RequestMapping(value = "/api/logout", method = GET)
+    public ResponseEntity<?> logout() throws InventoryException {
+        SecurityContextHolder.getContext().setAuthentication(null);
 
         BaseResponse<Object> baseResponse = InventoryUtil.setBaseResponse(InventoryConstants.STATUS_CODE_SUCCESS,
-                InventoryConstants.STATUS_MSG_SUCCESS, userVO);
+                InventoryConstants.STATUS_MSG_SUCCESS);
 
         return ResponseEntity.ok(baseResponse);
     }
-
 }

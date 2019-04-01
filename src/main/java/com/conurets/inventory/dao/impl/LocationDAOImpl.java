@@ -13,20 +13,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class LocationDAOImpl extends BaseDAOImpl<Location> implements LocationDAO {
     private static final Logger logger = LoggerFactory.getLogger(LocationDAOImpl.class);
-
-
-/*    public List<Location> findAllLocations(){
-
-        List<Location> locationList =findAll();
-
-        if(locationList == null){
-
-            throw new EntityNotFoundException(101, "No location found");
-
-        }
-
-        return locationList;
-    }*/
-
-
 }

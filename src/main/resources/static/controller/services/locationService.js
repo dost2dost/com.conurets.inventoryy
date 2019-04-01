@@ -13,7 +13,11 @@ app.service('LocationService', ['$rootScope', '$http', function($rootScope, $htt
                 method: 'GET',
                 url: '/inventory-management/findAllLocations',
                 dataType: 'json',
-                contentType: "application/json"
+                headers : {
+                    'Accept' : 'application/json',
+                    'Content-Type' : 'application/json',
+                    'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                },
             }).then(function (response) {
 
                 $rootScope.locationDAOs = response.data.data;

@@ -1,5 +1,7 @@
 <!doctype html >
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
     <!-- Date range  -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
 
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
@@ -25,7 +27,7 @@
 
 
 </head>
-<body ng-app="CIMS" >
+<body ng-app="CIMS">
 
 
 <div ng-include="'header'"></div>
@@ -38,11 +40,11 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div id="basic-info" class="tab-pane active">
-             <basic-info></basic-info>
+            <basic-info></basic-info>
         </div>
 
         <div id="storage-info" class="tab-pane ">
-             <storage-info></storage-info>
+            <storage-info></storage-info>
         </div>
 
 
@@ -61,8 +63,6 @@
         <div id="supplier-info" class="tab-pane ">
             <supplier-info></supplier-info>
         </div>
-
-
     </div>
 </section>
 <!-- End  content -->
@@ -109,17 +109,16 @@
 <script src="/inventory-management/controller/basicInfoController.js" type="text/javascript"></script>
 
 
-
 </body>
-<script >
+<script>
 
-//    $(document).ready(function(){
-//        $('.btn-left-panel-form').click(function () {
-//            $('.left-panel-form ').toggleClass("show-left-panel-form");
-//            $('.content ').toggleClass("form-add-margin");
-//        });
-//
-//    });
+    //    $(document).ready(function(){
+    //        $('.btn-left-panel-form').click(function () {
+    //            $('.left-panel-form ').toggleClass("show-left-panel-form");
+    //            $('.content ').toggleClass("form-add-margin");
+    //        });
+    //
+    //    });
 
 
 </script>

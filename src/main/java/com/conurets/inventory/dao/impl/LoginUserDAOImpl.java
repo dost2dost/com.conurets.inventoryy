@@ -2,14 +2,14 @@ package com.conurets.inventory.dao.impl;
 
 import com.conurets.inventory.dao.LoginUserDAO;
 import com.conurets.inventory.entity.LoginUser;
-import com.conurets.inventory.exception.EntityNotFoundException;
-import com.conurets.inventory.exception.InvalidDataException;
 import com.conurets.inventory.exception.InventoryException;
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
+import com.conurets.inventory.util.InventoryConstants;
+import com.conurets.inventory.util.InventoryHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.TypedQuery;
 
 /**
  * @author MSA
@@ -17,49 +17,27 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class LoginUserDAOImpl extends BaseDAOImpl<LoginUser> implements LoginUserDAO {
-
     private static final Logger logger = LoggerFactory.getLogger(LoginUserDAOImpl.class);
 
+    /**
+     * Get login user details
+     * @param userId
+     * @return login user object
+     * @throws InventoryException
+     */
 
-    public LoginUser findByEmail(String emailId) throws InventoryException {
+    public LoginUser findByUserId(long userId) throws InventoryException {
+        final String hqlQuery = "from LoginUser lu where lu.user.id = :userId";
 
+        TypedQuery<LoginUser> query = getSession().createQuery(hqlQuery);
+        query.setParameter("userId", userId);
 
-        if(emailId.equals(null)){
-
-            throw new EntityNotFoundException(101,"Email cannot be empty. Please enter Email Id");
-
+        if (query.setMaxResults(1) == null) {
+            InventoryHelper.handleInventoryException(InventoryConstants.STATUS_CODE_NO_CREDENTIAL_FOUND, InventoryConstants.STATUS_MSG_NO_CREDENTIAL_FOUND);
         }
 
-        Criteria createCriteria = createEntityCriteria();
-        createCriteria.add(Restrictions.eq("emailId",emailId));
+        LoginUser loginUser = (LoginUser) query.getResultList().get(InventoryConstants.INT_ZERO);
 
-        LoginUser loginUser = (LoginUser) createCriteria.uniqueResult();
-
-        if(loginUser==null){
-
-            throw new InvalidDataException(120,"Invalid Email. Please enter correct Email");
-
-        }
         return loginUser;
-
     }
-
-
-    public LoginUser login(LoginUser loginUser) throws InventoryException {
-
-        LoginUser emailExist = findByEmail(loginUser.getEmail());
-
-         if(loginUser.getPassword().equals(null)){
-
-            throw new EntityNotFoundException(101,"Password cannot be empty. Please enter Password");
-
-        }else if(!emailExist.getPassword().equals(loginUser.getPassword())){
-
-             throw new InvalidDataException(120,"Password Mismatch. Please enter correct Password");
-
-         }
-
-        return emailExist;
-    }
-
 }

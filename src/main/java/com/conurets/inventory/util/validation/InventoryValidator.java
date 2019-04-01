@@ -10,6 +10,13 @@ import javax.validation.ConstraintValidatorContext;
  */
 
 public class InventoryValidator implements ConstraintValidator<InventoryNotNull, Object> {
+    /**
+     * Checking null object
+     * @param value
+     * @param context
+     * @return boolean
+     */
+
     public boolean isValid(Object value, ConstraintValidatorContext context) {
         return value == null ? Boolean.FALSE : Boolean.TRUE;
     }
