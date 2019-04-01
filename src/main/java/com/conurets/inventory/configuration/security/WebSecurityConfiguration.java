@@ -34,7 +34,7 @@ import javax.annotation.PostConstruct;
 @ComponentScan(basePackages = "com.conurets.inventory")
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     public static final String[] URL_API = new String[]{"/api/login", "/api/addUser"};
-    public static final String[] RESOURCES = new String[]{"/js/**", "/css/**", "/images/**", "/fonts/**", "/controller/**"};
+    public static final String[] RESOURCES = new String[]{"/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/fonts/**"};
     public static final String[] UI_PAGES = new String[]{"/", "/form", "/reports", "/login",
             "/header", "/footer", "/form-left-panel", "/basic-info", "/storage-info",
             "/report-left-panel", "/report-basic-info", "/spare-useage", "/item-handling",
@@ -118,7 +118,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .accessDeniedHandler(jwtAccessDeniedHandler)
                 .and().authorizeRequests()
-                .antMatchers(RESOURCES).permitAll()
+                ///.antMatchers(RESOURCES).permitAll()
                 .antMatchers(UI_PAGES).permitAll()
                 .antMatchers(URL_API).permitAll()
                 .anyRequest().authenticated()
@@ -141,6 +141,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/fonts/**", "/controller/**");
+        web.ignoring().antMatchers(RESOURCES);
     }
 }

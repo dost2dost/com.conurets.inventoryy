@@ -2,6 +2,7 @@ package com.conurets.inventory.util;
 
 import com.conurets.inventory.bean.ErrorResponse;
 import com.conurets.inventory.entity.Role;
+import com.conurets.inventory.exception.InvalidSessionException;
 import com.conurets.inventory.model.CustomUserDetails;
 import com.conurets.inventory.vo.BaseResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -317,6 +318,8 @@ public class InventoryUtil {
             customUserDetails = (CustomUserDetails) authentication.getPrincipal();
         }
 
+        InventoryHelper.validateSession(customUserDetails);
+
         return customUserDetails;
     }
 
@@ -396,12 +399,24 @@ public class InventoryUtil {
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
     }
 
+    /**
+     * Set user role list
+     * @param role
+     * @return list
+     */
+
     public static List<String> setUserRole(Role role) {
         List<String> stringList = new ArrayList<>();
         stringList.add(role.getRoleName());
 
         return stringList;
     }
+
+    /**
+     * Get logged in user role by authorityList
+     * @param authorityList
+     * @return String
+     */
 
     public static String getUserRole(Collection<? extends GrantedAuthority> authorityList) {
         for (GrantedAuthority grantedAuthority : authorityList) {
@@ -411,11 +426,15 @@ public class InventoryUtil {
         return null;
     }
 
+    /**
+     * Get logged in user role
+     * @return String
+     */
+
     public static String getUserRole() {
         for (GrantedAuthority grantedAuthority : getUserDetails().getAuthorities()) {
             return grantedAuthority.getAuthority();
         }
-
         return null;
     }
 }

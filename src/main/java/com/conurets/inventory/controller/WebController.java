@@ -1,13 +1,13 @@
 package com.conurets.inventory.controller;
 
+import com.conurets.inventory.exception.InvalidSessionException;
 import com.conurets.inventory.util.InventoryUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.security.Principal;
 
 /**
  * @author MSA
@@ -25,11 +25,14 @@ public class WebController {
     @GetMapping(value = "/form")
     public String form(Model model) {
         model.addAttribute("userRole", InventoryUtil.getUserRole());
+
         return "form";
     }
 
     @GetMapping(value = "/reports")
-    public String reports() {
+    public String reports(Model model) {
+        model.addAttribute("userRole", InventoryUtil.getUserRole());
+
         return "reports";
     }
 
@@ -91,5 +94,10 @@ public class WebController {
     @GetMapping(value = "/supplier-info")
     public String supplierInfo() {
         return "supplier-info";
+    }
+
+    @ExceptionHandler(InvalidSessionException.class)
+    public String handleInvalidSession(InvalidSessionException e) {
+        return "redirect:/";
     }
 }

@@ -5,5 +5,5 @@ package com.conurets.inventory.bean;
  */
 
 public enum RoleEnum {
-    ROLE_SUPERADMIN, ROLE_ADMIN, ROLE_USER
+    ROLE_SUPER_ADMIN, ROLE_ADMIN, ROLE_SUPER_USER, ROLE_USER
 }

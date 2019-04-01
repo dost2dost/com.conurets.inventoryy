@@ -136,6 +136,9 @@ public interface InventoryConstants {
     public static final int STATUS_CODE_BASIC_INFO_ALREADY_EXISTS = 105;
     public static final String STATUS_MSG_BASIC_INFO_ALREADY_EXISTS = "Basic Information already exists";
 
+    public static final int STATUS_CODE_INVALID_SESSION = 106;
+    public static final String STATUS_MSG_INVALID_SESSION = "Invalid session";
+
     public static final int STATUS_CODE_INVALID_INPUT_DATA = 201;
     public static final String STATUS_MSG_INVALID_INPUT_DATA = "Invalid input data";
 

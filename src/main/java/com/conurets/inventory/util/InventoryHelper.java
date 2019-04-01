@@ -1,9 +1,7 @@
 package com.conurets.inventory.util;
 
-import com.conurets.inventory.exception.ConfigurationException;
-import com.conurets.inventory.exception.EntityNotFoundException;
-import com.conurets.inventory.exception.InvalidDataException;
-import com.conurets.inventory.exception.InventoryException;
+import com.conurets.inventory.exception.*;
+import com.conurets.inventory.model.CustomUserDetails;
 
 import java.util.Collection;
 
@@ -115,5 +113,16 @@ public final class InventoryHelper {
 
     public static void handleInventoryException(int code, String message) throws InventoryException {
         throw new InvalidDataException(code, message);
+    }
+
+    /**
+     * Invalid session handling
+     * @param customUserDetails
+     */
+
+    public static void validateSession(CustomUserDetails customUserDetails) {
+        if (customUserDetails == null) {
+            throw new InvalidSessionException(InventoryConstants.STATUS_CODE_INVALID_SESSION, InventoryConstants.STATUS_MSG_INVALID_SESSION);
+        }
     }
 }

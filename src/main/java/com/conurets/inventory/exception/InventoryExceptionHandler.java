@@ -62,7 +62,7 @@ public class InventoryExceptionHandler {
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleBadRequest(Exception e) {
+    public ResponseEntity<ErrorResponse> handleException(Exception e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(InventoryConstants.STATUS_CODE_UNKONWN, e.getMessage());
 
         return ResponseEntity.ok(response);
@@ -70,7 +70,7 @@ public class InventoryExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorResponse> handleValidationExceptions(MethodArgumentNotValidException e) {
+    public ResponseEntity<ErrorResponse> handleValidation(MethodArgumentNotValidException e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(InventoryConstants.STATUS_CODE_INVALID_INPUT_DATA, e.getBindingResult());
 
         return ResponseEntity.ok(response);
