@@ -96,6 +96,16 @@ public class WebController {
         return "supplier-info";
     }
 
+    @GetMapping(value = "/bulk-import")
+    public String bulkImport() {
+        return "bulk-import";
+    }
+
+    @GetMapping(value = "/bulk-import-data")
+    public String bulkImportData() {
+        return "bulk-import-data";
+    }
+
     @ExceptionHandler(InvalidSessionException.class)
     public String handleInvalidSession(InvalidSessionException e) {
         return "redirect:/";

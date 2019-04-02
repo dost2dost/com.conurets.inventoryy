@@ -80,41 +80,46 @@ a:hover {
   color: #FAA91A;
 }
 
+/* line 78, ../sass/main.scss */
+.ml-50 {
+  margin-left: 50;
+}
+
 /* Header section
 *****************/
-/* line 81, ../sass/main.scss */
+/* line 83, ../sass/main.scss */
 .header {
   background: #354052;
   padding: 10px 0px;
   z-index: 2;
 }
-/* line 88, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 .header span {
   font-size: 18px;
 }
-/* line 91, ../sass/main.scss */
+/* line 93, ../sass/main.scss */
 .header .menu {
   margin-top: 5px;
 }
-/* line 93, ../sass/main.scss */
+/* line 95, ../sass/main.scss */
 .header .menu .btn {
   font-size: 12px;
 }
-/* line 96, ../sass/main.scss */
+/* line 98, ../sass/main.scss */
 .header .menu a {
   font-size: 15px;
   padding: 0px 10px;
   text-transform: uppercase;
   color: #a0acbe;
 }
-/* line 101, ../sass/main.scss */
+/* line 103, ../sass/main.scss */
 .header .menu a:hover {
   color: #ffc107;
 }
 
 /* Form left panel section
 *****************/
-/* line 113, ../sass/main.scss */
+/* line 115, ../sass/main.scss */
 .left-panel-form {
   position: fixed;
   width: 300px;
@@ -124,66 +129,65 @@ a:hover {
   background: #293241;
   padding: 10px 0px;
 }
-/* line 122, ../sass/main.scss */
+/* line 124, ../sass/main.scss */
 .left-panel-form h5 i {
   font-size: 20px;
 }
-/* line 127, ../sass/main.scss */
+/* line 129, ../sass/main.scss */
 .left-panel-form .nav-item a {
   padding: 15px;
   background: #354052;
   margin: 4px 0px;
 }
-/* line 132, ../sass/main.scss */
+/* line 134, ../sass/main.scss */
 .left-panel-form .nav-item .btn-left-panel-form {
   background: #7D9E75;
   color: #fff;
 }
-/* line 139, ../sass/main.scss */
+/* line 141, ../sass/main.scss */
 .left-panel-form .menu-list .active {
   background: #FAA91A;
   color: #354052;
 }
 
-/* line 147, ../sass/main.scss */
+/* line 149, ../sass/main.scss */
 .hide-left-panel-form {
   left: -250px;
 }
 
-/* line 151, ../sass/main.scss */
+/* line 153, ../sass/main.scss */
 .show-left-panel-form {
   left: 0px !important;
 }
 
 /* content form
 *****************/
-/* line 158, ../sass/main.scss */
+/* line 160, ../sass/main.scss */
 .content .tab-content {
   padding-left: 50px;
 }
-/* line 161, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 .content .title {
   font-size: 36px;
   background: #f9f9f9;
   color: #444443;
   text-align: center;
   padding: 15px;
-  margin-left: 50px;
 }
-/* line 169, ../sass/main.scss */
+/* line 170, ../sass/main.scss */
 .content .error {
   font-size: 12px;
   color: #ff0000;
 }
 
 @media (min-width: 1200px) {
-  /* line 176, ../sass/main.scss */
+  /* line 177, ../sass/main.scss */
   .form-add-margin {
     margin-left: 250px;
   }
 }
 @media (max-width: 1200px) {
-  /* line 182, ../sass/main.scss */
+  /* line 183, ../sass/main.scss */
   .form-add-margin {
     position: relative;
     left: 250px;
@@ -191,7 +195,7 @@ a:hover {
 }
 /* footer
 *****************/
-/* line 190, ../sass/main.scss */
+/* line 191, ../sass/main.scss */
 .footer {
   position: absolute;
   text-align: center;
@@ -203,7 +207,7 @@ a:hover {
 
 /* Login form
 *****************/
-/* line 201, ../sass/main.scss */
+/* line 202, ../sass/main.scss */
 .login {
   position: fixed;
   top: 30%;
@@ -212,7 +216,7 @@ a:hover {
   border: 0px;
   right: 0px;
 }
-/* line 208, ../sass/main.scss */
+/* line 209, ../sass/main.scss */
 .login .row {
   width: 500px;
   margin: 0 auto;

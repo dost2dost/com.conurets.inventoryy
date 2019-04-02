@@ -5,78 +5,35 @@ app.controller("form", function ($scope) {
 
 });
 
-/*
 
-app.controller('ctrl1', function ($scope) {
 
-    $scope.checkboxModel = {
-        date: true,
-        location: true,
-        venue: true,
-        userName: true,
-        companyName: true,
-        itemDescription: true,
-        itemID: true,
-        serialNum: true,
-        qtyUsed: true,
+app.controller('ctrl2', function ($scope) {
 
-    };
-
-    $scope.data = [
+    $scope.data2 = [
         [
             "3/11/2019",
             "System Architect",
-            "Edinburgh",
-            "Ali",
-            "Conure Telecom",
-            "Lorem Ipsum",
-            "61",
-            "4324324",
-            "34"
+
         ],
         [
             "3/11/2019",
             "System Architect",
-            "Edinburgh",
-            "Ali",
-            "Conure Telecom",
-            "Lorem Ipsum",
-            "61",
-            "4324324",
-            "34"
+
         ],
         [
             "3/11/2019",
             "System Architect",
-            "Edinburgh",
-            "Ali",
-            "Conure Telecom",
-            "Lorem Ipsum",
-            "61",
-            "4324324",
-            "34"
+
         ],
         [
             "3/11/2019",
             "System Architect",
-            "Edinburgh",
-            "Ali",
-            "Conure Telecom",
-            "Lorem Ipsum",
-            "61",
-            "4324324",
-            "34"
+
         ],
         [
             "3/11/2019",
             "System Architect",
-            "Edinburgh",
-            "Ali",
-            "Conure Telecom",
-            "Lorem Ipsum",
-            "61",
-            "4324324",
-            "34"
+
         ],
 
 
@@ -84,11 +41,10 @@ app.controller('ctrl1', function ($scope) {
 
 
 });
-*/
 
-app.controller('ctrl2', function ($scope) {
+app.controller('ctrl3', function ($scope) {
 
-    $scope.data2 = [
+    $scope.bulkimport = [
         [
             "3/11/2019",
             "System Architect",

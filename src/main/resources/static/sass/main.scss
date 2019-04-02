@@ -75,7 +75,9 @@ table th, table td {
   //font-size: 14px !important;
   //font-weight: bold;
 }
-
+.ml-50{
+  margin-left:50;
+}
 /* Header section
 *****************/
 .header {
@@ -164,7 +166,6 @@ table th, table td {
     color: #444443;
     text-align: center;
     padding: 15px;
-    margin-left:50px;
   }
   .error{
     font-size:12px;

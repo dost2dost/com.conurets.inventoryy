@@ -1,13 +1,11 @@
 <!doctype html >
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Conure Telecom Servicess</title>
+    <title>Conure Telecom Services</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/inventory-management/css/bootstrap.css" rel="stylesheet">
@@ -17,53 +15,30 @@
     <link href="/inventory-management/css/main.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
-    <!-- Date range  -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
 
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <!-- datepicker-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.13/daterangepicker.min.css" />
 
 </head>
+
 <body ng-app="CIMS">
 
 
 <div ng-include="'header'"></div>
 
-<form-left-panel></form-left-panel>
+
 
 <!-- start content -->
 <section class="content">
-    <div class="title ml-50"><i class="fas fa-file-alt mr-2"></i>Form</div>
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div id="basic-info" class="tab-pane active">
-            <basic-info></basic-info>
-        </div>
+    <div class="title "><i class="fas fa-file-import mr-2"></i>Bulk Import</div>
 
-        <div id="storage-info" class="tab-pane ">
-            <storage-info></storage-info>
-        </div>
+    <bulk-import-data></bulk-import-data>
 
-
-        <div id="item-handling" class="tab-pane ">
-            <item-handling></item-handling>
-        </div>
-
-        <div id="caliration" class="tab-pane ">
-            <caliration></caliration>
-        </div>
-
-        <div id="item-conition" class="tab-pane ">
-            <item-conition></item-conition>
-        </div>
-
-        <div id="supplier-info" class="tab-pane ">
-            <supplier-info></supplier-info>
-        </div>
-    </div>
 </section>
 <!-- End  content -->
 
@@ -72,15 +47,14 @@
 
 <!-- Optional JavaScript Angular -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script src="https://code.angularjs.org/1.7.5/angular.min.js"></script>
-
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js'></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>-->
 <script src="/inventory-management/js/main.js"></script>
 <script src="/inventory-management/js/directive.js"></script>
 <script src="/inventory-management/js/util.js"></script>
 
+<!-- Optional JavaScript -->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -90,15 +64,17 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-<!--
-<script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>-->
-<!-- date range-->
-<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
-
 
 <!--  Datatable js-->
 <script src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
 
+<!-- Optional Datepicker-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.13/daterangepicker.min.js"></script>
+<!-- endbower -->
+
+<script src="https://fragaria.github.io/angular-daterangepicker/js/angular-daterangepicker.min.js"></script>
 
 <script src="/inventory-management/js/controller/services/itemService.js" type="text/javascript"></script>
 <script src="/inventory-management/js/controller/services/locationService.js" type="text/javascript"></script>
@@ -106,9 +82,11 @@
 <script src="/inventory-management/js/controller/services/basicInfoService.js" type="text/javascript"></script>
 <script src="/inventory-management/js/controller/basicInfoController.js" type="text/javascript"></script>
 
+
+
+
 </body>
 
-
-
 </html>
+
 

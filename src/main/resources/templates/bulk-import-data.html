@@ -1,0 +1,45 @@
+<!-- start Storage Info -->
+<br>
+<div class="container-fluid">
+
+
+    <div class="col-12">
+        <div class="row ">
+            <div class="col-lg-10">
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input" id="customFile" name="filename">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <buttton class="btn btn-warning float-right"><i class="fas fa-check mr-1"></i>Submit</buttton>
+            </div>
+        </div>
+        <div class="border-bottom mb-4"></div>
+
+        <div ng-controller="ctrl3">
+            <table  class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Content</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="n in bulkimport">
+                    <td>{{n[0]}}</td>
+                    <td>{{n[1]}}</td>
+
+                </tr>
+
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- End  Storage Info -->

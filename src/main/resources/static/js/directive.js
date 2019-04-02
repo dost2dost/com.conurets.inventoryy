@@ -51,8 +51,6 @@ app.directive('supplierInfo', function () {
 });
 
 
-
-
 // Report left panel
 app.directive('reportLeftPanel', function () {
     return {
@@ -71,5 +69,12 @@ app.directive('reportBasicInfo', function () {
 app.directive('spareUseage', function () {
     return {
         templateUrl: 'spare-useage'
+    };
+});
+
+// Report left panel
+app.directive('bulkImportData', function () {
+    return {
+        templateUrl: 'bulk-import-data'
     };
 });
