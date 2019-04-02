@@ -86,34 +86,35 @@ a:hover {
 .header {
   background: #354052;
   padding: 10px 0px;
+  z-index: 2;
 }
-/* line 87, ../sass/main.scss */
+/* line 88, ../sass/main.scss */
 .header span {
   font-size: 18px;
 }
-/* line 90, ../sass/main.scss */
+/* line 91, ../sass/main.scss */
 .header .menu {
   margin-top: 5px;
 }
-/* line 92, ../sass/main.scss */
+/* line 93, ../sass/main.scss */
 .header .menu .btn {
   font-size: 12px;
 }
-/* line 95, ../sass/main.scss */
+/* line 96, ../sass/main.scss */
 .header .menu a {
   font-size: 15px;
   padding: 0px 10px;
   text-transform: uppercase;
   color: #a0acbe;
 }
-/* line 100, ../sass/main.scss */
+/* line 101, ../sass/main.scss */
 .header .menu a:hover {
   color: #ffc107;
 }
 
 /* Form left panel section
 *****************/
-/* line 112, ../sass/main.scss */
+/* line 113, ../sass/main.scss */
 .left-panel-form {
   position: fixed;
   width: 300px;
@@ -123,44 +124,44 @@ a:hover {
   background: #293241;
   padding: 10px 0px;
 }
-/* line 121, ../sass/main.scss */
+/* line 122, ../sass/main.scss */
 .left-panel-form h5 i {
   font-size: 20px;
 }
-/* line 126, ../sass/main.scss */
+/* line 127, ../sass/main.scss */
 .left-panel-form .nav-item a {
   padding: 15px;
   background: #354052;
   margin: 4px 0px;
 }
-/* line 131, ../sass/main.scss */
+/* line 132, ../sass/main.scss */
 .left-panel-form .nav-item .btn-left-panel-form {
   background: #7D9E75;
   color: #fff;
 }
-/* line 138, ../sass/main.scss */
+/* line 139, ../sass/main.scss */
 .left-panel-form .menu-list .active {
   background: #FAA91A;
   color: #354052;
 }
 
-/* line 146, ../sass/main.scss */
+/* line 147, ../sass/main.scss */
 .hide-left-panel-form {
   left: -250px;
 }
 
-/* line 150, ../sass/main.scss */
+/* line 151, ../sass/main.scss */
 .show-left-panel-form {
   left: 0px !important;
 }
 
 /* content form
 *****************/
-/* line 157, ../sass/main.scss */
+/* line 158, ../sass/main.scss */
 .content .tab-content {
   padding-left: 50px;
 }
-/* line 160, ../sass/main.scss */
+/* line 161, ../sass/main.scss */
 .content .title {
   font-size: 36px;
   background: #f9f9f9;
@@ -169,15 +170,20 @@ a:hover {
   padding: 15px;
   margin-left: 50px;
 }
+/* line 169, ../sass/main.scss */
+.content .error {
+  font-size: 12px;
+  color: #ff0000;
+}
 
 @media (min-width: 1200px) {
-  /* line 171, ../sass/main.scss */
+  /* line 176, ../sass/main.scss */
   .form-add-margin {
     margin-left: 250px;
   }
 }
 @media (max-width: 1200px) {
-  /* line 177, ../sass/main.scss */
+  /* line 182, ../sass/main.scss */
   .form-add-margin {
     position: relative;
     left: 250px;
@@ -185,7 +191,7 @@ a:hover {
 }
 /* footer
 *****************/
-/* line 185, ../sass/main.scss */
+/* line 190, ../sass/main.scss */
 .footer {
   position: absolute;
   text-align: center;
@@ -197,7 +203,7 @@ a:hover {
 
 /* Login form
 *****************/
-/* line 196, ../sass/main.scss */
+/* line 201, ../sass/main.scss */
 .login {
   position: fixed;
   top: 30%;
@@ -206,7 +212,7 @@ a:hover {
   border: 0px;
   right: 0px;
 }
-/* line 203, ../sass/main.scss */
+/* line 208, ../sass/main.scss */
 .login .row {
   width: 500px;
   margin: 0 auto;
