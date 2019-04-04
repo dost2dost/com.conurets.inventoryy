@@ -1,23 +1,60 @@
 <!-- start Storage Info -->
 <br>
-<div class="container-fluid">
+<div class="container-fluid" >
+
+
+    <div>
+        <form id="uploadfrom" ng-controller="ctrl">
+            <div class="form-group">
+                <input id="inp_file" type="file" file-input="files" multiple="multiple" />
+            </div>
+
+            <!------ SUBMIT BUTTON ------>
+            <div id="btn">
+                <button id="submit_btn" type="button" class="btn btn-primary" ng-click="upload()">Upload</button>
+            </div>
+
+            <!------ LIST OF UPLOADED FILES ------>
+            <div> </div>
+            <div id="uploaded-files-list">
+                <ul><li class="pointer" ng-repeat="file in files">{{ file.name }}</li></ul>
+            </div>
+
+            <!------ UPLOAD MESSAGE ------>
+            <div> </div>
+            <div id="result" class="alert alert-success ng-hide" ng-show="successmessagebox">{{ message }}</div>
+        </form>
+    </div>
 
 
     <div class="col-12">
         <div class="row ">
             <div class="col-lg-10">
+
+                <div >
+
+                <!--   <input type="file" id="file1" name="file" multiple />
+
+                 <input type="button" ng-click="uploadFiles()" value="Upload" /> -->
+
+
+
+                </div>
+
                 <div class="custom-file mb-3">
-                    <input type="file" class="custom-file-input" id="customFile" name="filename">
+
+
+                    <input type = "file" file-model = "myFile"/>
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
             </div>
             <div class="col-lg-2">
-                <buttton class="btn btn-warning float-right"><i class="fas fa-check mr-1"></i>Submit</buttton>
+                <buttton ng-click="upload()" class="btn btn-warning float-right"><i class="fas fa-check mr-1"></i>Submit</buttton>
             </div>
         </div>
         <div class="border-bottom mb-4"></div>
 
-        <div ng-controller="ctrl3">
+        <div >
             <table  class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable">
                 <thead>
                 <tr>
