@@ -5,7 +5,7 @@ html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   text-decoration: none;
 }
@@ -16,6 +16,13 @@ body {
   color: $yellowColor;
 }
 
+.bg-lightcolor {
+  background: $lightGray;
+}
+
+.borderline{
+  border-top:5px solid $borderLine;
+}
 /* Button color
 *****************/
 .btn-success {
@@ -59,6 +66,14 @@ h6 {
   font-size: 12px;
 }
 
+.f12 {
+  font-size: 12px;
+}
+
+.f14 {
+  font-size: 14px;
+}
+
 a {
   text-decoration: none;
   transition: all 0.8s ease;
@@ -71,19 +86,19 @@ a {
   }
 }
 
-table th, table td {
-  //font-size: 14px !important;
-  //font-weight: bold;
+table td, table th{white-space: nowrap;}
+
+
+.ml-50 {
+  margin-left: 50px;
 }
-.ml-50{
-  margin-left:50;
-}
+
 /* Header section
 *****************/
 .header {
   background: $bgheaderColor;
   padding: 10px 0px;
-  z-index:2;
+  z-index: 2;
   & a {
 
   }
@@ -154,6 +169,55 @@ table th, table td {
   left: 0px !important;
 }
 
+/* content reports
+*****************/
+.reports {
+  .filter {
+    font-size: 14px;
+    min-height: 350px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+    padding-top: 20px;
+    overflow: hidden;
+    background: $lightGray;
+    .tabSection {
+      min-height: 350px;
+    }
+    & h4 {
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $line;
+    }
+    .left {
+      width: 250px;
+      position: absolute;
+      & a {
+        display: block;
+        margin: 4px 0px;
+        text-align: left;
+        font-size: 14px;
+      }
+    }
+    .right {
+      margin-left: 275px;
+
+      .form-control {
+        margin-bottom: 8px;
+      }
+    }
+    .filter-table {
+      & input {
+        margin: 5px 5px 0px 0px;
+      }
+    }
+
+  }
+  & table {
+    font-size: 13px;
+  }
+}
+
 /* content form
 *****************/
 .content {
@@ -161,15 +225,18 @@ table th, table td {
     padding-left: 50px;
   }
   .title {
-    font-size: 36px;
+    font-size: 30px;
     background: $lightGray;
     color: #444443;
-    text-align: center;
-    padding: 15px;
+    padding: 15px 30px;
+    .form-group{
+      margin-bottom:0px;
+    }
+
   }
-  .error{
-    font-size:12px;
-    color:#ff0000;
+  .error {
+    font-size: 12px;
+    color: #ff0000;
   }
 }
 
@@ -180,10 +247,10 @@ table th, table td {
 }
 
 @media (max-width: 1200px) {
-    .form-add-margin {
-      position: relative;
-      left: 250px;
-    }
+  .form-add-margin {
+    position: relative;
+    left: 250px;
+  }
 }
 
 /* footer
@@ -199,17 +266,18 @@ table th, table td {
 
 /* Login form
 *****************/
-.login{
+.login {
   position: fixed;
   top: 30%;
   left: 0px;
   background: rgba(0, 0, 0, 0.6);
   border: 0px;
   right: 0px;
-  .row{
-    width:500px;
+  .row {
+    width: 500px;
     margin: 0 auto;
     padding: 30px 0px;
     color: #fff;
   }
 }
+

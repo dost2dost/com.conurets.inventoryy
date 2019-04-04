@@ -1,89 +1,471 @@
-<!-- start Basic info -->
-<br>
-<div class="container-fluid" ng-controller="basicInfoCtrl" ng-init="fetchBasicInfoDate();" >
-    kkkk
-    <div class="col-12">
-        <div class="row ">
-            <div class="col-xl-4 mt-2">
-                <h4 class="mt-2 "><i class="fas fa-info-circle mr-2"></i>BASIC INFORMATION </h4>
+
+<div class="container-fluid reports" ng-controller="reportCtrl">
+
+    <div class="bg-lightcolor showFilter" style="display:none;">
+    <div class="filter">
+        <div class="col-12 tabSection">
+            <div class="left">
+                <div class="col-12"><h4><i class="fas fa-sliders-h mr-1"></i> MENU</h4></div>
+                <a href="javascript:void(0);" class="btn btn-primary tabBtn" id="01"> <i class="fas fa-info-circle mr-1 "></i> BASIC INFORMATION</a>
+                <a href="javascript:void(0);" class="btn btn-secondary tabBtn" id="02"><i class="fas fa-database mr-1 "></i> STORAGE INFORMATION</a>
+                <a href="javascript:void(0);" class="btn btn-secondary tabBtn" id="03"><i class="fas fa-list-ul mr-1"></i> ITEM HANDLING</a>
+                <a href="javascript:void(0);" class="btn btn-secondary tabBtn" id="04"><i class="fas fa-weight mr-1"></i> CALIBRATION</a>
+                <a href="javascript:void(0);" class="btn btn-secondary tabBtn" id="05"><i class="fas fa-asterisk mr-1"></i> ITEM CONDITION</a>
+                <a href="javascript:void(0);" class="btn btn-secondary tabBtn" id="06"><i class="fas fa-phone mr-1"></i> SUPPLIER INFORMATION</a>
+                <a href="javascript:void(0);" class="btn btn-secondary tabBtn" id="07"><i class="fas fa-map-marker-alt mr-1"></i> RMA</a>
+                <a href="javascript:void(0);" class="btn btn-secondary tabBtn" id="08"><i class="fas fa-comment-dots mr-1"></i> COMMENTS</a>
             </div>
-            <div class="col-xl-4">
+            <div class="right">
+                <div class="row" id="001">
+                    <div class="col-xl-10 ">
+                        <div class="row ">
+                            <div class="col-12"><h4><i class="fas fa-info-circle mr-1"></i> BASIC INFORMATION</h4></div>
+
+                            <div class="col-xl-4">
+                                <span>Item Id</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Location</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Venue</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Product Category </span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Item Description</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Serial Number</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Manufacturer</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Date Item Entered</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Item Entered By</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>User Company Name</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Qty</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Warranty</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Warranty Expiration</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2">
+                        <h4> <i class="fas fa-database mr-1"></i> DATA COL</h4>
+                        <div class="filter-table">
+                            <div><input type="checkbox"/> Item Id</div>
+                            <div><input type="checkbox"/> Location</div>
+                            <div><input type="checkbox"/> Venue</div>
+                            <div><input type="checkbox"/> Product Category</div>
+                            <div><input type="checkbox"/> Item Description</div>
+                            <div><input type="checkbox"/> Serial Number</div>
+                            <div><input type="checkbox"/> Manufacturer</div>
+                            <div><input type="checkbox"/> Date Item Entered</div>
+                            <div><input type="checkbox"/> Item Entered By</div>
+                            <div><input type="checkbox"/> User Company Name</div>
+                            <div><input type="checkbox"/> Qty</div>
+                            <div><input type="checkbox"/> Warranty</div>
+                            <div><input type="checkbox"/> Warranty Expiration</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="002" style="display:none;">
+                    <div class="col-xl-10 ">
+                        <div class="row ">
+                            <div class="col-12"><h4><i class="fas fa-database mr-1"></i> STORAGE INFORMATION</h4></div>
+
+                            <div class="col-xl-4">
+                                <span>Storage Location</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Stored On Shelf</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Shelf / Bay Number</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Stored In Cabinet</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Cabinet Shelf No</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2">
+                        <h4> <i class="fas fa-database mr-1"></i> DATA COL</h4>
+                        <div class="filter-table">
+                            <div><input type="checkbox"/> Storage Location</div>
+                            <div><input type="checkbox"/> Stored On Shelf</div>
+                            <div><input type="checkbox"/> Shelf / Bay Number</div>
+                            <div><input type="checkbox"/> Stored In Cabinet</div>
+                            <div><input type="checkbox"/> Cabinet Shelf No</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="003" style="display:none;">
+                    <div class="col-xl-10 ">
+                        <div class="row ">
+                            <div class="col-12"><h4> <i class="fas fa-list-ul mr-1"></i> ITEM HANDLING</h4></div>
+
+                            <div class="col-xl-4">
+                                <span>Special Handling Required</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Special Handling Notes</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Approx Weight</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2">
+                        <h4> <i class="fas fa-database mr-1"></i> DATA COL</h4>
+                        <div class="filter-table">
+                            <div><input type="checkbox"/> Special Handling Required</div>
+                            <div><input type="checkbox"/> Special Handling Notes</div>
+                            <div><input type="checkbox"/> Approx Weight</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="004" style="display:none;">
+                    <div class="col-xl-10 ">
+                        <div class="row ">
+                            <div class="col-12"><h4><i class="fas fa-weight mr-1"></i> CALIBRATION</h4></div>
+
+                            <div class="col-xl-4">
+                                <span>Calibration Required</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Date Calibrated</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Validity Of Calibration</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Calibration Due Date</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2">
+                        <h4> <i class="fas fa-database mr-1"></i> DATA COL</h4>
+                        <div class="filter-table">
+                            <div><input type="checkbox"/> Calibration Required</div>
+                            <div><input type="checkbox"/> Date Calibrated</div>
+                            <div><input type="checkbox"/> Validity Of Calibration</div>
+                            <div><input type="checkbox"/> Calibration Due Date</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="005" style="display:none;">
+                    <div class="col-xl-10 ">
+                        <div class="row ">
+                            <div class="col-12"><h4><i class="fas fa-asterisk mr-1"></i> ITEM CONDITION</h4></div>
+
+                            <div class="col-xl-4">
+                                <span>Used</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Reconditioned</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Useable</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2">
+                        <h4> <i class="fas fa-database mr-1"></i> DATA COL</h4>
+                        <div class="filter-table">
+                            <div><input type="checkbox"/> Used</div>
+                            <div><input type="checkbox"/> Reconditioned</div>
+                            <div><input type="checkbox"/> Useable</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="006" style="display:none;">
+                    <div class="col-xl-10 ">
+                        <div class="row ">
+                            <div class="col-12"><h4><i class="fas fa-phone mr-1"></i> SUPPLIER INFORMATION</h4></div>
+
+                            <div class="col-xl-4">
+                                <span>Supplier</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Supplier Representative</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Supplier Representative Mobile</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Supplier Representative Email</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2">
+                        <h4> <i class="fas fa-database mr-1"></i> DATA COL</h4>
+                        <div class="filter-table">
+                            <div><input type="checkbox"/> Supplier</div>
+                            <div><input type="checkbox"/> Supplier Representative</div>
+                            <div><input type="checkbox"/> Supplier Representative Mobile</div>
+                            <div><input type="checkbox"/> Supplier Representative Email</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="007" style="display:none;">
+                    <div class="col-xl-10 ">
+                        <div class="row ">
+                            <div class="col-12"><h4><i class="fas fa-map-marker-alt mr-1"></i> RMA</h4></div>
+
+                            <div class="col-xl-4">
+                                <span>Date</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Tracking</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Date of RMA</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="col-xl-4">
+                                <span>Notes</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2">
+                        <h4><i class="fas fa-database mr-1"></i> DATA COL</h4>
+                        <div class="filter-table">
+                            <div><input type="checkbox"/> Date</div>
+                            <div><input type="checkbox"/> Tracking</div>
+                            <div><input type="checkbox"/> Date of RMA</div>
+                            <div><input type="checkbox"/> Notes</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="008" style="display:none;">
+                    <div class="col-xl-10 ">
+                        <div class="row ">
+                            <div class="col-12"><h4><i class="fas fa-comment-dots mr-1"></i> COMMENTS</h4></div>
+
+                            <div class="col-xl-12">
+                                <span>Comments</span>
+                                <input type="text" class="form-control"/>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2">
+                        <h4><i class="fas fa-database mr-1"></i> DATA COL</h4>
+                        <div class="filter-table">
+                            <div><input type="checkbox"/> Comments</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12 overflow-hidden mt-3 border-top">
+            <div class="mt-3 float-right ">
+                <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editTemplate"><i class="fas fa-pencil-alt mr-1"></i> Edit Template</button>
+                <button class="btn btn-danger btn-sm "><i class="fas fa-trash-alt mr-1"></i> Remove Template</button>
+                <button class="btn btn-primary btn-sm "  data-toggle="modal" data-target="#createTemplate"><i class="fas fa-plus mr-1"></i> Create Template</button>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-12 mt-5">
+        <div class="row ">
+
+            <div class="col-xl-6">
                 <div class="input-group mb-3 ">
                     <div class="input-group-prepend">
                                     <span class="input-group-text"><i
                                             class="fas fa-calendar-alt mr-1"></i>Date Range</span>
                     </div>
-                   <!-- <input type="text" class="form-control" ng-model="frmToDate" name="daterange" value="2019-03-01 to 2019-03-05" />
-                   --> <input date-range-picker id="daterange2" ng-model="fromToDate" name="daterange2"
-                              class="form-control date-picker" type="text"  required/>
+                    <input type="text" name="daterange" class="form-control"
+                           value="01/01/2018 - 01/15/2018"/>
                 </div>
 
-                <div>
-                    <buttton class="btn btn-warning"  ng-click="fetchBasicInfoRp();"  ><i class="fas fa-check mr-1"></i>Search</buttton>
 
-                </div>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-6">
 
                 <div class="float-right">
-                                <span class="dropdown ">
-                                    <button type="button" class="btn btn-warning dropdown-toggle"
-                                            data-toggle="dropdown">
-                                      <i class="fas fa-pencil-alt mr-1"></i>  Edit Col
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-
-                                            <div class="dropdown-item"><input type="checkbox" class="mr-1"  ng-model="checkboxModel.date" /> Date </div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.location" /> Location</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.venue"/> Venue</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.userName"/> User Name</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.companyName"/> Company Name</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.itemDescription"/> Item Description</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.itemID"/> Item Id</div>
-                                           <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.serialNum"/> Serial Number</div>
-                                             <div class="dropdown-item"><input type="checkbox" class="mr-1" ng-model="checkboxModel.qtyUsed"/> Qty Used</div>
 
 
-                                    </div>
-                                </span>
-                    <button class="btn  btn-success "><i class="fas fa-file-excel"></i> Excel</button>
-                    <button class="btn  btn-success "><i class="fas fa-file-pdf"></i> PDF</button>
-                    <button class="btn  btn-success"><i class="fas fa-at"></i> Email</button>
+                    <button class="btn  btn-light btn-sm"><i class="fas fa-file-excel"></i> Excel</button>
+                    <button class="btn  btn-light btn-sm"><i class="fas fa-file-pdf"></i> PDF</button>
+                    <button class="btn  btn-light btn-sm"><i class="fas fa-at"></i> Email</button>
                 </div>
 
             </div>
         </div>
         <div class="border-bottom mb-4"></div>
 
-        <div >
-            <table id="basic-info-data" class="table table-bordered bordered table-striped table-condensed datatable"
-                   ui-jq="dataTable">
+        <div class="table-responsive">
+            <table   class="table table-bordered " style="width:100%" >
+
                 <thead>
                 <tr>
-                    <th ng-show="checkboxModel.date">Date</th>
-                    <th ng-show="checkboxModel.location">Location</th>
-                    <!--<th ng-show="checkboxModel.venue">Venue</th>-->
-                    <th ng-show="checkboxModel.userName">User Name</th>
-                    <th ng-show="checkboxModel.companyName">Company Name</th>
-                    <th ng-show="checkboxModel.itemDescription">Item Description</th>
-                    <th ng-show="checkboxModel.itemID">Item Id</th>
-                    <th ng-show="checkboxModel.serialNum">Serial Number</th>
-                    <th ng-show="checkboxModel.qtyUsed">Qty Used</th>
+                    <td colspan="13"><h5 class="text-center">BASIC INFORMATION</h5></td>
+                    <td colspan="5"><h5 class="text-center">STORAGE INFORMATION</h5></td>
+                    <td colspan="3"><h5 class="text-center">ITEM HANDLING</h5></td>
+                    <td colspan="4"><h5 class="text-center">CALIBRATION</h5></td>
+                    <td colspan="3"><h5 class="text-center">Item Condition</h5></td>
+                    <td colspan="4"><h5 class="text-center">SUPPLIER INFORMATION</h5></td>
+                    <td colspan="4"><h5 class="text-center"> RMA</h5></td>
+                    <td colspan="1"><h5 class="text-center">COMMENTS</h5></td>
 
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <th>Venue</th>
+                    <th>Product Category </th>
+                    <th>Item Id</th>
+                    <th>Item Description</th>
+                    <th>Serial Number</th>
+                    <th>Manufacturer</th>
+                    <th>Date Item Entered</th>
+                    <th>Item Entered By</th>
+                    <th>User Company Name</th>
+                    <th>Qty</th>
+                    <th>Warranty</th>
+                    <th>Warranty Expiration</th>
+                    <th>Storage Location</th>
+                    <th>Stored On Shelf</th>
+                    <th>Shelf/Bay Number</th>
+                    <th>Stored In Cabinet</th>
+                    <th>Cabinet She lf No</th>
+                    <th>Special Handling Required</th>
+                    <th>Special Handling Notes</th>
+                    <th>Approx Weight</th>
+                    <th>Calibration Required</th>
+                    <th>Date Calibrated</th>
+                    <th>Validity Of Calibration</th>
+                    <th>Calibration Due Date</th>
+                    <th>Used</th>
+                    <th>Reconditioned</th>
+                    <th>Useable</th>
+                    <th>Supplier</th>
+                    <th>Supplier Representative</th>
+                    <th>Supplier Representative Mobile</th>
+                    <th>Supplier Representative Email</th>
+                    <th>Date</th>
+                    <th>Tracking</th>
+                    <th>Date Of RMA</th>
+                    <th>Notes</th>
+                    <th>Comments</th>
 
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="n in basicInfoRp">
-                    <td ng-show="checkboxModel.date">{{n.entryDate}}</td>
-                    <td ng-show="checkboxModel.location">{{n.locationName}}</td>
-                    <!--<td ng-show="checkboxModel.venue">{{n[2]}}</td>-->
-                    <td ng-show="checkboxModel.userName">{{n.userName}}</td>
-                    <td ng-show="checkboxModel.companyName">{{n.companyName}}</td>
-                    <td ng-show="checkboxModel.itemDescription">{{n.itemName}}</td>
-                    <td ng-show="checkboxModel.itemID">{{n.itemId}}</td>
-                    <td ng-show="checkboxModel.serialNum">{{n.serialNumber}}</td>
-                    <td ng-show="checkboxModel.qtyUsed">{{n.qty}}</td>
+                <tr ng-repeat="n in dataReport">
+                    <td>{{n[0]}}</td>
+                    <td>{{n[1]}}</td>
+                    <td>{{n[2]}}</td>
+                    <td>{{n[3]}}</td>
+                    <td>{{n[4]}}</td>
+                    <td>{{n[5]}}</td>
+                    <td>{{n[6]}}</td>
+                    <td>{{n[7]}}</td>
+                    <td>{{n[8]}}</td>
+                    <td>{{n[9]}}</td>
+                    <td>{{n[10]}}</td>
+                    <td>{{n[11]}}</td>
+                    <td>{{n[12]}}</td>
+                    <td>{{n[13]}}</td>
+                    <td>{{n[14]}}</td>
+                    <td>{{n[15]}}</td>
+                    <td>{{n[16]}}</td>
+                    <td>{{n[17]}}</td>
+                    <td>{{n[18]}}</td>
+                    <td>{{n[19]}}</td>
+                    <td>{{n[20]}}</td>
+                    <td>{{n[21]}}</td>
+                    <td>{{n[22]}}</td>
+                    <td>{{n[23]}}</td>
+                    <td>{{n[24]}}</td>
+                    <td>{{n[25]}}</td>
+                    <td>{{n[26]}}</td>
+                    <td>{{n[27]}}</td>
+                    <td>{{n[28]}}</td>
+                    <td>{{n[29]}}</td>
+                    <td>{{n[30]}}</td>
+                    <td>{{n[31]}}</td>
+                    <td>{{n[32]}}</td>
+                    <td>{{n[33]}}</td>
+                    <td>{{n[34]}}</td>
+                    <td>{{n[35]}}</td>
+                    <td>{{n[36]}}</td>
 
                 </tr>
 
@@ -92,10 +474,113 @@
 
             </table>
         </div>
-
-
     </div>
-
 </div>
 
-<!-- End  Basic Info -->
+
+<!-- The Modal -->
+<div class="modal" id="createTemplate">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content borderline">
+
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h4 class="mb-2">Template Name</h4>
+                <input type="text" class="form-control-lg form-control"/>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="editTemplate">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content borderline">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Edit Template</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Template Name</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1/4/2019</td>
+                        <td>Template 1</td>
+                        <td><a href="javascript:void(0);"><i class="fas fa-pencil-alt text-warning"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>1/4/2019</td>
+                        <td>Template 2</td>
+                        <td><a href="javascript:void(0);"><i class="fas fa-pencil-alt text-warning"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>1/4/2019</td>
+                        <td>Template 3</td>
+                        <td><a href="javascript:void(0);"><i class="fas fa-pencil-alt text-warning"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>1/4/2019</td>
+                        <td>Template 4</td>
+                        <td><a href="javascript:void(0);"><i class="fas fa-pencil-alt text-warning"></i></a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- End  Storage Info -->
+<script>
+    $(document).ready(function(){
+        $('#report-data').DataTable( {
+            "scrollX": true
+
+        });
+
+
+        $('.tabBtn').click(function () {
+            $(this).addClass('btn-primary');
+            $(this).removeClass('btn-secondary');
+            $(this).siblings( ".tabBtn").addClass('btn-secondary');
+
+
+            var activeTab = $(this).attr('id');
+
+            $('#0' + activeTab).show();
+            $('#0' + activeTab).siblings().hide();
+
+
+        });
+    });
+
+</script>
