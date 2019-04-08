@@ -6,7 +6,7 @@ app.controller('loginController', function ($scope, LoginService) {
     $scope.loginForm = [];
 
     $scope.login = function () {
-        localStorage.removeItem("USER_TOKEN");
+        localStorage.removeItem("INV_USER_TOKEN");
 
         let loginObject = {
             username: $scope.loginForm.username,

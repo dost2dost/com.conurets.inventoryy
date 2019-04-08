@@ -13,7 +13,6 @@ import javax.validation.ConstraintValidatorContext;
 
 /**
  * @author MSA
- * @version 1.0
  */
 
 public class InventoryUsernameValidator implements ConstraintValidator<InventoryUsername, String> {

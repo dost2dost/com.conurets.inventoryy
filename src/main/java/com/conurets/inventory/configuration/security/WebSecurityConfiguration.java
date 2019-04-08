@@ -6,6 +6,7 @@ import com.conurets.inventory.configuration.security.jwt.JwtAuthenticationTokenF
 import com.conurets.inventory.service.CustomUserDetailsService;
 import com.conurets.inventory.util.InventoryHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +21,7 @@ import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.annotation.PostConstruct;
@@ -112,13 +114,17 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
      */
 
     protected void configure(HttpSecurity http) throws Exception {
-        http.headers().cacheControl().and().frameOptions().disable()
-                .and().cors()
-                .and().csrf().disable().exceptionHandling()
+        http.headers().cacheControl()
+                .and()
+                .frameOptions().disable()
+                .and()
+                .cors()
+                .and()
+                .csrf().disable().exceptionHandling()
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .accessDeniedHandler(jwtAccessDeniedHandler)
-                .and().authorizeRequests()
-                ///.antMatchers(RESOURCES).permitAll()
+                .and()
+                .authorizeRequests()
                 .antMatchers(UI_PAGES).permitAll()
                 .antMatchers(URL_API).permitAll()
                 .anyRequest().authenticated()
@@ -130,9 +136,17 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/")
                 .permitAll();
 
-        http.sessionManagement().maximumSessions(1).sessionRegistry(sessionRegistry());
+        http.sessionManagement()
+                .maximumSessions(1)
+                .maxSessionsPreventsLogin(Boolean.TRUE)
+                .expiredUrl("/?expired")
+                .sessionRegistry(sessionRegistry());
         http.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint);
         http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
+    }
+
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers(RESOURCES);
     }
 
     @Bean
@@ -140,7 +154,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         return new SessionRegistryImpl();
     }
 
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers(RESOURCES);
+    @Bean
+    public static ServletListenerRegistrationBean<HttpSessionEventPublisher> httpSessionEventPublisher() {
+        return new ServletListenerRegistrationBean<HttpSessionEventPublisher>(new HttpSessionEventPublisher());
     }
 }

@@ -55,7 +55,7 @@ app.service('BasicInfoService', ['$rootScope', '$http', function($rootScope, $ht
                 headers : {
                     'Accept' : 'application/json',
                     'Content-Type' : 'application/json',
-                    'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                    'Authorization': 'Bearer '+ localStorage.getItem("INV_USER_TOKEN")
                 },
             }).then(function (response) {
 
@@ -89,7 +89,7 @@ app.service('BasicInfoService', ['$rootScope', '$http', function($rootScope, $ht
                 headers : {
                     'Accept' : 'application/json',
                     'Content-Type' : 'application/json',
-                    'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                    'Authorization': 'Bearer '+ localStorage.getItem("INV_USER_TOKEN")
                 },
             }).then(function (rsp) {
 

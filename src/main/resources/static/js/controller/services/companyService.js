@@ -21,7 +21,7 @@ app.service('CompanyService', ['$rootScope', '$http', function($rootScope, $http
                 headers : {
                     'Accept' : 'application/json',
                     'Content-Type' : 'application/json',
-                    'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                    'Authorization': 'Bearer '+ localStorage.getItem("INV_USER_TOKEN")
                 },
             }).then(function (response) {
 
@@ -45,7 +45,7 @@ app.service('CompanyService', ['$rootScope', '$http', function($rootScope, $http
                     headers : {
                         'Accept' : 'application/json',
                         'Content-Type' : 'application/json',
-                        'Authorization': 'Bearer '+ localStorage.getItem("USER_TOKEN")
+                        'Authorization': 'Bearer '+ localStorage.getItem("INV_USER_TOKEN")
                     },
                 }).then(function (response)
                 {

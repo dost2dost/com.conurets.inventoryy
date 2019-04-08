@@ -17,7 +17,7 @@ app.service('LoginService', ['$rootScope', '$http', function($rootScope, $http) 
                         let loginObject = response.data.data;
                         let authorities = loginObject.authorities;
 
-                        localStorage.setItem("USER_TOKEN", loginObject.token);
+                        localStorage.setItem("INV_USER_TOKEN", loginObject.token);
 
                         $(location).attr('href', '/inventory-management/form');
                     } else {

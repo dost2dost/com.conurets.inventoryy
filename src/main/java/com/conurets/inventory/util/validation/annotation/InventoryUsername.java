@@ -13,7 +13,6 @@ import static java.lang.annotation.ElementType.*;
 
 /**
  * @author MSA
- * @version 1.0
  */
 
 @Documented
