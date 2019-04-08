@@ -32,36 +32,33 @@
 
 <div ng-include="'header'"></div>
 
-<form-left-panel></form-left-panel>
+<!--<form-left-panel></form-left-panel>-->
 
 <!-- start content -->
 <section class="content">
-    <div class="title ml-50"><i class="fas fa-file-alt mr-2"></i>Form</div>
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div id="basic-info" class="tab-pane active">
-            <basic-info></basic-info>
-        </div>
+    <div class="title position-relative"><i class="fas fa-file-alt mr-2"></i>Form <span class="edit-form"> <button class="btn btn-warning"><i class="fas fa-pencil-alt mr-1"></i> Edit Form</button></span></div>
 
-        <div id="storage-info" class="tab-pane ">
-            <storage-info></storage-info>
-        </div>
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="border-bottom pb-2 mb-3 mt-3 position-relative edit-search-form" style="display:none;">
 
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
+                    </div>
+                    <input type="text" ng-model="basicInfo.searchName" class="form-control" placeholder="Search"
+                           style="margin-right: 85px;">
+                </div>
 
-        <div id="item-handling" class="tab-pane ">
-            <item-handling></item-handling>
-        </div>
+                <button class="btn btn-primary" style="position: absolute; right: 0px; top: 0px; ">Search</button>
 
-        <div id="caliration" class="tab-pane ">
-            <caliration></caliration>
-        </div>
+            </div>
+            <div class="form-tab-content">
+                <div id="basic-info" class=" active">
+                    <basic-info></basic-info>
+                </div>
 
-        <div id="item-conition" class="tab-pane ">
-            <item-conition></item-conition>
-        </div>
-
-        <div id="supplier-info" class="tab-pane ">
-            <supplier-info></supplier-info>
+            </div>
         </div>
     </div>
 </section>
@@ -108,7 +105,13 @@
 
 </body>
 
+<script>
+    $(document).ready(function(){
+        $('.edit-form').click(function(){
+            $('.edit-search-form').toggle();
+        });
+    });
 
-
+</script>
 </html>
 

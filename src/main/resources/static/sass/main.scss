@@ -20,9 +20,10 @@ body {
   background: $lightGray;
 }
 
-.borderline{
-  border-top:5px solid $borderLine;
+.borderline {
+  border-top: 5px solid $borderLine;
 }
+
 /* Button color
 *****************/
 .btn-success {
@@ -51,11 +52,11 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h5 {
@@ -86,8 +87,9 @@ a {
   }
 }
 
-table td, table th{white-space: nowrap;}
-
+table td, table th {
+  white-space: nowrap;
+}
 
 .ml-50 {
   margin-left: 50px;
@@ -221,16 +223,37 @@ table td, table th{white-space: nowrap;}
 /* content form
 *****************/
 .content {
-  .tab-content {
-    padding-left: 50px;
+  .content-box {
+    background: #f9f9f9;
+    padding: 30px 15px 5px 15px;
+    border: 1px solid #ccc;
+    position: relative;
+    margin-top: 40px;
+    & h4 {
+     // background: #fff;
+      position: absolute;
+      top: -16px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      font-size:14px;
+      font-weight: bold;
+    }
+    .boxToggle{
+      cursor: pointer;
+    }
   }
   .title {
     font-size: 30px;
     background: $lightGray;
     color: #444443;
     padding: 15px 30px;
-    .form-group{
-      margin-bottom:0px;
+    .edit-form{
+      position: absolute;
+      right: 30px;
+      top: 20px;
+    }
+    .form-group {
+      margin-bottom: 0px;
     }
 
   }
