@@ -11,6 +11,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.conurets.inventory.exception.InventoryException;
 import com.conurets.inventory.util.UploadUtil;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -31,7 +32,7 @@ public class UploadService {
 		this.uploadUtil = uploadUtil;
 	}
 
-	public List<Map<String, String>> upload(MultipartFile file) throws Exception {
+	public List<Map<String, String>> upload(MultipartFile file) throws InventoryException, Exception {
 
 		Path tempDir = Files.createTempDirectory("");
 

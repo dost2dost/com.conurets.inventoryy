@@ -56,6 +56,7 @@ public class UserController extends BaseController {
     @RequestMapping(value = "/api/addUser", method = POST)
     public ResponseEntity<?> addUser(@Valid @RequestBody User model) throws InventoryException {
         userService.save(model);
+        //basicInfoService.save();
 
         BaseResponse<Object> baseResponse = InventoryUtil.setBaseResponse(InventoryConstants.STATUS_CODE_SUCCESS,
                 InventoryConstants.STATUS_MSG_SUCCESS);

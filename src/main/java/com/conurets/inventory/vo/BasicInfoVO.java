@@ -20,7 +20,7 @@ public class BasicInfoVO {
     private Long itemId;
     private String itemName;
 
-    private Integer serialNumber;
+    private String serialNumber;
     private Integer qty;
 
 
@@ -64,11 +64,11 @@ public class BasicInfoVO {
         this.itemId = itemId;
     }
 
-    public Integer getSerialNumber() {
+    public String getSerialNumber() {
         return serialNumber;
     }
 
-    public void setSerialNumber(Integer serialNumber) {
+    public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
 

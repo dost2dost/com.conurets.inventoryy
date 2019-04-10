@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "supplier_information")
 public class SupplierInformation extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

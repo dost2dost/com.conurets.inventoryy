@@ -1,5 +1,6 @@
 package com.conurets.inventory.controller;
 
+import com.conurets.inventory.dao.factory.DAOFactory;
 import com.conurets.inventory.service.*;
 import com.conurets.inventory.util.InventoryHelper;
 import org.slf4j.Logger;
@@ -29,6 +30,8 @@ public class BaseController {
     protected BasicInfoService basicInfoService;
     @Autowired
     protected CustomUserDetailsService customUserDetailsService;
+    @Autowired
+    protected DAOFactory daoFactory;
 
     /**
      * Checking @Autowired object

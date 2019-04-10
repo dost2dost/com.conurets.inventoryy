@@ -3,6 +3,7 @@ package com.conurets.inventory.service.impl;
 import com.conurets.inventory.converter.BasicInfoConverter;
 import com.conurets.inventory.dao.factory.DAOFactory;
 import com.conurets.inventory.entity.BasicInformation;
+import com.conurets.inventory.entity.BasicInformation2;
 import com.conurets.inventory.exception.InventoryException;
 import com.conurets.inventory.service.BasicInfoService;
 import com.conurets.inventory.util.InventoryConstants;
@@ -42,9 +43,14 @@ public class BasicInfoServiceImpl implements BasicInfoService {
         BasicInformation basicInfo = daoFactory.getBasicInfoDAO().findByKeyValue("serialNumber", model.getSerialNo());
 
         if (basicInfo == null) {
-            BasicInformation entity = basicInfoConverter.fromController(model);
+            try{
+                BasicInformation entity = basicInfoConverter.fromController(model);
 
-            daoFactory.getBasicInfoDAO().save(entity);
+                daoFactory.getBasicInfoDAO().save(entity);
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+
 
         } else {
             InventoryHelper.handleInventoryException(InventoryConstants.STATUS_CODE_USER_ALREADY_EXISTS,
@@ -53,11 +59,20 @@ public class BasicInfoServiceImpl implements BasicInfoService {
 
     }
 
+
+
     public void update(com.conurets.inventory.model.BasicInformation model) throws InventoryException {
 
-        BasicInformation entity = basicInfoConverter.fromController(model);
+        try{
+            BasicInformation entity = basicInfoConverter.fromController(model);
+            daoFactory.getBasicInfoDAO().update(entity);
 
-        daoFactory.getBasicInfoDAO().update(entity);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+
+
     }
 
     public void delete(long id) throws InventoryException {

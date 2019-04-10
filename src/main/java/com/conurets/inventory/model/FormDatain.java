@@ -1,45 +1,32 @@
 package com.conurets.inventory.model;
 
-import com.conurets.inventory.util.validation.annotation.InventoryNotNull;
 import lombok.*;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Date;
 
 /**
- * Created by Iraj on 03/20/19.
+ * Created by Dost M. Soomro on 4/8/2019.
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-public class BasicInformation  {
+public class FormDatain {
 
-    private Long id;
-
-    @InventoryNotNull(message = "Entry Date cannot be null")
-    private Date entryDate;
-
-    @InventoryNotNull(message = "Location Id cannot be null")
-    private Integer locationId;
-
-    @InventoryNotNull(message = "User Name cannot be null")
-    private Integer userId;
-
-    @InventoryNotNull(message = "Company Id cannot be null")
-    private Integer companyId;
-
-    @InventoryNotNull(message = "Item Id cannot be null")
-    private Integer itemId;
-
-    @InventoryNotNull(message = "Serial No cannot be null")
+    private String entryDate;
+    private long userId;
+    private long locationId;
+    private long itemId;
+    private long companyId;
+    private String userName;
+    private String location;
+    private String company;
+    private String item_description;
     private String serialNo;
-
-    @InventoryNotNull(message = "Quantity cannot be null")
-    private Integer qty;
+    private String qty;
     private String warranty;
-
-    @InventoryNotNull(message = "Manufacturer cannot be null")
     private String manufacturer;
 
     private String storageLocation;
@@ -58,6 +45,7 @@ public class BasicInformation  {
     private String itemUsed;
     private String itemReconditioned;
     private String itemUseable;
+    private String supplier;
     private Integer supplierId;
     private Integer supplier_Rep_Id;
     private String supplierRepresentative;

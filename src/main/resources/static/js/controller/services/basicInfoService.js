@@ -48,10 +48,12 @@ app.service('BasicInfoService', ['$rootScope', '$http', function($rootScope, $ht
 
             /*if (_isDataValidated)
              {} */
+            var basicinfodata=JSON.stringify(_dataObject);
+            var basicinfodata2=JSON.stringify(_dataObject);
             $http({
                 method: 'POST',
                 url: '/inventory-management/saveBasicInfo',
-                data: JSON.stringify(_dataObject),
+                data: basicinfodata,
                 headers : {
                     'Accept' : 'application/json',
                     'Content-Type' : 'application/json',

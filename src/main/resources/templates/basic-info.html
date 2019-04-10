@@ -1,7 +1,12 @@
 <!-- start Basic info -->
-<div ng-form="basicForm" class="container-fluid content-box" ng-controller="basicInfoCtrl" ng-init="initializeBasicInfo();">
+<!-- th:object="${greeting}" -->
+
+<div  ng-form="basicForm" ng-controller="basicInfoCtrl" ng-init="initializeBasicInfo();">
+
+<div   class="container-fluid content-box"  >
 
     <h4 class="boxToggle btn-secondary"><i class="fas fa-info-circle mr-2 "></i>BASIC INFORMATION</h4>
+
 
 
     <div class="row">
@@ -9,7 +14,7 @@
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Date</span>
-                <input type="text" name="entryDate" ng-model="basicInfo.entryDate" required class="form-control"/>
+                <input type="text" name="date" ng-model="basicInfo.entryDate" required class="form-control"/>
                 <!--<div role="alert">-->
                 <!--<span class="error" ng-show="basicForm.entryDate.$error.required">Date is Required!</span>-->
                 <!--</div>-->
@@ -18,7 +23,7 @@
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>User Name</span>
-                <input type="text" ng-model="basicInfo.userName" readonly class="form-control"/>
+                <input type="text" name="username" ng-model="basicInfo.userName" readonly class="form-control"/>
             </div>
 
         </div>
@@ -87,6 +92,19 @@
         </div>
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
+                <span>Warranty</span>
+                <input id="rdwarranty1" type="radio" name="warranty" ng-model="basicInfo.warranty" value="Yes" required class="form-control"/>
+                <label for="rdwarranty1">Yes</label>
+                <input id="rdwarranty2" type="radio" name="warranty" ng-model="basicInfo.warranty" value="No" required class="form-control"/>
+                <label for="rdwarranty1">No</label>
+                <!--<div role="alert">-->
+                <!--<span class="error" ng-show="basicForm.qty.$error.required">-->
+                <!--Qty is Required!</span>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <div class="form-group">
                 <span>Manufacturer</span>
                 <input type="text" name="manufacturer" ng-model="basicInfo.manufacturer" readonly
                        class="form-control"/>
@@ -111,35 +129,37 @@
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Storage Location</span>
-                <input type="text" class="form-control"/>
+                <input ng-model="basicInfo.storageLocation" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Stored On Shelf</span>
-                <input type="text" class="form-control"/>
+                <input  name="storageOnShelf" ng-model="basicInfo.storageOnShelf" value="Yes" type="radio" class="form-control"/>
+                <input name="storageOnShelf" ng-model="basicInfo.storageOnShelf" value="No" type="radio" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Shelf / Bay Number</span>
-                <input type="text" class="form-control"/>
+                <input name="shelfByNo" ng-model="basicInfo.shelfByNo" type="number" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Stored In Cabinet</span>
-                <input type="text" class="form-control"/>
+                <input name="storedInCabnet" ng-model="basicInfo.storedInCabnet" type="radio" value="Yes" class="form-control"/>
+                <input name="storedInCabnet" ng-model="basicInfo.storedInCabnet" type="radio" value="No" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Cabinet Shelf No</span>
-                <input type="text" class="form-control"/>
+                <input name="cabnetShelfNo" ng-model="basicInfo.cabnetShelfNo" type="number" class="form-control"/>
             </div>
         </div>
 
@@ -160,21 +180,22 @@
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Special Handling Required</span>
-                <input type="text" class="form-control"/>
+                <input name="spcialHandlinReq" ng-model="basicInfo.spcialHandlinReq" value="Yes" type="radio" class="form-control"/>
+                <input name="spcialHandlinReq" ng-model="basicInfo.spcialHandlinReq" value="No" type="radio" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Special Handling Notes</span>
-                <input type="text" class="form-control"/>
+                <input name="specialHandlingNotes" ng-model="basicInfo.specialHandlingNotes" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Approx Weight</span>
-                <input type="text" class="form-control"/>
+                <input name="approxWeight" ng-model="basicInfo.approxWeight" type="text" class="form-control"/>
             </div>
         </div>
 
@@ -193,28 +214,29 @@
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Calibration Required</span>
-                <input type="text" class="form-control"/>
+                <input name="calibrationRequired" ng-model="basicInfo.calibrationRequired" value="True" type="radio" class="form-control"/>
+                <input name="calibrationRequired" ng-model="basicInfo.calibrationRequired" value="False" type="radio" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Date Calibrated</span>
-                <input type="text" class="form-control"/>
+                <input name="calibratedDate" ng-model="basicInfo.calibratedDate" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Validity Of Calibration</span>
-                <input type="text" class="form-control"/>
+                <input name="calibrationValidity" ng-model="basicInfo.calibrationValidity" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Calibration Due Date</span>
-                <input type="text" class="form-control"/>
+                <input name="calibrationDueDate" ng-model="basicInfo.calibrationDueDate" type="text" class="form-control"/>
             </div>
         </div>
 
@@ -231,30 +253,43 @@
 
     <div class="row">
         <div class="col-xl-3 col-lg-6">
+            <select name="itemReconditioned" ng-model="basicInfo.itemReconditioned" required class="form-control">
+                <option value="" selected="selected">---Please Select---</option>
+                <option ng-repeat="x in data.availableOptions" value={{x.id}}>{{x.name}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>New</span>
-                <input type="text" class="form-control"/>
+                <input name="itemNew" ng-model="basicInfo.itemNew" type="radio" value="Yes" class="form-control"/>
+                <input name="itemNew" ng-model="basicInfo.itemNew" type="radio" value="No" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Used</span>
-                <input type="text" class="form-control"/>
+                <input name="itemUsed" ng-model="basicInfo.itemUsed" type="radio" value="Yes" class="form-control"/>
+                <input name="itemUsed" ng-model="basicInfo.itemUsed" type="radio" value="No" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Reconditioned</span>
-                <input type="text" class="form-control"/>
+                <input name="itemReconditioned" ng-model="basicInfo.itemReconditioned" type="radio" value="Yes" class="form-control"/>
+                <input name="itemReconditioned" ng-model="basicInfo.itemReconditioned" type="radio" value="No" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Useable</span>
-                <input type="text" class="form-control"/>
+                <input name="itemUseable" ng-model="basicInfo.itemUseable" type="radio" value="Yes" class="form-control"/>
+                <input name="itemUseable" ng-model="basicInfo.itemUseable" type="radio" value="No" class="form-control"/>
             </div>
         </div>
 
@@ -273,28 +308,28 @@
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Supplier</span>
-                <input type="text" class="form-control"/>
+                <input   ng-model="basicInfo.supplierId" name="supplierId" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Supplier Representative</span>
-                <input type="text" class="form-control"/>
+                <input name="supplier_Rep_Id" ng-model="basicInfo.supplier_Rep_Id" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Supplier Representative Mobile</span>
-                <input type="text" class="form-control"/>
+                <input name="supplierRepresentativeMobile" ng-model="basicInfo.supplierRepresentativeMobile" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-6">
             <div class="form-group">
                 <span>Supplier Representative Email</span>
-                <input type="text" class="form-control"/>
+                <input name="supplierRepresentativeEmail" ng-model="basicInfo.supplierRepresentativeEmail" type="email" class="form-control"/>
             </div>
         </div>
 
@@ -315,12 +350,14 @@
         <div class="col-lg-4">
             <div class="float-right">
                 <buttton class="btn btn-light " ><i class="fas fa-times mr-1"></i>Cancel </buttton>
-                <buttton class="btn btn-warning "><i class="fas fa-check mr-1"></i>Submit</buttton>
+                <buttton class="btn btn-warning " ng-click="saveBasicInformation()"><i class="fas fa-check mr-1"></i>Submit</buttton>
             </div>
         </div>
     </div>
 
 </div>
+
+
 
 <script>
     $(document).ready(function () {
@@ -333,3 +370,4 @@
 
     });
 </script>
+</div>

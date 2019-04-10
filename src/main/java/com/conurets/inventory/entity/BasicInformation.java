@@ -35,19 +35,22 @@ public class BasicInformation extends BaseEntity {
     private Item itemId;
 
     @Column(name = "serial_number")
-    private Integer serialNumber;
+    private String serialNumber;
 
     @Column(name = "qty")
     private Integer qty;
 
+    @Column(name = "warranty")
+    private String warranty;
+
     @Column(name = "stored_on_shelf")
-    private Boolean storedOnShelf;
+    private String storedOnShelf;
 
     @Column(name = "shelf_bay_number")
     private Integer shelfBayNumber;
 
     @Column(name = "stored_in_cabinet")
-    private Boolean storedInCabinet;
+    private String storedInCabinet;
 
     @Column(name = "cabinet_shelf_no")
     private Integer cabinetShelfNo;
@@ -63,6 +66,72 @@ public class BasicInformation extends BaseEntity {
 
     @Column(name = "item_condition")
     private String itemCondition;
+
+    @Column(name = "storage_location")
+    private String itemStorageLocation;
+
+    @Column(name = "Special_Handling_Notes")
+    private String specialHandlingNotes;
+
+    @Column(name = "Approx_Weight")
+    private Integer approxWeight;
+
+    @Column(name = "Special_Handling_Required")
+    private String specialHandlingRequired;
+
+    @Column(name = "Supplier_ID")
+    private Integer supplierId;
+
+    @Column(name = "Supplier_Rep_ID")
+    private Integer supplier_Rep_Id;
+
+    public Integer getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(Integer supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public Integer getSupplier_Rep_Id() {
+        return supplier_Rep_Id;
+    }
+
+    public void setSupplier_Rep_Id(Integer supplier_Rep_Id) {
+        this.supplier_Rep_Id = supplier_Rep_Id;
+    }
+
+    public String getSpecialHandlingRequired() {
+        return specialHandlingRequired;
+    }
+
+    public void setSpecialHandlingRequired(String specialHandlingRequired) {
+        this.specialHandlingRequired = specialHandlingRequired;
+    }
+
+    public String getSpecialHandlingNotes() {
+        return specialHandlingNotes;
+    }
+
+    public void setSpecialHandlingNotes(String specialHandlingNotes) {
+        this.specialHandlingNotes = specialHandlingNotes;
+    }
+
+    public Integer getApproxWeight() {
+        return approxWeight;
+    }
+
+    public void setApproxWeight(Integer approxWeight) {
+        this.approxWeight = approxWeight;
+    }
+
+    public String getItemStorageLocation() {
+        return itemStorageLocation;
+    }
+
+    public void setItemStorageLocation(String itemStorageLocation) {
+        this.itemStorageLocation = itemStorageLocation;
+    }
 
     public Long getBasicInformationId() {
         return basicInformationId;
@@ -112,11 +181,11 @@ public class BasicInformation extends BaseEntity {
         this.itemId = itemId;
     }
 
-    public Integer getSerialNumber() {
+    public String getSerialNumber() {
         return serialNumber;
     }
 
-    public void setSerialNumber(Integer serialNumber) {
+    public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
 
@@ -128,13 +197,7 @@ public class BasicInformation extends BaseEntity {
         this.qty = qty;
     }
 
-    public Boolean getStoredOnShelf() {
-        return storedOnShelf;
-    }
 
-    public void setStoredOnShelf(Boolean storedOnShelf) {
-        this.storedOnShelf = storedOnShelf;
-    }
 
     public Integer getShelfBayNumber() {
         return shelfBayNumber;
@@ -144,11 +207,27 @@ public class BasicInformation extends BaseEntity {
         this.shelfBayNumber = shelfBayNumber;
     }
 
-    public Boolean getStoredInCabinet() {
+    public String getWarranty() {
+        return warranty;
+    }
+
+    public void setWarranty(String warranty) {
+        this.warranty = warranty;
+    }
+
+    public String getStoredOnShelf() {
+        return storedOnShelf;
+    }
+
+    public void setStoredOnShelf(String storedOnShelf) {
+        this.storedOnShelf = storedOnShelf;
+    }
+
+    public String getStoredInCabinet() {
         return storedInCabinet;
     }
 
-    public void setStoredInCabinet(Boolean storedInCabinet) {
+    public void setStoredInCabinet(String storedInCabinet) {
         this.storedInCabinet = storedInCabinet;
     }
 

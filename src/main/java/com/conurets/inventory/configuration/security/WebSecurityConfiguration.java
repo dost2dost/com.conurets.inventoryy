@@ -40,7 +40,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     public static final String[] UI_PAGES = new String[]{"/", "/form", "/reports", "/login",
             "/header", "/footer", "/form-left-panel", "/basic-info", "/storage-info",
             "/report-left-panel", "/report-basic-info", "/spare-useage", "/item-handling",
-            "/caliration", "/item-conition", "/supplier-info","/upload","/uploadf"};
+            "/caliration", "/item-conition", "/supplier-info","/upload","/uploadf","/submit/form","saveBasicInfo"};
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;

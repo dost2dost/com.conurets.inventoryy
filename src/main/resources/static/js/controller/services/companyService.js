@@ -8,7 +8,6 @@ app.service('CompanyService', ['$rootScope', '$http', function($rootScope, $http
 
     return {
 
-
         getAllCompanies: function ()
         {
 
