@@ -19,45 +19,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
 </head>
 
-<style>
-    body {
-        background: #7D9E75;
-    }
-</style>
-<body ng-app="CIMS">
+
+<body ng-app="CIMS" class="bgblue">
 
 <div class="login" ng-form="loginForm" ng-controller="loginController">
-    <div class="row my-3">
-        <div class="col-12">
-            <h4 class="font-weight-normal text-center">
-                <img src="/inventory-management/images/logo.png " class="mb-2"/>
-            </h4>
-        </div>
+    <div class="row">
+    <div class="col-xl-4"></div>
+    <div class="col-xl-4">
+        <div class="row my-3">
+            <div class="col-12">
+                <h4 class="font-weight-normal text-center">
+                    <img src="/inventory-management/images/logo.png " class="mb-2"/>
+                </h4>
+            </div>
 
-        <div class="col-xl-12 mt-3">
-            <div class="input-group ">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" style="width: 118px;"><i class="fas fa-user-tie mr-1"></i> User ID</span>
+            <div class="col-12 my-4">
+                <h1 class="font-weight-normal text-center">
+                    Login
+                </h1>
+            </div>
+
+            <div class="col-xl-12 mt-3">
+                <div class="input-group ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" style="width: 105px;"><i class="fas fa-user-tie mr-1"></i> User ID</span>
+                    </div>
+                    <input type="text" class="form-control" ng-model="loginForm.username" placeholder="User ID">
                 </div>
-                <input type="text" class="form-control" ng-model="loginForm.username" placeholder="User ID">
+            </div>
+
+            <div class="col-xl-12 mt-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key mr-1"></i> Password</span>
+                    </div>
+                    <input type="password" class="form-control" ng-model="loginForm.password" placeholder="Password">
+                </div>
+            </div>
+            <div class="col-xl-12 mt-3">
+                <a ng-click="login()" class="btn btn-warning w-100"><i class="fas fa-check"></i> Login</a>
             </div>
         </div>
 
-        <div class="col-xl-12 mt-3">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-key mr-1"></i> Password</span>
-                </div>
-                <input type="password" class="form-control" ng-model="loginForm.password" placeholder="Password">
-            </div>
-        </div>
-        <div class="col-xl-12 mt-3">
-            <a ng-click="login()" class="btn btn-warning w-100"><i class="fas fa-check"></i> Login</a>
-        </div>
     </div>
-    <div class="col-12 text-center mt-4">
-        <h5 class="copy-right">© 2019 Insite Wireless Group</h5>
+
     </div>
+</div>
+<div class="text-center mt-4">
+    <h5 style="color:#fff;">© 2019 Insite Wireless Group</h5>
 </div>
 
 <!-- Optional JavaScript -->

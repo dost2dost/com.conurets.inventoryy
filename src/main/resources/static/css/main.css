@@ -30,121 +30,126 @@ body {
 
 /* Button color
 *****************/
-/* line 29, ../sass/main.scss */
+/* line 30, ../sass/main.scss */
 .btn-success {
   background: #7D9E75;
 }
-/* line 32, ../sass/main.scss */
+/* line 33, ../sass/main.scss */
 .btn-success hover {
   background: #28a745;
 }
 
+/* line 39, ../sass/main.scss */
+.bgblue {
+  background: #254087;
+}
+
 /* Font size
 *****************/
-/* line 40, ../sass/main.scss */
+/* line 45, ../sass/main.scss */
 h1, h2, h3, h4, h5, h6, a {
   padding: 0px;
   margin: 0px;
 }
 
-/* line 46, ../sass/main.scss */
+/* line 51, ../sass/main.scss */
 h1 {
   font-size: 36px;
 }
 
-/* line 50, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 h2 {
   font-size: 30px;
 }
 
-/* line 54, ../sass/main.scss */
+/* line 59, ../sass/main.scss */
 h3 {
   font-size: 20px;
 }
 
-/* line 58, ../sass/main.scss */
+/* line 63, ../sass/main.scss */
 h4 {
   font-size: 16px;
 }
 
-/* line 62, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 h5 {
   font-size: 14px;
 }
 
-/* line 66, ../sass/main.scss */
+/* line 71, ../sass/main.scss */
 h6 {
   font-size: 12px;
 }
 
-/* line 70, ../sass/main.scss */
+/* line 75, ../sass/main.scss */
 .f12 {
   font-size: 12px;
 }
 
-/* line 74, ../sass/main.scss */
+/* line 79, ../sass/main.scss */
 .f14 {
   font-size: 14px;
 }
 
-/* line 78, ../sass/main.scss */
+/* line 83, ../sass/main.scss */
 a {
   text-decoration: none;
   transition: all 0.8s ease;
   color: #FAA91A;
 }
-/* line 82, ../sass/main.scss */
+/* line 87, ../sass/main.scss */
 a:hover {
   text-decoration: none;
   outline: 0;
   color: #FAA91A;
 }
 
-/* line 90, ../sass/main.scss */
+/* line 95, ../sass/main.scss */
 table td, table th {
   white-space: nowrap;
 }
 
-/* line 94, ../sass/main.scss */
+/* line 99, ../sass/main.scss */
 .ml-50 {
   margin-left: 50px;
 }
 
 /* Header section
 *****************/
-/* line 100, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 .header {
   background: #254087;
   padding: 10px 0px;
   z-index: 2;
 }
-/* line 107, ../sass/main.scss */
+/* line 112, ../sass/main.scss */
 .header span {
   font-size: 18px;
 }
-/* line 110, ../sass/main.scss */
+/* line 115, ../sass/main.scss */
 .header .menu {
   margin-top: 5px;
 }
-/* line 112, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 .header .menu .btn {
   font-size: 12px;
 }
-/* line 115, ../sass/main.scss */
+/* line 120, ../sass/main.scss */
 .header .menu a {
   font-size: 15px;
   padding: 0px 10px;
   text-transform: uppercase;
   color: #a0acbe;
 }
-/* line 120, ../sass/main.scss */
+/* line 125, ../sass/main.scss */
 .header .menu a:hover {
   color: #ffc107;
 }
 
 /* Form left panel section
 *****************/
-/* line 132, ../sass/main.scss */
+/* line 137, ../sass/main.scss */
 .left-panel-form {
   position: fixed;
   width: 300px;
@@ -154,40 +159,40 @@ table td, table th {
   background: #293241;
   padding: 10px 0px;
 }
-/* line 141, ../sass/main.scss */
+/* line 146, ../sass/main.scss */
 .left-panel-form h5 i {
   font-size: 20px;
 }
-/* line 146, ../sass/main.scss */
+/* line 151, ../sass/main.scss */
 .left-panel-form .nav-item a {
   padding: 15px;
   background: #254087;
   margin: 4px 0px;
 }
-/* line 151, ../sass/main.scss */
+/* line 156, ../sass/main.scss */
 .left-panel-form .nav-item .btn-left-panel-form {
   background: #7D9E75;
   color: #fff;
 }
-/* line 158, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 .left-panel-form .menu-list .active {
   background: #FAA91A;
   color: #254087;
 }
 
-/* line 166, ../sass/main.scss */
+/* line 171, ../sass/main.scss */
 .hide-left-panel-form {
   left: -250px;
 }
 
-/* line 170, ../sass/main.scss */
+/* line 175, ../sass/main.scss */
 .show-left-panel-form {
   left: 0px !important;
 }
 
 /* content reports
 *****************/
-/* line 177, ../sass/main.scss */
+/* line 182, ../sass/main.scss */
 .reports .filter {
   font-size: 14px;
   min-height: 350px;
@@ -198,99 +203,91 @@ table td, table th {
   overflow: hidden;
   background: #f9f9f9;
 }
-/* line 186, ../sass/main.scss */
+/* line 191, ../sass/main.scss */
 .reports .filter .tabSection {
   min-height: 350px;
 }
-/* line 189, ../sass/main.scss */
+/* line 194, ../sass/main.scss */
 .reports .filter h4 {
   padding-bottom: 5px;
   margin-bottom: 10px;
   border-bottom: 1px solid #ced4da;
 }
-/* line 194, ../sass/main.scss */
+/* line 199, ../sass/main.scss */
 .reports .filter .left {
   width: 250px;
   position: absolute;
 }
-/* line 197, ../sass/main.scss */
+/* line 202, ../sass/main.scss */
 .reports .filter .left a {
   display: block;
   margin: 4px 0px;
   text-align: left;
   font-size: 14px;
 }
-/* line 204, ../sass/main.scss */
+/* line 209, ../sass/main.scss */
 .reports .filter .right {
   margin-left: 275px;
 }
-/* line 207, ../sass/main.scss */
+/* line 212, ../sass/main.scss */
 .reports .filter .right .form-control {
   margin-bottom: 8px;
 }
-/* line 212, ../sass/main.scss */
+/* line 217, ../sass/main.scss */
 .reports .filter .filter-table input {
   margin: 5px 5px 0px 0px;
 }
-/* line 218, ../sass/main.scss */
+/* line 223, ../sass/main.scss */
 .reports table {
   font-size: 13px;
 }
 
 /* content form
 *****************/
-/* line 226, ../sass/main.scss */
+/* line 231, ../sass/main.scss */
 .content .content-box {
-  background: #f9f9f9;
-  padding: 30px 15px 5px 15px;
-  border: 1px solid #ccc;
-  position: relative;
-  margin-top: 40px;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
-/* line 232, ../sass/main.scss */
+/* line 239, ../sass/main.scss */
 .content .content-box h4 {
-  position: absolute;
-  top: -16px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  padding-bottom: 10px;
+  font-size: 15px;
   font-weight: bold;
+  color: #254087;
 }
-/* line 241, ../sass/main.scss */
-.content .content-box .boxToggle {
-  cursor: pointer;
-}
-/* line 245, ../sass/main.scss */
+/* line 253, ../sass/main.scss */
 .content .title {
   font-size: 30px;
   background: #f9f9f9;
   color: #444443;
   padding: 15px 30px;
+  text-transform: uppercase;
 }
-/* line 250, ../sass/main.scss */
+/* line 260, ../sass/main.scss */
 .content .title .edit-form {
   position: absolute;
   right: 30px;
   top: 20px;
 }
-/* line 255, ../sass/main.scss */
+/* line 265, ../sass/main.scss */
 .content .title .form-group {
   margin-bottom: 0px;
 }
-/* line 260, ../sass/main.scss */
+/* line 270, ../sass/main.scss */
 .content .error {
   font-size: 12px;
   color: #ff0000;
 }
 
 @media (min-width: 1200px) {
-  /* line 267, ../sass/main.scss */
+  /* line 277, ../sass/main.scss */
   .form-add-margin {
     margin-left: 250px;
   }
 }
 @media (max-width: 1200px) {
-  /* line 273, ../sass/main.scss */
+  /* line 283, ../sass/main.scss */
   .form-add-margin {
     position: relative;
     left: 250px;
@@ -298,7 +295,7 @@ table td, table th {
 }
 /* footer
 *****************/
-/* line 281, ../sass/main.scss */
+/* line 291, ../sass/main.scss */
 .footer {
   position: absolute;
   text-align: center;
@@ -310,19 +307,15 @@ table td, table th {
 
 /* Login form
 *****************/
-/* line 292, ../sass/main.scss */
+/* line 302, ../sass/main.scss */
 .login {
-  position: fixed;
-  top: 30%;
-  left: 0px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 0px;
-  right: 0px;
-}
-/* line 299, ../sass/main.scss */
-.login .row {
-  width: 500px;
-  margin: 0 auto;
-  padding: 30px 0px;
+  margin-top: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px;
   color: #fff;
+}
+/* line 307, ../sass/main.scss */
+.login a {
+  font-size: 18px;
+  color: #000 !important;
 }

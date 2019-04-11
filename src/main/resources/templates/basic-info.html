@@ -3,335 +3,372 @@
 
 <div  ng-form="basicForm" ng-controller="basicInfoCtrl" ng-init="initializeBasicInfo();">
 
-<div   class="container-fluid content-box"  >
+<div   class="container content-box"  >
 
-    <h4 class="boxToggle btn-secondary"><i class="fas fa-info-circle mr-2 "></i>BASIC INFORMATION</h4>
-
-
+    <h4 class="boxToggle "><i class="fas fa-info-circle mr-2 "></i>BASIC INFORMATION</h4>
 
     <div class="row">
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Date</span>
-                <input type="text" name="date" ng-model="basicInfo.entryDate" required class="form-control"/>
-                <!--<div role="alert">-->
-                <!--<span class="error" ng-show="basicForm.entryDate.$error.required">Date is Required!</span>-->
-                <!--</div>-->
+                <div>Date</div>
+                <input type="text" name="date" ng-model="basicInfo.entryDate" required class="form-control" id="datepicker"/>
+
             </div>
         </div>
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>User Name</span>
+                <div>User Name</div>
                 <input type="text" name="username" ng-model="basicInfo.userName" readonly class="form-control"/>
             </div>
 
         </div>
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Location</span>
+                <div>Location</div>
 
                 <select name="locationId" ng-model="basicInfo.locationId" required class="form-control">
                     <option value="">---Please Select---</option>
                     <option ng-repeat="x in locationDAOs" value={{x.loginUserId}}>{{x.location}}</option>
                 </select>
 
-                <!--<div role="alert">-->
-                <!--<span class="error" ng-show="basicForm.locationId.$error.required">Location is Required!</span>-->
-                <!--</div>-->
+
             </div>
 
         </div>
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Company Name</span>
+                <div>Company Name</div>
                 <input type="text" ng-model="basicInfo.company" readonly class="form-control"/>
-                <!--
-                <select ng-model="basicInfo.company" class="form-control" ng-change="changeItem(basicInfo.company);">
-                    <option value="">-&#45;&#45;Please Select-&#45;&#45;</option>
-                    <option ng-repeat="x in companyDAOs" value={{x.id}}>{{x.company}}</option>
-                </select>
-                -->
+
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Item Description</span>
+                <div>Item Description</div>
                 <select name="itemId" ng-model="basicInfo.itemId" required class="form-control">
                     <option value="">---Please Select---</option>
                     <option ng-repeat="x in itemDAOs" value={{x.id}}>{{x.itemDescription}}</option>
                 </select>
-
-                <!--<div role="alert">-->
-                <!--<span class="error" ng-show="basicForm.itemId.$error.required">Item is Required!</span>-->
-                <!--</div>-->
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Serial Number</span>
+                <div>Serial Number</div>
                 <input type="number" name="serialNo" ng-model="basicInfo.serialNo" required class="form-control"/>
-                <!--<div role="alert">-->
-                <!--<span class="error" ng-show="basicForm.serialNo.$error.required">-->
-                <!--Serial No. is Required!</span>-->
-                <!--</div>-->
+
             </div>
         </div>
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Qty</span>
+                <div>Qty</div>
                 <input type="number" name="qty" ng-model="basicInfo.qty" required class="form-control"/>
-                <!--<div role="alert">-->
-                <!--<span class="error" ng-show="basicForm.qty.$error.required">-->
-                <!--Qty is Required!</span>-->
-                <!--</div>-->
+
             </div>
         </div>
-        <div class="col-xl-3 col-lg-6">
+
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Warranty</span>
-                <input id="rdwarranty1" type="radio" name="warranty" ng-model="basicInfo.warranty" value="Yes" required class="form-control"/>
-                <label for="rdwarranty1">Yes</label>
-                <input id="rdwarranty2" type="radio" name="warranty" ng-model="basicInfo.warranty" value="No" required class="form-control"/>
-                <label for="rdwarranty1">No</label>
-                <!--<div role="alert">-->
-                <!--<span class="error" ng-show="basicForm.qty.$error.required">-->
-                <!--Qty is Required!</span>-->
-                <!--</div>-->
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Manufacturer</span>
+                <div>Manufacturer</div>
                 <input type="text" name="manufacturer" ng-model="basicInfo.manufacturer" readonly
                        class="form-control"/>
-                <!--<div role="alert">-->
-                <!--<span class="error" ng-show="basicForm.manufacturer.$error.required">-->
-                <!--Manufacturer is Required!</span>-->
-                <!--</div>-->
+
             </div>
         </div>
-    </div>
+        <div class="col-xl-4 col-lg-6">
+            <!--<div class="form-group">-->
+                <!--<div>Warranty</div>-->
+                <!--<input id="rdwarranty1" type="radio" name="warranty" ng-model="basicInfo.warranty" value="Yes" required class="form-control"/>-->
+                <!--<label for="rdwarranty1">Yes</label>-->
+                <!--<input id="rdwarranty2" type="radio" name="warranty" ng-model="basicInfo.warranty" value="No" required class="form-control"/>-->
+                <!--<label for="rdwarranty1">No</label>-->
 
+            <!--</div>-->
+
+
+            <div class="mb-1">Warranty</div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="rdwarranty1" name="warranty" ng-model="basicInfo.warranty" value="Yes" required>
+                <label class="custom-control-label" for="rdwarranty1">YES</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="rdwarranty2" name="warranty" ng-model="basicInfo.warranty" value="No" required>
+                <label class="custom-control-label" for="rdwarranty2">NO</label>
+            </div>
+
+        </div>
+    </div>
+    <hr>
 </div>
 <!-- End  Basic info -->
 
 <!-- start Storage Info -->
-<div class="container-fluid content-box">
+<div class="container content-box">
 
-    <h4 class="boxToggle btn-secondary"><i class="fas fa-database mr-2"></i>STORAGE INFORMATION</h4>
+    <h4 class="boxToggle "><i class="fas fa-database mr-2"></i>STORAGE INFORMATION</h4>
 
 
     <div class="row">
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Storage Location</span>
+                <div>Storage Location</div>
                 <input ng-model="basicInfo.storageLocation" type="text" class="form-control"/>
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Stored On Shelf</span>
-                <input  name="storageOnShelf" ng-model="basicInfo.storageOnShelf" value="Yes" type="radio" class="form-control"/>
-                <input name="storageOnShelf" ng-model="basicInfo.storageOnShelf" value="No" type="radio" class="form-control"/>
-            </div>
-        </div>
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Shelf / Bay Number</span>
+                <div>Shelf / Bay Number</div>
                 <input name="shelfByNo" ng-model="basicInfo.shelfByNo" type="number" class="form-control"/>
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Stored In Cabinet</span>
-                <input name="storedInCabnet" ng-model="basicInfo.storedInCabnet" type="radio" value="Yes" class="form-control"/>
-                <input name="storedInCabnet" ng-model="basicInfo.storedInCabnet" type="radio" value="No" class="form-control"/>
-            </div>
-        </div>
 
-        <div class="col-xl-3 col-lg-6">
+
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Cabinet Shelf No</span>
+                <div>Cabinet Shelf No</div>
                 <input name="cabnetShelfNo" ng-model="basicInfo.cabnetShelfNo" type="number" class="form-control"/>
             </div>
         </div>
 
+        <div class="col-xl-4 col-lg-6">
+            <!--<div class="form-group">-->
+                <!--<div>Stored In Cabinet</div>-->
+                <!--<input name="storedInCabnet" ng-model="basicInfo.storedInCabnet" type="radio" value="Yes" class="form-control"/>-->
+                <!--<input name="storedInCabnet" ng-model="basicInfo.storedInCabnet" type="radio" value="No" class="form-control"/>-->
+            <!--</div>-->
+
+            <div  class="mb-1">Stored In Cabinet</div>
+            <div class="custom-control custom-radio custom-control-inline mb-2" >
+                <input class="custom-control-input" name="storedInCabnet" ng-model="basicInfo.storedInCabnet" type="radio" value="Yes" id="stoCabinet">
+                <label class="custom-control-label" for="stoCabinet">YES</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline mb-2">
+                <input class="custom-control-input" name="storedInCabnet" ng-model="basicInfo.storedInCabnet" type="radio" value="No" id="stoCabinet2">
+                <label class="custom-control-label" for="stoCabinet2">NO</label>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6">
+            <!--<div class="form-group">-->
+                <!--<div>Stored On Shelf</div>-->
+                <!--<input  name="storageOnShelf" ng-model="basicInfo.storageOnShelf" value="Yes" type="radio" class="form-control"/>-->
+                <!--<input name="storageOnShelf" ng-model="basicInfo.storageOnShelf" value="No" type="radio" class="form-control"/>-->
+            <!--</div>-->
+
+            <div  class="mb-1">Stored On Shelf</div>
+
+
+            <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input"  name="storageOnShelf" ng-model="basicInfo.storageOnShelf" value="Yes" type="radio" id="storShelf">
+                <label class="custom-control-label" for="storShelf">YES</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input class="custom-control-input" name="storageOnShelf" ng-model="basicInfo.storageOnShelf" value="No" type="radio" id="storShelf2">
+                <label class="custom-control-label" for="storShelf2">NO</label>
+            </div>
+        </div>
+
+
 
     </div>
-
+    <hr>
 
 </div>
 <!-- End  Storage Info -->
 
 <!-- start ITEM HANDLING  -->
-<div class="container-fluid content-box">
+<div class="container content-box">
 
-    <h4 class="boxToggle btn-secondary"><i class="fas fa-list-ul mr-2"></i>ITEM HANDLING</h4>
+    <h4 class="boxToggle "><i class="fas fa-list-ul mr-2"></i>ITEM HANDLING</h4>
 
 
     <div class="row">
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Special Handling Required</span>
-                <input name="spcialHandlinReq" ng-model="basicInfo.spcialHandlinReq" value="Yes" type="radio" class="form-control"/>
-                <input name="spcialHandlinReq" ng-model="basicInfo.spcialHandlinReq" value="No" type="radio" class="form-control"/>
-            </div>
-        </div>
 
-        <div class="col-xl-3 col-lg-6">
+
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Special Handling Notes</span>
+                <div>Special Handling Notes</div>
                 <input name="specialHandlingNotes" ng-model="basicInfo.specialHandlingNotes" type="text" class="form-control"/>
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Approx Weight</span>
+                <div>Approx Weight</div>
                 <input name="approxWeight" ng-model="basicInfo.approxWeight" type="text" class="form-control"/>
             </div>
         </div>
 
+        <div class="col-xl-4 col-lg-6">
+            <!--<div class="form-group">-->
+            <!--<div>Special Handling Required</div>-->
+            <!--<input name="spcialHandlinReq" ng-model="basicInfo.spcialHandlinReq" value="Yes" type="radio" class="form-control"/>-->
+            <!--<input name="spcialHandlinReq" ng-model="basicInfo.spcialHandlinReq" value="No" type="radio" class="form-control"/>-->
+            <!--</div>-->
+
+            <div  class="mb-1">Special Handling Required</div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input class="custom-control-input" name="spcialHandlinReq" ng-model="basicInfo.spcialHandlinReq" value="Yes" type="radio"  id="spcialHandlinReq">
+            <label class="custom-control-label" for="spcialHandlinReq">YES</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input class="custom-control-input" name="spcialHandlinReq" ng-model="basicInfo.spcialHandlinReq" value="NO" type="radio"  id="spcialHandlinReq2">
+            <label class="custom-control-label" for="spcialHandlinReq2">NO</label>
+        </div>
+        </div>
 
     </div>
-
+    <hr>
 </div>
 <!-- End  ITEM HANDLING  -->
 
 <!-- start CALIBRATION   -->
-<div class="container-fluid content-box">
+<div class="container content-box">
 
-    <h4 class="boxToggle btn-secondary"><i class="fas fa-weight mr-2"></i>CALIBRATION</h4>
+    <h4 class="boxToggle "><i class="fas fa-weight mr-2"></i>CALIBRATION</h4>
 
     <div class="row">
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Calibration Required</span>
-                <input name="calibrationRequired" ng-model="basicInfo.calibrationRequired" value="True" type="radio" class="form-control"/>
-                <input name="calibrationRequired" ng-model="basicInfo.calibrationRequired" value="False" type="radio" class="form-control"/>
-            </div>
-        </div>
 
-        <div class="col-xl-3 col-lg-6">
+
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Date Calibrated</span>
+                <div>Date Calibrated</div>
                 <input name="calibratedDate" ng-model="basicInfo.calibratedDate" type="text" class="form-control"/>
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Validity Of Calibration</span>
+                <div>Validity Of Calibration</div>
                 <input name="calibrationValidity" ng-model="basicInfo.calibrationValidity" type="text" class="form-control"/>
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Calibration Due Date</span>
+                <div>Calibration Due Date</div>
                 <input name="calibrationDueDate" ng-model="basicInfo.calibrationDueDate" type="text" class="form-control"/>
             </div>
         </div>
 
+        <div class="col-xl-4 col-lg-6">
+            <!--<div class="form-group">-->
+                <!--<div>Calibration Required</div>-->
+                <!--<input name="calibrationRequired" ng-model="basicInfo.calibrationRequired" value="True" type="radio" class="form-control"/>-->
+                <!--<input name="calibrationRequired" ng-model="basicInfo.calibrationRequired" value="False" type="radio" class="form-control"/>-->
+            <!--</div>-->
+            <div  class="mb-1">Calibration Required</div>
+            <div class="custom-control custom-radio custom-control-inline mb-2">
+                <input class="custom-control-input" name="calibrationRequired" ng-model="basicInfo.calibrationRequired" value="YES" type="radio" id="calibrationRequired">
+                <label class="custom-control-label" for="calibrationRequired">YES</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline mb-2">
+                <input class="custom-control-input" name="calibrationRequired" ng-model="basicInfo.calibrationRequired" value="NO" type="radio" id="calibrationRequired2">
+                <label class="custom-control-label" for="calibrationRequired2">NO</label>
+            </div>
+
+
+        </div>
+
 
     </div>
-
+    <hr>
 </div>
 <!-- End  CALIBRATION   -->
 
 <!-- start ITEM CONDITION    -->
-<div class="container-fluid content-box">
+<div class="container content-box">
 
-    <h4 class="boxToggle btn-secondary"><i class="fas fa-asterisk mr-2"></i>ITEM CONDITION</h4>
+    <h4 class="boxToggle "><i class="fas fa-asterisk mr-2"></i>ITEM CONDITION</h4>
 
+    <div>Item Condition</div>
     <div class="row">
-        <div class="col-xl-3 col-lg-6">
-            <select name="itemReconditioned" ng-model="basicInfo.itemReconditioned" required class="form-control">
+        <div class="col-xl-4 col-lg-6 ">
+            <select name="itemReconditioned" ng-model="basicInfo.itemReconditioned" required class="form-control mb-2">
                 <option value="" selected="selected">---Please Select---</option>
                 <option ng-repeat="x in data.availableOptions" value={{x.id}}>{{x.name}}</option>
             </select>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>New</span>
-                <input name="itemNew" ng-model="basicInfo.itemNew" type="radio" value="Yes" class="form-control"/>
-                <input name="itemNew" ng-model="basicInfo.itemNew" type="radio" value="No" class="form-control"/>
-            </div>
-        </div>
+    <!--<div class="row">-->
+        <!--<div class="col-xl-4 col-lg-6">-->
+            <!--<div class="form-group">-->
+                <!--<div>New</div>-->
+                <!--<input name="itemNew" ng-model="basicInfo.itemNew" type="radio" value="Yes" class="form-control"/>-->
+                <!--<input name="itemNew" ng-model="basicInfo.itemNew" type="radio" value="No" class="form-control"/>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Used</span>
-                <input name="itemUsed" ng-model="basicInfo.itemUsed" type="radio" value="Yes" class="form-control"/>
-                <input name="itemUsed" ng-model="basicInfo.itemUsed" type="radio" value="No" class="form-control"/>
-            </div>
-        </div>
+        <!--<div class="col-xl-4 col-lg-6">-->
+            <!--<div class="form-group">-->
+                <!--<div>Used</div>-->
+                <!--<input name="itemUsed" ng-model="basicInfo.itemUsed" type="radio" value="Yes" class="form-control"/>-->
+                <!--<input name="itemUsed" ng-model="basicInfo.itemUsed" type="radio" value="No" class="form-control"/>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Reconditioned</span>
-                <input name="itemReconditioned" ng-model="basicInfo.itemReconditioned" type="radio" value="Yes" class="form-control"/>
-                <input name="itemReconditioned" ng-model="basicInfo.itemReconditioned" type="radio" value="No" class="form-control"/>
-            </div>
-        </div>
+        <!--<div class="col-xl-4 col-lg-6">-->
+            <!--<div class="form-group">-->
+                <!--<div>Reconditioned</div>-->
+                <!--<input name="itemReconditioned" ng-model="basicInfo.itemReconditioned" type="radio" value="Yes" class="form-control"/>-->
+                <!--<input name="itemReconditioned" ng-model="basicInfo.itemReconditioned" type="radio" value="No" class="form-control"/>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Useable</span>
-                <input name="itemUseable" ng-model="basicInfo.itemUseable" type="radio" value="Yes" class="form-control"/>
-                <input name="itemUseable" ng-model="basicInfo.itemUseable" type="radio" value="No" class="form-control"/>
-            </div>
-        </div>
+        <!--<div class="col-xl-4 col-lg-6">-->
+            <!--<div class="form-group">-->
+                <!--<div>Useable</div>-->
+                <!--<input name="itemUseable" ng-model="basicInfo.itemUseable" type="radio" value="Yes" class="form-control"/>-->
+                <!--<input name="itemUseable" ng-model="basicInfo.itemUseable" type="radio" value="No" class="form-control"/>-->
+            <!--</div>-->
+        <!--</div>-->
 
 
-    </div>
-
+    <!--</div>-->
+    <hr>
 </div>
 <!-- End  ITEM CONDITION    -->
 
 <!-- start SUPPLIER INFORMATION   -->
-<div class="container-fluid content-box">
+<div class="container content-box">
 
-    <h4 class="boxToggle btn-secondary"><i class="fas fa-phone mr-2"></i>SUPPLIER INFORMATION</h4>
+    <h4 class="boxToggle "><i class="fas fa-phone mr-2"></i>SUPPLIER INFORMATION</h4>
 
     <div class="row">
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Supplier</span>
+                <div>Supplier</div>
                 <input   ng-model="basicInfo.supplierId" name="supplierId" type="text" class="form-control"/>
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <span>Supplier Representative</span>
+                <div>Supplier Representative</div>
                 <input name="supplier_Rep_Id" ng-model="basicInfo.supplier_Rep_Id" type="text" class="form-control"/>
             </div>
         </div>
 
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Supplier Representative Mobile</span>
-                <input name="supplierRepresentativeMobile" ng-model="basicInfo.supplierRepresentativeMobile" type="text" class="form-control"/>
-            </div>
-        </div>
+        <!--<div class="col-xl-4 col-lg-6">-->
+            <!--<div class="form-group">-->
+                <!--<div>Supplier Representative Mobile</div>-->
+                <!--<input name="supplierRepresentativeMobile" ng-model="basicInfo.supplierRepresentativeMobile" type="text" class="form-control"/>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="col-xl-3 col-lg-6">
-            <div class="form-group">
-                <span>Supplier Representative Email</span>
-                <input name="supplierRepresentativeEmail" ng-model="basicInfo.supplierRepresentativeEmail" type="email" class="form-control"/>
-            </div>
-        </div>
+        <!--<div class="col-xl-4 col-lg-6">-->
+            <!--<div class="form-group">-->
+                <!--<div>Supplier Representative Email</div>-->
+                <!--<input name="supplierRepresentativeEmail" ng-model="basicInfo.supplierRepresentativeEmail" type="email" class="form-control"/>-->
+            <!--</div>-->
+        <!--</div>-->
 
 
     </div>
@@ -349,8 +386,8 @@
         </div>
         <div class="col-lg-4">
             <div class="float-right">
-                <buttton class="btn btn-light " ><i class="fas fa-times mr-1"></i>Cancel </buttton>
-                <buttton class="btn btn-warning " ng-click="saveBasicInformation()"><i class="fas fa-check mr-1"></i>Submit</buttton>
+                <buttton class="btn btn-secondary " ><i class="fas fa-times mr-1"></i>Cancel </buttton>
+                <buttton class="btn btn-primary " ng-click="saveBasicInformation()"><i class="fas fa-check mr-1"></i>Submit</buttton>
             </div>
         </div>
     </div>
@@ -362,11 +399,13 @@
 <script>
     $(document).ready(function () {
 
-        $('.boxToggle ').click(function(){
-            $(this).next().toggle();
+//        $('.boxToggle ').click(function(){
+//            $(this).next().toggle();
+//
+//
+//        });
 
-
-        });
+        $( "#datepicker" ).datepicker();
 
     });
 </script>

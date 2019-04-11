@@ -24,6 +24,7 @@ body {
   border-top: 5px solid $borderLine;
 }
 
+
 /* Button color
 *****************/
 .btn-success {
@@ -33,6 +34,10 @@ body {
     background: #28a745;
 
   }
+}
+
+.bgblue {
+  background: $blue;
 }
 
 /* Font size
@@ -224,30 +229,35 @@ table td, table th {
 *****************/
 .content {
   .content-box {
-    background: #f9f9f9;
-    padding: 30px 15px 5px 15px;
-    border: 1px solid #ccc;
-    position: relative;
-    margin-top: 40px;
+    //background: #f9f9f9;
+    //padding: 30px 15px 5px 15px;
+    //border: 1px solid #ccc;
+    //position: relative;
+    margin-top: 25px;
+    //border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
     & h4 {
-     // background: #fff;
-      position: absolute;
-      top: -16px;
-      padding: 8px;
-      border: 1px solid #ccc;
-      font-size:14px;
+      // background: #fff;
+      // position: absolute;
+      //top: -16px;
+      padding-bottom: 10px;
+      // border: 1px solid #ccc;
+      font-size: 15px;
       font-weight: bold;
+      color:$blue;
     }
-    .boxToggle{
-      cursor: pointer;
-    }
+    //.boxToggle{
+    //  cursor: pointer;
+    //}
   }
   .title {
     font-size: 30px;
     background: $lightGray;
     color: #444443;
     padding: 15px 30px;
-    .edit-form{
+    text-transform: uppercase;
+
+    .edit-form {
       position: absolute;
       right: 30px;
       top: 20px;
@@ -290,17 +300,26 @@ table td, table th {
 /* Login form
 *****************/
 .login {
-  position: fixed;
-  top: 30%;
-  left: 0px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 0px;
-  right: 0px;
-  .row {
-    width: 500px;
-    margin: 0 auto;
-    padding: 30px 0px;
-    color: #fff;
+  margin-top:200px;
+  background:rgba(0,0,0,.5);
+  padding:25px;
+  color:#fff;
+  & a{
+    font-size:18px;
+    color:#000!important;
   }
+
+  // position: fixed;
+  // top: 30%;
+  //  left: 0px;
+  //background: rgba(0, 0, 0, 0.6);
+  //border: 0px;
+  // right: 0px;
+  //.row {
+  //  width: 500px;
+  //  margin: 0 auto;
+  //  padding: 30px 0px;
+  //  color: #fff;
+  //}
 }
 
