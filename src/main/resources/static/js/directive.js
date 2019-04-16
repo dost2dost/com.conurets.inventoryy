@@ -77,4 +77,7 @@ app.directive('bulkImportData', function () {
     return {
         templateUrl: 'bulk-import-data'
     };
+
 });
+
+

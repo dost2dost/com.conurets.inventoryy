@@ -42,6 +42,19 @@ public class BasicInfoController extends BaseController {
         return ResponseEntity.ok(baseResponse);
     }
 
+    @RequestMapping(value = "/updateBasicInfo", method = POST)
+    public ResponseEntity<?> updateRecord(@Valid @RequestBody FormDatain frmDataIn) throws ParseException {
+
+        BasicInformation basicInformation= FormData.basicinfo4mFormData(frmDataIn);
+
+        basicInfoService.update(basicInformation);
+
+        BaseResponse<Object> baseResponse = InventoryUtil.setBaseResponse(InventoryConstants.STATUS_CODE_SUCCESS,
+                InventoryConstants.STATUS_MSG_SUCCESS);
+
+
+        return ResponseEntity.ok(baseResponse);
+    }
     @RequestMapping(value = "/fetchBasicInfoReport", method = GET)
     public ResponseEntity<?> fetchBasicInfoReport(@RequestParam("fromDate") String fromDate ,@RequestParam("toDate") String toDate){
 
@@ -52,6 +65,19 @@ public class BasicInfoController extends BaseController {
 
         return ResponseEntity.ok(baseResponse);
     }
+
+    @RequestMapping(value = "/fetchEditform", method = GET)
+    public ResponseEntity<?> fetchEditform(@RequestParam("serialno") String serialno){
+        //@RequestParam("fromDate") String fromDate ,@RequestParam("toDate") String toDate
+
+        FormDatain basicInfoVOSList = basicInfoService.fetchEditform(serialno);
+
+        BaseResponse<Object> baseResponse = InventoryUtil.setBaseResponse(InventoryConstants.STATUS_CODE_SUCCESS,
+                InventoryConstants.STATUS_MSG_SUCCESS,basicInfoVOSList);
+
+        return ResponseEntity.ok(baseResponse);
+    }
+
 
 
 }

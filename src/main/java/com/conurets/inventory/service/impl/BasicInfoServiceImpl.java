@@ -3,8 +3,8 @@ package com.conurets.inventory.service.impl;
 import com.conurets.inventory.converter.BasicInfoConverter;
 import com.conurets.inventory.dao.factory.DAOFactory;
 import com.conurets.inventory.entity.BasicInformation;
-import com.conurets.inventory.entity.BasicInformation2;
 import com.conurets.inventory.exception.InventoryException;
+import com.conurets.inventory.model.FormDatain;
 import com.conurets.inventory.service.BasicInfoService;
 import com.conurets.inventory.util.InventoryConstants;
 import com.conurets.inventory.util.InventoryHelper;
@@ -85,6 +85,19 @@ public class BasicInfoServiceImpl implements BasicInfoService {
     public List<BasicInfoVO> fetchBasicInfoReport(String frmDate,String toDate ) throws InventoryException {
 
         List<BasicInfoVO> basicInfoVOList = daoFactory.getBasicInfoDAO().fetchBasicInfoReport(frmDate,toDate);
+
+        return basicInfoVOList;
+    }
+
+    @Override
+    public FormDatain fetchEditform(String frmDate) throws InventoryException {
+      FormDatain  basicInfoVOList = daoFactory.getBasicInfoDAO().fetchEditForm(frmDate);
+        return basicInfoVOList;
+    }
+
+    public FormDatain fetchEditForm(String serialno) throws InventoryException {
+
+        FormDatain basicInfoVOList = daoFactory.getBasicInfoDAO().fetchEditForm(serialno);
 
         return basicInfoVOList;
     }

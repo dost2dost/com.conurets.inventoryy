@@ -4,6 +4,7 @@ package com.conurets.inventory.service;
 import com.conurets.inventory.exception.InventoryException;
 import com.conurets.inventory.model.BasicInformation;
 
+import com.conurets.inventory.model.FormDatain;
 import com.conurets.inventory.vo.BasicInfoVO;
 
 import java.util.List;
@@ -21,5 +22,7 @@ public interface BasicInfoService {
     void delete(long id) throws InventoryException;
 
     List<BasicInfoVO> fetchBasicInfoReport(String frmDate,String toDate) throws InventoryException;
+    FormDatain fetchEditform(String seriano) throws InventoryException;
 
+//    FormDatain fetchEditform(String s, String s1);
 }

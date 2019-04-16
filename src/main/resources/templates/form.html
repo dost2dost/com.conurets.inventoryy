@@ -36,6 +36,7 @@
 <!--<form-left-panel></form-left-panel>-->
 
 <!-- start content -->
+<div ng-controller="basicInfoCtrl">
 <section class="content">
     <div class="title position-relative"><i class="fas fa-file-alt mr-2"></i>Form <span class="edit-form"> <button class="btn btn-primary"><i class="fas fa-pencil-alt mr-1"></i> Edit Form</button></span></div>
 
@@ -47,11 +48,11 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-search mr-1"></i>Search</span>
                     </div>
-                    <input type="text" ng-model="basicInfo.searchName" class="form-control" placeholder="Search"
+                    <input type="text" ng-model="basicInfo.searchName"  class="form-control" placeholder="Enter Serial no for Edit "
                            style="margin-right: 85px;">
                 </div>
 
-                <button class="btn btn-primary" style="position: absolute; right: 0px; top: 0px; ">Search</button>
+                <button class="btn btn-primary" style="position: absolute; right: 0px; top: 0px; " ng-Click="testt()">Search</button>
 
             </div>
             <div class="form-tab-content">
@@ -65,6 +66,7 @@
         </div>
     </div>
 </section>
+</div>
 <!-- End  content -->
 
 <div ng-include="'footer'"></div>
@@ -119,6 +121,8 @@
     $(document).ready(function(){
         $('.edit-form').click(function(){
             $('.edit-search-form').toggle();
+            $('#btnupdate').toggle();
+
         });
     });
 

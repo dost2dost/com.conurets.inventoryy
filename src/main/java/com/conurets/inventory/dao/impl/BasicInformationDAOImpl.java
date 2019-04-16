@@ -5,6 +5,7 @@ import com.conurets.inventory.dao.BasicInformationDAO;
 import com.conurets.inventory.entity.BasicInformation;
 import com.conurets.inventory.exception.EntityNotFoundException;
 import com.conurets.inventory.exception.InventoryException;
+import com.conurets.inventory.model.FormDatain;
 import com.conurets.inventory.util.InventoryUtil;
 import com.conurets.inventory.vo.BasicInfoVO;
 import org.hibernate.query.Query;
@@ -48,5 +49,25 @@ public class BasicInformationDAOImpl extends BaseDAOImpl<BasicInformation> imple
 
         return basicInfoConverter.toReportController(basicInfoList);
     }
+
+    @Override
+    public FormDatain fetchEditForm(String serialno) throws InventoryException {
+
+        Query<BasicInformation> query = getSession().createQuery("from BasicInformation" +
+                " where serial_number = '"+ serialno + "' ");
+
+        BasicInformation basicInfoList = query.getSingleResult();
+
+        if (basicInfoList == null) {
+            throw new EntityNotFoundException(101, "No Basic Information found");
+        }
+
+
+
+
+
+        return basicInfoConverter.toEditForm(basicInfoList);
+    }
+
 
 }

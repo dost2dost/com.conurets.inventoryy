@@ -3,10 +3,11 @@
  */
 
 
-app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,ItemService,BasicInfoService)
+
+app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,ItemService,BasicInfoService, $http)
 {
     $scope.basicInfo ={};
-    $scope.basicInfo.entryDate ='2019-10-10';
+    $scope.basicInfo.entryDate ='2019-10-14';
     $scope.basicInfo.userName ='Iraj Khan';
     $scope.basicInfo.userId= 1;
     $scope.basicInfo.location ='';
@@ -41,18 +42,25 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     $scope.basicInfo.itemUseable ='';
     $scope.basicInfo.supplierId ='1';
     $scope.basicInfo.supplier_Rep_Id ='2';
+    $scope.basicInfo.itemCondition ='';
 
 
+        $scope.myFunc=function () {
+
+            console.log($scope.basicInfo.entryDate);
+
+        }
 
     $scope.data = {
 
         availableOptions: [
-            {id: '1', name: 'New'},
-            {id: '2', name: 'Used'},
-            {id: '3', name: 'Reconditioned'},
-            {id: '4', name: 'Useable'}
+            {id: 'New', name: 'New'},
+            {id: 'Used', name: 'Used'},
+            {id: 'Reconditioned', name: 'Reconditioned'},
+            {id: 'Useable', name: 'Useable'}
         ]
     };
+
 
     /*
      $scope.cars = [
@@ -64,50 +72,51 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     //Supplier info
     $scope.basicInfo.supplier ='';
     $scope.basicInfo.supplierRepresentative ='';
-    $scope.basicInfo.supplierRepresentativeMobile ='';
-    $scope.basicInfo.supplierRepresentativeEmail ='';
-
-
-
-
-
+    // $scope.basicInfo.supplierRepresentativeMobile ='';
+    // $scope.basicInfo.supplierRepresentativeEmail ='';
 
     $scope.companyInfo ={};
     $scope.companyInfo.companyId = 1 ;
     $scope.companyInfo.companyName = '';
-    $scope.companyInfo.representative ='';
-    $scope.companyInfo.repEmail = '';
+    // $scope.companyInfo.representative ='';
+    // $scope.companyInfo.repEmail = '';
 
-    $scope.checkboxModel = {
-        date: true,
-        location: true,
-        venue: true,
-        userName: true,
-        companyName: true,
-        itemDescription: true,
-        itemID: true,
-        serialNum: true,
-        qtyUsed: true,
-
-    };
+    // $scope.checkboxModel = {
+    //     date: true,
+    //     location: true,
+    //     venue: true,
+    //     userName: true,
+    //     companyName: true,
+    //     itemDescription: true,
+    //     itemID: true,
+    //     serialNum: true,
+    //     qtyUsed: true,
+    //
+    // };
 
     $scope.initializeBasicInfo = function(){
+
+
         LocationService.getAllLocations();
 
         //$scope.basicInfo.companyId =1;
         CompanyService.getCompanyDAO($scope.companyInfo,$scope.basicInfo);
 
         ItemService.getAllItems();
-
-
-
     };
 
 
+    $scope.updateBasicInformation = function(){
+
+        $scope.basicInfo.userId='1';
+        $scope.basicInfo.companyId='1';
+        BasicInfoService.updateInfoDAO($scope.basicInfo);
+    }
     $scope.saveBasicInformation = function(){
 
        // alert("basicinfo is called ");
-        BasicInfoService.saveInfoDAO($scope.basicInfo) ;
+        console.log(JSON.stringify($scope.basicInfo));
+        BasicInfoService.saveInfoDAO($scope.basicInfo);
     };
 
 
@@ -135,11 +144,42 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
 
     }
 
-    $scope.testt = function() {
-        alert("dtest");
-        console.log($scope.basicInfo);
+    $scope.testt = function(){
+        BasicInfoService.fetEditform(function(data) {
+            $scope.basicInfo = data;
+            $scope.basicInfo.locationId=1;
+            $scope.basicInfo.location=1;
+            $scope.basicInfo.supplierId=1;
+
+            $scope.basicInfo.supplier_Rep_Id=1;
+            $scope.basicInfo.itemCondition="New";
+
+        },$scope.basicInfo);
 
     }
+
+
+
+    $scope.supplierRep =[{"id":"1","name":"dost"}]
+    $scope.servers =
+    [
+        {
+            "id": "1",
+            "name": "JMA",
+            "version":
+                [
+                    "John Fletcher"
+                ]
+        },
+        {
+            "id": "2",
+            "name": "Corning",
+            "version":
+                [
+                    "John Fletcher", "David Smith"
+                ]
+        }
+    ];
 
 });
 

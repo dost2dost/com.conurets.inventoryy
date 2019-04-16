@@ -1,7 +1,7 @@
 <!-- start Basic info -->
 <!-- th:object="${greeting}" -->
 
-<div  ng-form="basicForm" ng-controller="basicInfoCtrl" ng-init="initializeBasicInfo();">
+<div  ng-form="basicForm"  ng-init="initializeBasicInfo();">
 
 <div   class="container content-box"  >
 
@@ -12,7 +12,7 @@
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <div>Date</div>
-                <input type="text" name="date" ng-model="basicInfo.entryDate" required class="form-control" id="datepicker"/>
+                <input type="Date" name="date"  ng-bind="basicInfo.entryDate|date:'yyyy-MM-dd'" required class="form-control" id="datepicker"/>
 
             </div>
         </div>
@@ -239,21 +239,21 @@
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <div>Date Calibrated</div>
-                <input name="calibratedDate" ng-model="basicInfo.calibratedDate" type="text" class="form-control"/>
+                <input id="calibDate" name="calibratedDate" ng-model="basicInfo.calibratedDate" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <div>Validity Of Calibration</div>
-                <input name="calibrationValidity" ng-model="basicInfo.calibrationValidity" type="text" class="form-control"/>
+                <input id="calbValid" name="calibrationValidity" ng-model="basicInfo.calibrationValidity" type="text" class="form-control"/>
             </div>
         </div>
 
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <div>Calibration Due Date</div>
-                <input name="calibrationDueDate" ng-model="basicInfo.calibrationDueDate" type="text" class="form-control"/>
+                <input id="calbduedate" name="calibrationDueDate" ng-model="basicInfo.calibrationDueDate" type="text" class="form-control"/>
             </div>
         </div>
 
@@ -290,7 +290,7 @@
     <div>Item Condition</div>
     <div class="row">
         <div class="col-xl-4 col-lg-6 ">
-            <select name="itemReconditioned" ng-model="basicInfo.itemReconditioned" required class="form-control mb-2">
+            <select name="itemCondition" ng-model="basicInfo.itemCondition" required class="form-control mb-2">
                 <option value="" selected="selected">---Please Select---</option>
                 <option ng-repeat="x in data.availableOptions" value={{x.id}}>{{x.name}}</option>
             </select>
@@ -341,37 +341,27 @@
 
     <h4 class="boxToggle "><i class="fas fa-phone mr-2"></i>SUPPLIER INFORMATION</h4>
 
+    <div>Supplier</div>
     <div class="row">
-        <div class="col-xl-4 col-lg-6">
-            <div class="form-group">
-                <div>Supplier</div>
-                <input   ng-model="basicInfo.supplierId" name="supplierId" type="text" class="form-control"/>
-            </div>
+        <div class="col-xl-4 col-lg-6 ">
+            <select name="itemCondition" ng-model="basicInfo.supplierId" required class="form-control mb-2">
+                <option value="" selected="selected">---Please Select---</option>
+                <option ng-repeat="xm in servers" value={{xm.id}}>{{xm.name}}</option>
+            </select>
         </div>
-
-        <div class="col-xl-4 col-lg-6">
-            <div class="form-group">
-                <div>Supplier Representative</div>
-                <input name="supplier_Rep_Id" ng-model="basicInfo.supplier_Rep_Id" type="text" class="form-control"/>
-            </div>
-        </div>
-
-        <!--<div class="col-xl-4 col-lg-6">-->
-            <!--<div class="form-group">-->
-                <!--<div>Supplier Representative Mobile</div>-->
-                <!--<input name="supplierRepresentativeMobile" ng-model="basicInfo.supplierRepresentativeMobile" type="text" class="form-control"/>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-xl-4 col-lg-6">-->
-            <!--<div class="form-group">-->
-                <!--<div>Supplier Representative Email</div>-->
-                <!--<input name="supplierRepresentativeEmail" ng-model="basicInfo.supplierRepresentativeEmail" type="email" class="form-control"/>-->
-            <!--</div>-->
-        <!--</div>-->
-
-
     </div>
+
+    <div>Supplier Representative</div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-6 ">
+            <select name="itemCondition" ng-model="basicInfo.supplier_Rep_Id" required class="form-control mb-2">
+                <option value="" selected="selected">---Please Select---</option>
+                <option ng-repeat="xm in supplierRep" value={{xm.id}}>{{xm.name}}</option>
+            </select>
+        </div>
+    </div>
+
+
 
 </div>
 <!-- End  SUPPLIER INFORMATION   -->
@@ -387,6 +377,7 @@
         <div class="col-lg-4">
             <div class="float-right">
                 <buttton class="btn btn-secondary " ><i class="fas fa-times mr-1"></i>Cancel </buttton>
+                <buttton class="btn btn-secondary" id="btnupdate" ng-click="updateBasicInformation()" style="display: none;"><i class="fas fa-times mr-1"></i>Update </buttton>
                 <buttton class="btn btn-primary " ng-click="saveBasicInformation()"><i class="fas fa-check mr-1"></i>Submit</buttton>
             </div>
         </div>
@@ -405,7 +396,10 @@
 //
 //        });
 
-        $( "#datepicker" ).datepicker();
+        $( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd'}.valueOf());
+        $( "#calibDate" ).datepicker({dateFormat: 'yy-mm-dd'}).valueOf();
+        $( "#calbValid" ).datepicker({dateFormat: 'yy-mm-dd'}).valueOf();
+        $( "#calbduedate" ).datepicker({dateFormat: 'yy-mm-dd'}).valueOf();
 
     });
 </script>

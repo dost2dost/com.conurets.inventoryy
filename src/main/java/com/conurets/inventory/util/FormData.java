@@ -18,7 +18,7 @@ public class FormData {
     public static BasicInformation  basicinfo4mFormData(FormDatain formDatain) throws ParseException {
 
         BasicInformation basicInformation=new BasicInformation();
-        basicInformation.setSerialNo(formDatain.getSerialNo());
+        basicInformation.setSerialNo(String.valueOf(formDatain.getSerialNo()));
         basicInformation.setItemId((int) formDatain.getItemId());
         basicInformation.setCompanyId((int) Math.toIntExact(formDatain.getCompanyId()));
         basicInformation.setLocationId((int) formDatain.getLocationId());
@@ -31,9 +31,9 @@ public class FormData {
         //Storage
         basicInformation.setStorageLocation(formDatain.getStorageLocation());
         basicInformation.setStorageOnShelf(formDatain.getStorageOnShelf());
-        basicInformation.setShelfByNo(formDatain.getShelfByNo());
+        basicInformation.setShelfByNo(String.valueOf(formDatain.getShelfByNo()));
         basicInformation.setStoredInCabnet(formDatain.getStoredInCabnet());
-        basicInformation.setCabnetShelfNo(formDatain.getCabnetShelfNo());
+        basicInformation.setCabnetShelfNo(String.valueOf(formDatain.getCabnetShelfNo()));
         //SpecialHandling
         basicInformation.setSpcialHandlinReq(formDatain.getSpcialHandlinReq());
         basicInformation.setSpecialHandlingNotes(formDatain.getSpecialHandlingNotes());
@@ -48,6 +48,7 @@ public class FormData {
         basicInformation.setItemUsed(formDatain.getItemUsed());
         basicInformation.setItemReconditioned(formDatain.getItemReconditioned());
         basicInformation.setItemUseable(formDatain.getItemUseable());
+        basicInformation.setItemCondition(formDatain.getItemCondition());
         //Supplier
         basicInformation.setSupplierId(formDatain.getSupplierId());
         basicInformation.setSupplier_Rep_Id(formDatain.getSupplier_Rep_Id());

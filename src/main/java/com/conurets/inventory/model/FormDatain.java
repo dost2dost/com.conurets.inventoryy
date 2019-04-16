@@ -24,16 +24,16 @@ public class FormDatain {
     private String location;
     private String company;
     private String item_description;
-    private String serialNo;
-    private String qty;
+    private Integer serialNo;
+    private Integer qty;
     private String warranty;
     private String manufacturer;
 
     private String storageLocation;
     private String storageOnShelf;
-    private String shelfByNo;
+    private Integer shelfByNo;
     private String storedInCabnet;
-    private String cabnetShelfNo;
+    private Integer cabnetShelfNo;
     private String spcialHandlinReq;
     private String specialHandlingNotes;
     private String approxWeight;
@@ -44,6 +44,7 @@ public class FormDatain {
     private String itemNew;
     private String itemUsed;
     private String itemReconditioned;
+    private String itemCondition;
     private String itemUseable;
     private String supplier;
     private Integer supplierId;

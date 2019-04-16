@@ -57,6 +57,7 @@ public class BasicInformation  {
     private String itemNew;
     private String itemUsed;
     private String itemReconditioned;
+    private String itemCondition;
     private String itemUseable;
     private Integer supplierId;
     private Integer supplier_Rep_Id;

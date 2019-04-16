@@ -58,6 +58,17 @@ public class BasicInformation extends BaseEntity {
     @Column(name = "calibrated_date")
     private Date calibratedDate;
 
+    @Column(name = "caliberation_required")
+    private String caliberation_Required;
+
+    public String getCaliberation_Required() {
+        return caliberation_Required;
+    }
+
+    public void setCaliberation_Required(String caliberation_Required) {
+        this.caliberation_Required = caliberation_Required;
+    }
+
     @Column(name = "validity_of_calibration")
     private Date validityOfCalibration;
 
