@@ -37,6 +37,7 @@ public class Utilityxl {
             //System.out.println("Populating Array");
             for (int i=3; i<numRows; i++) {
                 Row row = sheet.getRow(i);
+
                 for (int j=0; j<=12; j++) {
                     Cell cell = row.getCell(j);
 

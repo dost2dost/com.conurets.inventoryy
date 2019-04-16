@@ -4,7 +4,7 @@
 
 
     <div>
-        <form id="uploadfrom" ng-controller="ctrl">
+        <form id="uploadfrom" >
             <div class="form-group">
                 <input id="inp_file" type="file" file-input="files" multiple="multiple" />
             </div>
@@ -33,9 +33,9 @@
 
                 <div >
 
-                <!--   <input type="file" id="file1" name="file" multiple />
+                    <!--   <input type="file" id="file1" name="file" multiple />
 
-                 <input type="button" ng-click="uploadFiles()" value="Upload" /> -->
+                     <input type="button" ng-click="uploadFiles()" value="Upload" /> -->
 
 
 
@@ -65,7 +65,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="n in bulkimport">
+                <tr ng-repeat="n in bulkimport track by $index">
                     <td>{{n[0]}}</td>
                     <td>{{n[1]}}</td>
 
