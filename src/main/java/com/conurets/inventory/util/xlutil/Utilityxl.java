@@ -18,7 +18,7 @@ import java.util.List;
 public class Utilityxl {
 
     final String SAMPLE_XLSX_FILE_PATH = "E:\\dtemp\\sample import file.xlsx";
-    public  List<BasicInfoxl> test(){
+    public  List<BasicInfoxl> test(String filepath){
 
 
          DataFormatter dataFormatter = new DataFormatter();
@@ -27,7 +27,7 @@ public class Utilityxl {
          Workbook workbook = null;
 
         try {
-            workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
+            workbook = WorkbookFactory.create(new File(filepath));
             Sheet sheet = workbook.getSheetAt(0);
             int numRows = sheet.getLastRowNum()+1;
             int numCols = sheet.getRow(0).getLastCellNum();
