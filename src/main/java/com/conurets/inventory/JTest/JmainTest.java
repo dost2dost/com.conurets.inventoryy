@@ -22,7 +22,7 @@ public class JmainTest {
     SimpleDateFormat simpleDateFormat;
 
     public static void main(String args[]){
-        Utilityxl obj=new Utilityxl();
+        /*Utilityxl obj=new Utilityxl();
         List<BasicInfoxl> lst=obj.test();
         lst.forEach(s -> {
             BasicInformation basicInformation=new BasicInformation();
@@ -36,7 +36,7 @@ public class JmainTest {
             //basicInformation.setItemId(Integer.valueOf(s.getItem_Id()));
             basicInfoService.save(basicInformation);
 
-        });
+        });*/
 
         //basicInfoService.save();
 
