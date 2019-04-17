@@ -44,6 +44,7 @@ public class ReportController extends BaseController{
         try {
 
             String fileName=file.getOriginalFilename();
+            String fileur=UPLOADED_FOLDER+fileName;
 
             // Get the file and save it somewhere//@RequestParam("file") MultipartFile file
             //Save file
@@ -54,7 +55,7 @@ public class ReportController extends BaseController{
             //Read file
 
             Utilityxl obj=new Utilityxl();
-             lst=obj.test();
+             lst=obj.test(fileur);
 
 
         } catch (IOException e) {

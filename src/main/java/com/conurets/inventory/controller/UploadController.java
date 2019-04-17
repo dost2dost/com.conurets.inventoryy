@@ -22,15 +22,19 @@ import org.springframework.web.multipart.MultipartFile;
 public class UploadController extends BaseController {
 	
 	private final UploadService uploadService;
+	private  String UPLOADED_FOLDER = "E://dtemp//";
 	
 	public UploadController(UploadService uploadService) {
 		this.uploadService = uploadService;
 	}
 
 	@GetMapping("/upload")
-	public List<Map<String, String>> upload() throws InventoryException, Exception{
+	public List<Map<String, String>> upload(@RequestParam("file") MultipartFile file) throws InventoryException, Exception{
+
+		String fileName=file.getOriginalFilename();
+		String fileur=UPLOADED_FOLDER+fileName;
 		Utilityxl obj=new Utilityxl();
-		List<BasicInfoxl> lst=obj.test();
+		List<BasicInfoxl> lst=obj.test(fileur);
 		lst.forEach(s -> {
 			BasicInformation basicInformation=new BasicInformation();
 
