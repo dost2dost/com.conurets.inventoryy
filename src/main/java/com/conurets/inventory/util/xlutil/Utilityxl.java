@@ -1,7 +1,6 @@
 package com.conurets.inventory.util.xlutil;
 
 import com.conurets.inventory.model.BasicInfoxl;
-import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
@@ -34,9 +33,19 @@ public class Utilityxl {
             int numCols = sheet.getRow(0).getLastCellNum();
             String[][] excelData = new String[numRows][numCols];
             String value="";
+            final boolean b=false;
             //System.out.println("Populating Array");
             for (int i=3; i<numRows; i++) {
                 Row row = sheet.getRow(i);
+
+                boolean bb=chkboolStatus(row);
+                System.out.println("chk   : "+bb);
+
+
+
+
+
+                //System.out.println("bool: "+bool);
 
                 for (int j=0; j<=12; j++) {
                     Cell cell = row.getCell(j);
@@ -195,5 +204,56 @@ public class Utilityxl {
         }
         return str;
 
+    }
+
+    public boolean chkboolStatus(Row row){
+
+        System.out.println("row num :    "+row.getRowNum());
+        boolean bool = false;
+        for(Cell cell:row){
+
+
+
+            if(cell.getColumnIndex()==0  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==1  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==2  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==3  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==4  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==5  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==6  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==7  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==8  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==9  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==10  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }if(cell.getColumnIndex()==11  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                 bool=true;
+                break;
+            }
+
+
+        }
+        return bool;
     }
 }
