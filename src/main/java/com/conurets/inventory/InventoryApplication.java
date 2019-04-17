@@ -18,12 +18,12 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableCaching
 @EnableAutoConfiguration(exclude = HibernateJpaAutoConfiguration.class)
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-public class InventoryApplication {
+/*public class InventoryApplication {
     public static void main(String[] args) {
         SpringApplication.run(InventoryApplication.class, args);
     }
-}
-/*public class InventoryApplication extends SpringBootServletInitializer {
+}*/
+public class InventoryApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(InventoryApplication.class);
     }
@@ -33,4 +33,4 @@ public class InventoryApplication {
                 .web(WebApplicationType.NONE)
                 .run(args);
     }
-}*/
+}

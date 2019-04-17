@@ -4,7 +4,7 @@
 
     <groupId>com.conurets.inventory</groupId>
     <artifactId>com.conurets.inventory</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>1.0</version>
 
     <name>Conurets Inventory Management</name>
