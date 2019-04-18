@@ -16,6 +16,7 @@ import java.util.Date;
 public class FormDatain {
 
     private String entryDate;
+    private long Id;
     private long userId;
     private long locationId;
     private long itemId;

@@ -54,7 +54,7 @@ public class BasicInformationDAOImpl extends BaseDAOImpl<BasicInformation> imple
     public FormDatain fetchEditForm(String serialno) throws InventoryException {
 
         Query<BasicInformation> query = getSession().createQuery("from BasicInformation" +
-                " where serial_number = '"+ serialno + "' ");
+                " where serial_number ='"+ serialno + "'");
 
         BasicInformation basicInfoList = query.getSingleResult();
 

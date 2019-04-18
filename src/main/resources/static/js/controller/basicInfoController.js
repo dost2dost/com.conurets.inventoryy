@@ -10,6 +10,7 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     $scope.basicInfo.entryDate ='2019-10-14';
     $scope.basicInfo.userName ='Iraj Khan';
     $scope.basicInfo.userId= 1;
+    $scope.basicInfo.Id='';
     $scope.basicInfo.location ='';
     $scope.basicInfo.company ='';
     $scope.basicInfo.companyId = 1;

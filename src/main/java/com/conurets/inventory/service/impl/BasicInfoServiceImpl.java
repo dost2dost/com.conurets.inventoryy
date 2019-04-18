@@ -64,7 +64,7 @@ public class BasicInfoServiceImpl implements BasicInfoService {
     public void update(com.conurets.inventory.model.BasicInformation model) throws InventoryException {
 
         try{
-            BasicInformation entity = basicInfoConverter.fromController(model);
+            BasicInformation entity = basicInfoConverter.fromControllerupdate(model);
             daoFactory.getBasicInfoDAO().update(entity);
 
         }catch (Exception ex){

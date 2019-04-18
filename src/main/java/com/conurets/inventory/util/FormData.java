@@ -88,6 +88,7 @@ public class FormData {
     public static BasicInformation  basicinfo4mFormData(FormDatain formDatain) throws ParseException {
 
         BasicInformation basicInformation=new BasicInformation();
+        basicInformation.setId(formDatain.getId());
         basicInformation.setSerialNo(String.valueOf(formDatain.getSerialNo()));
         basicInformation.setItemId((int) formDatain.getItemId());
         basicInformation.setCompanyId((int) Math.toIntExact(formDatain.getCompanyId()));
