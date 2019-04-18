@@ -22,21 +22,21 @@ public class JmainTest {
     SimpleDateFormat simpleDateFormat;
 
     public static void main(String args[]){
-        Utilityxl obj=new Utilityxl();
-        List<BasicInfoxl> lst=obj.test();
-        lst.forEach(s -> {
-            BasicInformation basicInformation=new BasicInformation();
-
-            //Date date=simpleDateFormat.parse(s.getDate_Item_Entered());
-            Date date=new Date();
-            basicInformation.setEntryDate(date);
-            //basicInformation.se(s.getManufacturer());
-            basicInformation.setQty(Integer.valueOf(s.getQty()));
-            //basicInformation.setSerialNumber(s.getSerial_Number());
-            //basicInformation.setItemId(Integer.valueOf(s.getItem_Id()));
-            basicInfoService.save(basicInformation);
-
-        });
+//        Utilityxl obj=new Utilityxl();
+//        List<BasicInfoxl> lst=obj.test();
+//        lst.forEach(s -> {
+//            BasicInformation basicInformation=new BasicInformation();
+//
+//            //Date date=simpleDateFormat.parse(s.getDate_Item_Entered());
+//            Date date=new Date();
+//            basicInformation.setEntryDate(date);
+//            //basicInformation.se(s.getManufacturer());
+//            basicInformation.setQty(Integer.valueOf(s.getQty()));
+//            //basicInformation.setSerialNumber(s.getSerial_Number());
+//            //basicInformation.setItemId(Integer.valueOf(s.getItem_Id()));
+//            basicInfoService.save(basicInformation);
+//
+//        });
 
         //basicInfoService.save();
 
