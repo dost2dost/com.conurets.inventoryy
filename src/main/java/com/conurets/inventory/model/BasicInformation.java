@@ -64,5 +64,8 @@ public class BasicInformation  {
     private String supplierRepresentative;
     private String supplierRepresentativeMobile;
     private String supplierRepresentativeEmail;
+    private String product_category;
+    private Date warranty_Expiration;
+
 
 }

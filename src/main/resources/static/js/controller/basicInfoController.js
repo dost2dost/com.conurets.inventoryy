@@ -114,6 +114,9 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     }
     $scope.saveBasicInformation = function(){
 
+        $scope.basicInfo.calibratedDate='2019-10-10'
+        $scope.basicInfo.calibrationDueDate='2019-10-11'
+        $scope.basicInfo.calibrationValidity='2019-10-12'
        // alert("basicinfo is called ");
         console.log(JSON.stringify($scope.basicInfo));
         BasicInfoService.saveInfoDAO($scope.basicInfo);

@@ -44,6 +44,36 @@ app.controller('ctrl', ['$scope', '$http',
         }
 
 
+        $scope.saveBulk=function () {
+                var basicinfodata=JSON.stringify($scope.bulkimport);
+                $http({
+                    method: 'POST',
+                    url: '/inventory-management/saveBulk',
+                    data: basicinfodata,
+                    headers : {
+                        'Accept' : 'application/json',
+                        'Content-Type' : 'application/json',
+                        'Authorization': 'Bearer '+ localStorage.getItem("INV_USER_TOKEN")
+                    },
+                }).then(function (response) {
+
+                    if (response.data.code == 0) {
+
+                        alert('Basic Information Saved Successfully!');
+
+                    } else if (response.data.code == 101) {
+
+                        alert('Basic Information Already Exists!');
+                    }
+
+
+                }, function (err) {
+                    console.log(err);
+                    alert("Error In Saving Basic Information.");
+                });
+
+            alert("test for bulk");
+        }
         $scope.jtest=function (_data) {
             $scope.bulkimport=_data;
             // [

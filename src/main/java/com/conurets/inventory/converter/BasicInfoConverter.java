@@ -37,12 +37,54 @@ public class BasicInfoConverter {
     @Autowired
     private DAOFactory daoFactory;
 
+    public BasicInformation fromControllerXl(com.conurets.inventory.model.BasicInformation model) throws InventoryException, ParseException {
+
+        BasicInformation entity = new BasicInformation();
+
+        entity=daoFactory.getBasicInfoDAO().findById(58);
+
+        entity.setEntryDate(model.getEntryDate()) ;
+        entity.setUserId(daoFactory.getUserDAO().findById(model.getUserId()));
+        entity.setLocationId(daoFactory.getLocationDAO().findById(model.getLocationId()));
+        entity.setCompanyId(daoFactory.getCompanyDAO().findById(model.getCompanyId()));
+        entity.setItemId(daoFactory.getItemDAO().findById(model.getItemId()));
+        entity.setSerialNumber(model.getSerialNo());
+        entity.setQty(model.getQty());
+        entity.setWarranty(model.getWarranty());
+        entity.setStoredOnShelf(model.getStorageOnShelf());
+        entity.setShelfBayNumber(Integer.valueOf(model.getShelfByNo()));
+        entity.setStoredInCabinet(model.getStoredInCabnet());
+        entity.setCabinetShelfNo(Integer.valueOf(model.getCabnetShelfNo()));
+        //Caliberation
+        entity.setCalibratedDate(simpleDateFormat.parse(model.getCalibratedDate()));
+        entity.setCaliberation_Required(model.getCalibrationRequired());
+        entity.setValidityOfCalibration(simpleDateFormat.parse(model.getCalibrationValidity()));
+        entity.setCalibrationDueDate(simpleDateFormat.parse(model.getCalibrationDueDate()));
+        entity.setItemStorageLocation(model.getStorageLocation());
+        //item handling
+        entity.setSpecialHandlingNotes(model.getSpecialHandlingNotes());
+        entity.setApproxWeight(Integer.valueOf(model.getApproxWeight()));
+        entity.setSpecialHandlingRequired(model.getSpcialHandlinReq());
+        entity.setItemCondition(model.getItemCondition());
+        //entity.set(model.getItemReconditioned());
+        //Supplier info
+        entity.setSupplierId(model.getSupplierId());
+        entity.setSupplier_Rep_Id(model.getSupplier_Rep_Id());
+
+
+        entity.setCreatedBy(InventoryConstants.DEFAULT_CREATED_BY);
+        entity.setCreatedDate(InventoryUtil.currentDateTime());
+        entity.setLastUpdateBy(InventoryConstants.DEFAULT_CREATED_BY);
+        entity.setLastUpdate(InventoryUtil.currentDateTime());
+
+        return entity;
+    }
 
     public BasicInformation fromController(com.conurets.inventory.model.BasicInformation model) throws InventoryException, ParseException {
 
         BasicInformation entity = new BasicInformation();
 
-            entity=daoFactory.getBasicInfoDAO().findById(58);
+            //entity=daoFactory.getBasicInfoDAO().findById(58);
 
         entity.setEntryDate(model.getEntryDate()) ;
         entity.setUserId(daoFactory.getUserDAO().findById(model.getUserId()));

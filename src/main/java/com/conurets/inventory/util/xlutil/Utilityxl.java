@@ -1,6 +1,9 @@
 package com.conurets.inventory.util.xlutil;
 
 import com.conurets.inventory.model.BasicInfoxl;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.hssf.usermodel.HSSFHeader;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
@@ -208,8 +211,9 @@ public class Utilityxl {
 
     public boolean chkboolStatus(Row row){
 
-        System.out.println("row num :    "+row.getRowNum());
+        //System.out.println("row num :    "+row.getRowNum());
         boolean bool = false;
+        //System.out.println("row num :    "+row.getRowNum()+"bool before   "+bool);
         for(Cell cell:row){
 
 
@@ -223,7 +227,8 @@ public class Utilityxl {
             }if(cell.getColumnIndex()==2  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
                  bool=true;
                 break;
-            }if(cell.getColumnIndex()==3  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+            }if(cell.getColumnIndex()==3  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+
                  bool=true;
                 break;
             }if(cell.getColumnIndex()==4  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
@@ -235,7 +240,8 @@ public class Utilityxl {
             }if(cell.getColumnIndex()==6  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
                  bool=true;
                 break;
-            }if(cell.getColumnIndex()==7  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+            }if(cell.getColumnIndex()==7  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+
                  bool=true;
                 break;
             }if(cell.getColumnIndex()==8  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
@@ -244,14 +250,98 @@ public class Utilityxl {
             }if(cell.getColumnIndex()==9  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
                  bool=true;
                 break;
-            }if(cell.getColumnIndex()==10  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+            }if(cell.getColumnIndex()==10  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
                  bool=true;
                 break;
             }if(cell.getColumnIndex()==11  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
                  bool=true;
                 break;
+            }if(cell.getColumnIndex()==12  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+                if (HSSFDateUtil.isCellDateFormatted(cell)) {
+                    System.out.println("The cell contains a date value: " + cell.getDateCellValue()+"ronum"+cell.getRowIndex());
+                }
+                 bool=true;
+                break;
             }
-
+            //after 12
+            if(cell.getColumnIndex()==13  && !cell.getCellTypeEnum().equals(CellType.STRING) && !cell.getCellTypeEnum().equals(CellType.BLANK)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==14  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==15  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==16  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==17  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==18 && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==19 && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==20  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==21 && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==22  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==23  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==24  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==25  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+                bool=true;
+                break;
+            }
+            //after 24
+            if(cell.getColumnIndex()==26  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==27  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==28  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==29 && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==30  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==31 && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==32  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==33 && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==33  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==34  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==35  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
+                bool=true;
+                break;
+            }if(cell.getColumnIndex()==36  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
+                bool=true;
+                break;
+            }
 
         }
         return bool;

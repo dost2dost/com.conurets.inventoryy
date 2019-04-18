@@ -14,10 +14,10 @@
                 <button id="submit_btn" type="button" class="btn btn-primary" ng-click="upload()">Upload</button>
             </div>
 
-            <!------ LIST OF UPLOADED FILES ------>
+            <!------ LIST OF UPLOADED FILES
             <div> </div>
             <div id="uploaded-files-list">
-                <ul><li class="pointer" ng-repeat="file in files">{{ file.name }}</li></ul>
+                <ul><li class="pointer" ng-repeat="file in files" ng-bind="file.name"></li></ul>
             </div>
 
             <!------ UPLOAD MESSAGE ------>
@@ -58,20 +58,30 @@
             <table  class="table table-bordered bordered table-striped table-condensed datatable " ui-jq="dataTable">
                 <thead>
                 <tr>
-                    <th ng-repeat="(key, val) in bulkimport[0]">{{key}}</th>
+                    <th ng-repeat="(key, val) in bulkimport[0]" ng-bind="key"></th>
                 </tr>
 
                 </thead>
+                <tfoot>
+
+                <div>
+                    <button ng-click="saveBulk()">Save</button>
+                </div>
+                </tfoot>
                 <tbody>
                 <tr ng-repeat="item in bulkimport">
-                    <td ng-repeat="(key, val) in item">{{val}}</td>
+                    <td ng-repeat="(key, val) in item" ng-bind="val"></td>
                 </tr>
+
 
 
                 </tbody>
 
             </table>
+
+
         </div>
+
     </div>
 </div>
 

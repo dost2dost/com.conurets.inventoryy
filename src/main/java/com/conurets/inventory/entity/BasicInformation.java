@@ -60,6 +60,10 @@ public class BasicInformation extends BaseEntity {
 
     @Column(name = "caliberation_required")
     private String caliberation_Required;
+    @Column(name = "product_category")
+    private String product_category;
+    @Column(name = "warranty_Expiration")
+    private Date warranty_Expiration;
 
     public String getCaliberation_Required() {
         return caliberation_Required;
