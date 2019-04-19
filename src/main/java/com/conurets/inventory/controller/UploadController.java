@@ -1,6 +1,5 @@
 package com.conurets.inventory.controller;
 
-import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -9,9 +8,9 @@ import com.conurets.inventory.exception.InventoryException;
 import com.conurets.inventory.model.BasicInformation;
 import com.conurets.inventory.model.BasicInfoxl;
 import com.conurets.inventory.service.UploadService;
+import com.conurets.inventory.util.InventoryUtil;
 import com.conurets.inventory.util.xlutil.Utilityxl;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,8 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class UploadController extends BaseController {
 	
 	private final UploadService uploadService;
-	private  String UPLOADED_FOLDER = "E://dtemp//";
-	
+
 	public UploadController(UploadService uploadService) {
 		this.uploadService = uploadService;
 	}
@@ -32,7 +30,7 @@ public class UploadController extends BaseController {
 	public List<Map<String, String>> upload(@RequestParam("file") MultipartFile file) throws InventoryException, Exception{
 
 		String fileName=file.getOriginalFilename();
-		String fileur=UPLOADED_FOLDER+fileName;
+		String fileur= InventoryUtil.PROJECT_FILES +fileName;
 		Utilityxl obj=new Utilityxl();
 		List<BasicInfoxl> lst=obj.test(fileur);
 		lst.forEach(s -> {

@@ -19,6 +19,7 @@ public interface InventoryConstants {
     public static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
     public static final String HIBERNATE_FORMAT_SQL = "hibernate.format_sql";
     public static final String HIBERNATE_GLOBAL_QUOTED_IDENTIFIERS = "hibernate.globally_quoted_identifiers";
+    public static final String HIBERNATE_DDL_AUTO = "hibernate.hbm2ddl.auto";
 
     public static final String ENTITY_PACKAGE = "com.conurets.inventory.entity";
 

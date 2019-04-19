@@ -46,6 +46,7 @@ public class DatabaseConfiguration {
         properties.put(InventoryConstants.HIBERNATE_SHOW_SQL, environment.getRequiredProperty(InventoryConstants.HIBERNATE_SHOW_SQL));
         properties.put(InventoryConstants.HIBERNATE_FORMAT_SQL, environment.getRequiredProperty(InventoryConstants.HIBERNATE_FORMAT_SQL));
         properties.put(InventoryConstants.HIBERNATE_GLOBAL_QUOTED_IDENTIFIERS, environment.getRequiredProperty(InventoryConstants.HIBERNATE_GLOBAL_QUOTED_IDENTIFIERS));
+        properties.put(InventoryConstants.HIBERNATE_DDL_AUTO, environment.getRequiredProperty(InventoryConstants.HIBERNATE_DDL_AUTO));
         return properties;
     }
 

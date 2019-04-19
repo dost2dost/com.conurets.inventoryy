@@ -2,7 +2,6 @@ package com.conurets.inventory.util;
 
 import com.conurets.inventory.bean.ErrorResponse;
 import com.conurets.inventory.entity.Role;
-import com.conurets.inventory.exception.InvalidSessionException;
 import com.conurets.inventory.model.CustomUserDetails;
 import com.conurets.inventory.vo.BaseResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -23,6 +22,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -38,6 +38,9 @@ import java.util.stream.Collectors;
  */
 
 public class InventoryUtil {
+
+    public static final String PROJECT_FILES = System.getProperty("catalina.home") + File.separator + "MARTA_FILES" + File.separator;
+
     private static final Logger logger = LoggerFactory.getLogger(InventoryUtil.class);
 
     /**

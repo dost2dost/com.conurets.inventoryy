@@ -20,7 +20,6 @@ import java.util.List;
  */
 public class Utilityxl {
 
-    final String SAMPLE_XLSX_FILE_PATH = "E:\\dtemp\\sample import file.xlsx";
     public  List<BasicInfoxl> test(String filepath){
 
 
