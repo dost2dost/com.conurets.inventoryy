@@ -38,6 +38,33 @@ public class BasicInfoServiceImpl implements BasicInfoService {
     }
 
 
+    public void save(List<com.conurets.inventory.model.BasicInformation> lstmodel) throws InventoryException {
+
+        lstmodel.forEach((com.conurets.inventory.model.BasicInformation model) ->{
+            BasicInformation basicInfo = daoFactory.getBasicInfoDAO().findByKeyValue("serialNumber", model.getSerialNo());
+
+            if (basicInfo == null) {
+                try{
+                    BasicInformation entity = basicInfoConverter.fromController(model);
+
+                    daoFactory.getBasicInfoDAO().save(entity);
+                }catch (Exception ex){
+                    ex.printStackTrace();
+
+                }
+
+
+            } else {
+
+                return;
+
+//                InventoryHelper.handleInventoryException(InventoryConstants.STATUS_CODE_USER_ALREADY_EXISTS,
+//                        InventoryConstants.STATUS_MSG_BASIC_INFO_ALREADY_EXISTS);
+            }
+        });
+
+
+    }
     public void save(com.conurets.inventory.model.BasicInformation model) throws InventoryException {
 
         BasicInformation basicInfo = daoFactory.getBasicInfoDAO().findByKeyValue("serialNumber", model.getSerialNo());
@@ -49,6 +76,7 @@ public class BasicInfoServiceImpl implements BasicInfoService {
                 daoFactory.getBasicInfoDAO().save(entity);
             }catch (Exception ex){
                 ex.printStackTrace();
+
             }
 
 

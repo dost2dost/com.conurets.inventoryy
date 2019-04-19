@@ -142,10 +142,22 @@ public class BasicInfoConverter {
         entity.setStoredInCabinet(model.getStoredInCabnet());
         entity.setCabinetShelfNo(Integer.valueOf(model.getCabnetShelfNo()));
         //Caliberation
-        entity.setCalibratedDate(simpleDateFormat.parse(model.getCalibratedDate()));
+        if(model.getCalibratedDate()==null||model.getCalibratedDate().equals("")){
+
+        }else {
+            entity.setCalibratedDate(simpleDateFormat.parse(model.getCalibratedDate()));
+        }
         entity.setCaliberation_Required(model.getCalibrationRequired());
-        entity.setValidityOfCalibration(simpleDateFormat.parse(model.getCalibrationValidity()));
-        entity.setCalibrationDueDate(simpleDateFormat.parse(model.getCalibrationDueDate()));
+        if(model.getCalibrationValidity()==null || model.getCalibrationValidity().equals("")){
+
+        }else {
+            entity.setValidityOfCalibration(simpleDateFormat.parse(model.getCalibrationValidity()));
+        }
+        if(model.getCalibrationDueDate()==null || model.getCalibrationDueDate().equals("")){
+
+        }else {
+            entity.setCalibrationDueDate(simpleDateFormat.parse(model.getCalibrationDueDate()));
+        }
         entity.setItemStorageLocation(model.getStorageLocation());
         //item handling
         entity.setSpecialHandlingNotes(model.getSpecialHandlingNotes());

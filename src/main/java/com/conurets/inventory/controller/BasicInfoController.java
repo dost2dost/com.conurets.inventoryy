@@ -33,6 +33,7 @@ public class BasicInfoController extends BaseController {
 
         BasicInformation basicInformation= FormData.basicinfo4mFormData(frmDataIn);
 
+
         basicInfoService.save(basicInformation);
 
         BaseResponse<Object> baseResponse = InventoryUtil.setBaseResponse(InventoryConstants.STATUS_CODE_SUCCESS,
@@ -46,6 +47,7 @@ public class BasicInfoController extends BaseController {
     public ResponseEntity<?> updateRecord(@Valid @RequestBody FormDatain frmDataIn) throws ParseException {
 
         BasicInformation basicInformation= FormData.basicinfo4mFormData(frmDataIn);
+
 
         basicInfoService.update(basicInformation);
 

@@ -15,6 +15,7 @@ import java.util.List;
 public interface BasicInfoService {
 
     void save(BasicInformation model) throws InventoryException;
+    void save(List<BasicInformation> model) throws InventoryException;
 
 
     void update(BasicInformation model) throws InventoryException;

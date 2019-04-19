@@ -43,6 +43,7 @@ public class ReportController extends BaseController{
 
         System.out.println("just for testing ");
         List<BasicInfoxl> lstB=basicInfoxls;
+        List<BasicInformation> lstBasicinfo=new ArrayList<>();
 
         lstB.forEach(s->{
 
@@ -51,13 +52,14 @@ public class ReportController extends BaseController{
             BasicInformation basicInformation= new BasicInformation();
             try {
                 basicInformation = FormData.basicinfo4mXLData(basicInfoxl);
-                basicInfoService.save(basicInformation);
+
+                lstBasicinfo.add(basicInformation);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
         });
 
-
+        basicInfoService.save((List<BasicInformation>) lstBasicinfo);
 
 
 
