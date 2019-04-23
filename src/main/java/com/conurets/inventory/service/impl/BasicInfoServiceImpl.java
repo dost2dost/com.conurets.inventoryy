@@ -40,6 +40,8 @@ public class BasicInfoServiceImpl implements BasicInfoService {
 
     public void save(List<com.conurets.inventory.model.BasicInformation> lstmodel) throws InventoryException {
 
+
+
         lstmodel.forEach((com.conurets.inventory.model.BasicInformation model) ->{
             BasicInformation basicInfo = daoFactory.getBasicInfoDAO().findByKeyValue("serialNumber", model.getSerialNo());
 
@@ -120,6 +122,7 @@ public class BasicInfoServiceImpl implements BasicInfoService {
     @Override
     public FormDatain fetchEditform(String frmDate) throws InventoryException {
       FormDatain  basicInfoVOList = daoFactory.getBasicInfoDAO().fetchEditForm(frmDate);
+
         return basicInfoVOList;
     }
 

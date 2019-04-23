@@ -12,7 +12,7 @@
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <div>Date</div>
-                <input type="Date" name="date"  ng-bind="basicInfo.entryDate|date:'yyyy-MM-dd'" required class="form-control" id="datepicker"/>
+                <input type="Text" name="date"  ng-model="basicInfo.entryDate|date:'yyyy-MM-dd'" required class="form-control" id="datepicker"/>
 
             </div>
         </div>
@@ -47,13 +47,23 @@
 
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
-                <div>Item Description</div>
-                <select name="itemId" ng-model="basicInfo.itemId" required class="form-control">
+                <div>Item Code</div>
+                <input type="text" name="itemCode"  ng-model="basicInfo.itemCode" class="form-control"/>
+
+                <!--<select name="itemId" ng-model="basicInfo.itemId" required class="form-control">
+
                     <option value="">---Please Select---</option>
                     <option ng-repeat="x in itemDAOs" value={{x.id}}>{{x.itemDescription}}</option>
-                </select>
+                </select>-->
             </div>
         </div>
+        <div class="col-xl-4 col-lg-6">
+            <div class="form-group">
+                <div>Item Description</div>
+                <input type="text" name="itemDescription" ng-model="basicInfo.itemDescription" class="form-control"/>
+            </div>
+        </div>
+
 
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">

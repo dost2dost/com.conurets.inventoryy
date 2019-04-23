@@ -30,6 +30,8 @@ public class DAOFactoryImpl implements DAOFactory {
     private RoleDAO roleDAO;
     @Autowired
     private UserRoleDAO userRoleDAO;
+    @Autowired
+    private SupplierInformationDAO supplierInformationDAO;
 
     /**
      * Checking @Autowired object
@@ -45,6 +47,7 @@ public class DAOFactoryImpl implements DAOFactory {
         InventoryHelper.checkConfiguration(basicInfoDAO, "basicInfoDAO");
         InventoryHelper.checkConfiguration(roleDAO, "roleDAO");
         InventoryHelper.checkConfiguration(userRoleDAO, "userRoleDAO");
+        InventoryHelper.checkConfiguration(supplierInformationDAO, "supplierInformationDAO");
     }
 
     public UserDAO getUserDAO() {
@@ -105,6 +108,11 @@ public class DAOFactoryImpl implements DAOFactory {
 
     public UserRoleDAO getUserRoleDAO() {
         return userRoleDAO;
+    }
+
+
+    public SupplierInformationDAO getSupplierInformationDao() {
+        return supplierInformationDAO;
     }
 
     public void setUserRoleDAO(UserRoleDAO userRoleDAO) {

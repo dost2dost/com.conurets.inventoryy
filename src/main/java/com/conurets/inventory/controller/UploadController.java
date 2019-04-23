@@ -43,7 +43,7 @@ public class UploadController extends BaseController {
 			basicInformation.setLocationId(1);
 			basicInformation.setUserId(1);
 			basicInformation.setCompanyId(1);
-			basicInformation.setItemId(1);
+			//basicInformation.setItemId(1);
 			basicInformation.setQty(Integer.valueOf(s.getQty()));
 			basicInformation.setSerialNo(String.valueOf(System.currentTimeMillis()));
 			//basicInformation.setSerialNumber(s.getSerial_Number());

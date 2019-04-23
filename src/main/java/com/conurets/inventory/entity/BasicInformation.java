@@ -22,6 +22,7 @@ public class BasicInformation extends BaseEntity {
     @JoinColumn(name = "location_id")
     private Location locationId;
 
+
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User userId;
@@ -32,7 +33,11 @@ public class BasicInformation extends BaseEntity {
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "item_id")
-    private Item itemId;
+    private Item item;
+
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name = "supplier_id")
+    private SupplierInformation supplierInformation;
 
     @Column(name = "serial_number")
     private String serialNumber;
@@ -65,6 +70,15 @@ public class BasicInformation extends BaseEntity {
     @Column(name = "warranty_Expiration")
     private Date warranty_Expiration;
 
+
+    public SupplierInformation getSupplierInformation() {
+        return supplierInformation;
+    }
+
+    public void setSupplierInformation(SupplierInformation supplierInformation) {
+        this.supplierInformation = supplierInformation;
+    }
+
     public String getCaliberation_Required() {
         return caliberation_Required;
     }
@@ -94,19 +108,12 @@ public class BasicInformation extends BaseEntity {
     @Column(name = "Special_Handling_Required")
     private String specialHandlingRequired;
 
-    @Column(name = "Supplier_ID")
-    private Integer supplierId;
+
 
     @Column(name = "Supplier_Rep_ID")
     private Integer supplier_Rep_Id;
 
-    public Integer getSupplierId() {
-        return supplierId;
-    }
 
-    public void setSupplierId(Integer supplierId) {
-        this.supplierId = supplierId;
-    }
 
     public Integer getSupplier_Rep_Id() {
         return supplier_Rep_Id;
@@ -188,12 +195,12 @@ public class BasicInformation extends BaseEntity {
         this.companyId = companyId;
     }
 
-    public Item getItemId() {
-        return itemId;
+    public Item getItem() {
+        return item;
     }
 
-    public void setItemId(Item itemId) {
-        this.itemId = itemId;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public String getSerialNumber() {
@@ -286,4 +293,21 @@ public class BasicInformation extends BaseEntity {
         this.itemCondition = itemCondition;
     }
 
+
+
+    public String getProduct_category() {
+        return product_category;
+    }
+
+    public void setProduct_category(String product_category) {
+        this.product_category = product_category;
+    }
+
+    public Date getWarranty_Expiration() {
+        return warranty_Expiration;
+    }
+
+    public void setWarranty_Expiration(Date warranty_Expiration) {
+        this.warranty_Expiration = warranty_Expiration;
+    }
 }

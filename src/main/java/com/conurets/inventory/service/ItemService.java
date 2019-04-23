@@ -1,6 +1,7 @@
 package com.conurets.inventory.service;
 
 import com.conurets.inventory.exception.InventoryException;
+import com.conurets.inventory.model.Items;
 import com.conurets.inventory.model.User;
 import com.conurets.inventory.vo.ItemVO;
 
@@ -16,7 +17,7 @@ public interface ItemService {
 
     ItemVO findById(long id) throws InventoryException;
 
-    void save(User model) throws InventoryException;
+    void save(Items model) throws InventoryException;
 
     void update(User model) throws InventoryException;
 

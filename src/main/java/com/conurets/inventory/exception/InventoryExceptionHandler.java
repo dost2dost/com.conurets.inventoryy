@@ -26,6 +26,8 @@ public class InventoryExceptionHandler {
     public ResponseEntity<ErrorResponse> handleMarta(InventoryException e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(e.getPosition(), e.getMessage());
 
+        logger.error(""+ e);
+
         return ResponseEntity.ok(response);
     }
 

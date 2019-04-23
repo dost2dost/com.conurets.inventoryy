@@ -25,4 +25,30 @@ public class BasicInfoxl {
     private String qty;
     private String warranty;
     private String warranty_Expiration;
+
+    private String  storageLocation;
+    private String  storedOnShelf;
+    private String  shelfBayNo;
+    private String  storedInCabinet;
+    private String  cabinetShelfNo;
+    private String  specialHandlingRequired;
+    private String  specialHandlingNotes;
+    private String  approxWeight;
+    private String  calibrationRequired;
+    private String  dateCalibrated;
+    private String  validityOfCalibration;
+    private String  calibrationDueDate;
+    private String  used;
+    private String  reconditioned;
+    private String  useable;
+    private String  supplier;
+    private String  supplierRepresentative;
+    private String  supplierRepresentativeMobile;
+    private String  supplierRepresentativeEmail;
+    private String  date;
+    private String  tracking;
+    private String  dateofRMA;
+    private String  notes;
+    private String  comments;
+
 }

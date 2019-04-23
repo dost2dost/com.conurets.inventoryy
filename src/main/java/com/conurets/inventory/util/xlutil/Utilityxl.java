@@ -27,12 +27,14 @@ public class Utilityxl {
         List<BasicInfoxl> lstBase=new ArrayList<>();
         BasicInfoxl basicInformation=null;
          Workbook workbook = null;
+        int numRows=0;
+        int numCols=0;
 
         try {
             workbook = WorkbookFactory.create(new File(filepath));
             Sheet sheet = workbook.getSheetAt(0);
-            int numRows = sheet.getLastRowNum()+1;
-            int numCols = sheet.getRow(0).getLastCellNum();
+             numRows = sheet.getLastRowNum()+1;
+             numCols = sheet.getRow(0).getLastCellNum();
             String[][] excelData = new String[numRows][numCols];
             String value="";
             final boolean b=false;
@@ -40,27 +42,32 @@ public class Utilityxl {
             for (int i=3; i<numRows; i++) {
                 Row row = sheet.getRow(i);
 
-                boolean bb=chkboolStatus(row);
-                System.out.println("chk   : "+bb);
-
-
-
-
-
                 //System.out.println("bool: "+bool);
 
-                for (int j=0; j<=12; j++) {
+                for (int j=0; j<=numCols; j++) {
                     Cell cell = row.getCell(j);
 
                     // String cellValue = dataFormatter.formatCellValue(cell);
-                    String cellValue = chkCelType(cell);
+                    String cellValue="";
+                    if(cell==null){
+
+                    }else{
+                         cellValue = chkCelType(cell);
+                    }
+
 
 
                     //value = obj.cellToString(cellValue);
-                    value = cellValue;
+                    if(cellValue.isEmpty() ||cellValue.equals("")){
+
+                    }else{
+                        value = cellValue;
+                        excelData[i][j] = value;
+                    }
 
 
-                    excelData[i][j] = value;
+
+
 
                 }
             }
@@ -73,7 +80,7 @@ public class Utilityxl {
             for (int i=3; i<numRows; i++) {
 
                 basicInformation=new BasicInfoxl();
-                for (int j = 0; j <= 12; j++) {
+                for (int j = 0; j <= numCols; j++) {
 
 
                     switch (j) {
@@ -116,6 +123,104 @@ public class Utilityxl {
                         case 12:
                             basicInformation.setWarranty_Expiration(excelData[i][j]);
                             break;
+
+                            //case 13:
+//                            basicInformation.setWarranty_Expiration(excelData[i][j]);
+//                            break;
+                            case 14:
+                            basicInformation.setStorageLocation(excelData[i][j]);
+                            break;
+                            case 15:
+                            basicInformation.setStoredOnShelf(excelData[i][j]);
+                            break;
+                            case 16:
+                            basicInformation.setShelfBayNo(excelData[i][j]);
+                            break;
+                            case 17:
+                            basicInformation.setStoredInCabinet(excelData[i][j]);
+                            break;
+                            case 18:
+                            basicInformation.setCabinetShelfNo(excelData[i][j]);
+                            break;
+//                            case 19:
+//                            basicInformation.setCabinetShelfNo(excelData[i][j]);
+//                            break;
+                            case 20:
+                            basicInformation.setSpecialHandlingRequired(excelData[i][j]);
+                            break;
+                            case 21:
+                            basicInformation.setSpecialHandlingNotes(excelData[i][j]);
+                            break;
+                            case 22:
+                            basicInformation.setApproxWeight(excelData[i][j]);
+                            break;
+//                            case 23:
+//                            basicInformation.setApproxWeight(excelData[i][j]);
+//                            break;
+
+                            case 24:
+                            basicInformation.setCalibrationRequired(excelData[i][j]);
+                            break;
+                            case 25:
+                            basicInformation.setDateCalibrated(excelData[i][j]);
+                            break;
+                            case 26:
+                            basicInformation.setValidityOfCalibration(excelData[i][j]);
+                            break;
+                            case 27:
+                            basicInformation.setCalibrationDueDate(excelData[i][j]);
+                            break;
+//                            case 28:
+//                            basicInformation.setCalibrationDueDate(excelData[i][j]);
+//                            break;
+                            case 29:
+                            basicInformation.setUsed(excelData[i][j]);
+                            break;
+                            case 30:
+                            basicInformation.setReconditioned(excelData[i][j]);
+                            break;
+                            case 31:
+                            basicInformation.setUseable(excelData[i][j]);
+                            break;
+//                            case 32:
+//                            basicInformation.setUseable(excelData[i][j]);
+//                            break;
+                            case 33:
+                            basicInformation.setSupplier(excelData[i][j]);
+                            break;
+                            case 34:
+                            basicInformation.setSupplierRepresentative(excelData[i][j]);
+                            break;
+                            case 35:
+                            basicInformation.setSupplierRepresentativeMobile(excelData[i][j]);
+                            break;
+                            case 36:
+                            basicInformation.setSupplierRepresentativeEmail(excelData[i][j]);
+                            break;
+//                            case 37:
+//                            basicInformation.setSupplierRepresentativeEmail(excelData[i][j]);
+//                            break;
+                            case 38:
+                            basicInformation.setDate(excelData[i][j]);
+                            break;
+                            case 39:
+                            basicInformation.setTracking(excelData[i][j]);
+                            break;
+                            case 40:
+                            basicInformation.setDateofRMA(excelData[i][j]);
+                            break;
+                            case 41:
+                            basicInformation.setNotes(excelData[i][j]);
+                            break;
+//                            case 42:
+//                            basicInformation.(excelData[i][j]);
+//                            break;
+                            case 43:
+                            basicInformation.setComments(excelData[i][j]);
+                            break;
+//                            case 44:
+//                            basicInformation.(excelData[i][j]);
+//                            break; */
 
                     }
 
@@ -208,141 +313,5 @@ public class Utilityxl {
 
     }
 
-    public boolean chkboolStatus(Row row){
 
-        //System.out.println("row num :    "+row.getRowNum());
-        boolean bool = false;
-        //System.out.println("row num :    "+row.getRowNum()+"bool before   "+bool);
-        for(Cell cell:row){
-
-
-
-            if(cell.getColumnIndex()==0  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==1  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==2  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==3  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==4  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==5  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==6  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==7  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==8  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==9  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==10  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==11  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                 bool=true;
-                break;
-            }if(cell.getColumnIndex()==12  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                if (HSSFDateUtil.isCellDateFormatted(cell)) {
-                    System.out.println("The cell contains a date value: " + cell.getDateCellValue()+"ronum"+cell.getRowIndex());
-                }
-                 bool=true;
-                break;
-            }
-            //after 12
-            if(cell.getColumnIndex()==13  && !cell.getCellTypeEnum().equals(CellType.STRING) && !cell.getCellTypeEnum().equals(CellType.BLANK)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==14  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==15  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==16  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==17  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==18 && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==19 && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==20  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==21 && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==22  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==23  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==24  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==25  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                bool=true;
-                break;
-            }
-            //after 24
-            if(cell.getColumnIndex()==26  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==27  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==28  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==29 && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==30  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==31 && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==32  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==33 && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==33  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==34  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==35  && !cell.getCellTypeEnum().equals(CellType.NUMERIC)) {
-                bool=true;
-                break;
-            }if(cell.getColumnIndex()==36  && !cell.getCellTypeEnum().equals(CellType.STRING)) {
-                bool=true;
-                break;
-            }
-
-        }
-        return bool;
-    }
 }

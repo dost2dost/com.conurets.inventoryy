@@ -1,5 +1,7 @@
 package com.conurets.inventory.model;
 
+import com.conurets.inventory.entity.Item;
+import com.conurets.inventory.entity.SupplierInformation;
 import com.conurets.inventory.util.validation.annotation.InventoryNotNull;
 import lombok.*;
 
@@ -30,7 +32,7 @@ public class BasicInformation  {
     private Integer companyId;
 
     @InventoryNotNull(message = "Item Id cannot be null")
-    private Integer itemId;
+    private Item item;
 
     @InventoryNotNull(message = "Serial No cannot be null")
     private String serialNo;
@@ -59,12 +61,13 @@ public class BasicInformation  {
     private String itemReconditioned;
     private String itemCondition;
     private String itemUseable;
-    private Integer supplierId;
+    private SupplierInformation supplierInformation;
     private Integer supplier_Rep_Id;
     private String supplierRepresentative;
     private String supplierRepresentativeMobile;
     private String supplierRepresentativeEmail;
     private String product_category;
+    private String itemDescription;
     private Date warranty_Expiration;
 
 

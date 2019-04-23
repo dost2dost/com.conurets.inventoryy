@@ -7,14 +7,15 @@
 app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,ItemService,BasicInfoService, $http)
 {
     $scope.basicInfo ={};
-    $scope.basicInfo.entryDate ='2019-10-14';
+    $scope.basicInfo.entryDate =$( "#datepicker" ).val();;
     $scope.basicInfo.userName ='Iraj Khan';
     $scope.basicInfo.userId= 1;
     $scope.basicInfo.Id='';
     $scope.basicInfo.location ='';
     $scope.basicInfo.company ='';
     $scope.basicInfo.companyId = 1;
-    $scope.basicInfo.itemId ='';
+    $scope.basicInfo.itemId ='1';
+    $scope.basicInfo.itemDescription ='';
     $scope.basicInfo.serialNo ='';
     $scope.basicInfo.qty ='';
     $scope.basicInfo.warranty ='';
@@ -115,9 +116,12 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     }
     $scope.saveBasicInformation = function(){
 
-        $scope.basicInfo.calibratedDate='2019-10-10'
-        $scope.basicInfo.calibrationDueDate='2019-10-11'
-        $scope.basicInfo.calibrationValidity='2019-10-12'
+
+
+        $scope.basicInfo.calibratedDate= $('#calibDate').val();
+        $scope.basicInfo.calibrationDueDate=$('#calbduedate').val();
+        $scope.basicInfo.calibrationValidity=$('#calbValid').val();
+        $scope.basicInfo.entryDate=$('#datepicker').val();
        // alert("basicinfo is called ");
         console.log(JSON.stringify($scope.basicInfo));
         BasicInfoService.saveInfoDAO($scope.basicInfo);

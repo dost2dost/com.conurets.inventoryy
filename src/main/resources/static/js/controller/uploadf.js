@@ -15,7 +15,7 @@ app.directive('fileInput', ['$parse', function($parse) {
         }
     }
 }]);
-app.controller('ctrl', ['$scope', '$http',
+app.controller("ctrl", ['$scope', '$http',
     function($scope, $http) {
         $scope.filesChanged = function(elm) {
             $scope.files = elm.files

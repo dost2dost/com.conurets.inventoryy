@@ -5,7 +5,9 @@ import com.conurets.inventory.dao.factory.DAOFactory;
 import com.conurets.inventory.entity.Item;
 import com.conurets.inventory.entity.User;
 import com.conurets.inventory.exception.InventoryException;
+import com.conurets.inventory.model.Items;
 import com.conurets.inventory.service.ItemService;
+import com.conurets.inventory.util.InventoryConstants;
 import com.conurets.inventory.util.InventoryHelper;
 import com.conurets.inventory.vo.ItemVO;
 import org.slf4j.Logger;
@@ -62,17 +64,19 @@ public class ItemServiceImpl implements ItemService {
         return itemConverter.toController(item);
     }
 
-    public void save(com.conurets.inventory.model.User model) throws InventoryException {
-     /*   User user = daoFactory.getUserDAO().findByKeyValue("username", model.getUsername());
+    public void save(com.conurets.inventory.model.Items model) throws InventoryException {
+       Item user =new Item();
+       user=daoFactory.getItemDAO().findByKeyValue("item_description",model.getItemDescription());
+
 
         if (user == null) {
-            User entity = itemConverter.fromController(model);
+            Item entity = itemConverter.fromController(model);
 
-            daoFactory.getUserDAO().save(entity);
+            daoFactory.getItemDAO().save(entity);
         } else {
             InventoryHelper.handleInventoryException(InventoryConstants.STATUS_CODE_USER_ALREADY_EXISTS,
                     InventoryConstants.STATUS_MSG_USER_ALREADY_EXISTS);
-        }*/
+        }
     }
 
     public void update(com.conurets.inventory.model.User model) throws InventoryException {

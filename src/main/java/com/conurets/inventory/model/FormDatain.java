@@ -24,11 +24,12 @@ public class FormDatain {
     private String userName;
     private String location;
     private String company;
-    private String item_description;
+    private String itemDescription;
     private Integer serialNo;
     private Integer qty;
     private String warranty;
     private String manufacturer;
+    private String itemCode;
 
     private String storageLocation;
     private String storageOnShelf;

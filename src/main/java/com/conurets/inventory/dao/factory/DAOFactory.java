@@ -25,4 +25,5 @@ public interface DAOFactory {
     RoleDAO getRoleDAO();
 
     UserRoleDAO getUserRoleDAO();
+    SupplierInformationDAO getSupplierInformationDao();
 }

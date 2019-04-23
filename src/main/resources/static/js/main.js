@@ -1,4 +1,6 @@
-var app = angular.module("CIMS", ['ui.utils']);
+
+
+var app = angular.module("CIMS",[]);
 
 
 app.controller("form", function ($scope) {
@@ -7,7 +9,7 @@ app.controller("form", function ($scope) {
 
 
 
-app.controller('ctrl2', function ($scope) {
+app.controller("ctrl2", function ($scope) {
 
     $scope.data2 = [
         [
