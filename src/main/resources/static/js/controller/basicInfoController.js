@@ -47,11 +47,11 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
     $scope.basicInfo.itemCondition ='';
 
 
-        $scope.myFunc=function () {
+    $scope.myFunc=function () {
 
-            console.log($scope.basicInfo.entryDate);
+        console.log($scope.basicInfo.entryDate);
 
-        }
+    }
 
     $scope.data = {
 
@@ -122,7 +122,7 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
         $scope.basicInfo.calibrationDueDate=$('#calbduedate').val();
         $scope.basicInfo.calibrationValidity=$('#calbValid').val();
         $scope.basicInfo.entryDate=$('#datepicker').val();
-       // alert("basicinfo is called ");
+        // alert("basicinfo is called ");
         console.log(JSON.stringify($scope.basicInfo));
         BasicInfoService.saveInfoDAO($scope.basicInfo);
     };
@@ -170,24 +170,24 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
 
     $scope.supplierRep =[{"id":"1","name":"dost"}]
     $scope.servers =
-    [
-        {
-            "id": "1",
-            "name": "JMA",
-            "version":
-                [
-                    "John Fletcher"
-                ]
-        },
-        {
-            "id": "2",
-            "name": "Corning",
-            "version":
-                [
-                    "John Fletcher", "David Smith"
-                ]
-        }
-    ];
+        [
+            {
+                "id": "1",
+                "name": "JMA",
+                "version":
+                    [
+                        "John Fletcher"
+                    ]
+            },
+            {
+                "id": "2",
+                "name": "Corning",
+                "version":
+                    [
+                        "John Fletcher", "David Smith"
+                    ]
+            }
+        ];
 
 });
 

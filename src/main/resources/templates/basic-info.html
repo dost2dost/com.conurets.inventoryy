@@ -12,7 +12,7 @@
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <div>Date</div>
-                <input type="Text" name="date"  ng-model="basicInfo.entryDate|date:'yyyy-MM-dd'" required class="form-control" id="datepicker"/>
+                <input type="Date" name="date" ng-model="basicInfo.entryDate" ng-bind="basicInfo.entryDate|date:'yyyy-MM-dd'" required class="form-control" id="datepicker"/>
 
             </div>
         </div>
@@ -63,7 +63,6 @@
                 <input type="text" name="itemDescription" ng-model="basicInfo.itemDescription" class="form-control"/>
             </div>
         </div>
-
 
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
