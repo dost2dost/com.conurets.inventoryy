@@ -25,7 +25,7 @@ public class FormDatain {
     private String location;
     private String company;
     private String itemDescription;
-    private Integer serialNo;
+    private String serialNo;
     private Integer qty;
     private String warranty;
     private String manufacturer;

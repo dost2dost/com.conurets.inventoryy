@@ -1,8 +1,8 @@
 
 
-var app = angular.module("CIMS",[]);
+var app = angular.module("CIMS", []);
 
-
+//'ngMessages', 'daterangepicker'
 app.controller("form", function ($scope) {
 
 });

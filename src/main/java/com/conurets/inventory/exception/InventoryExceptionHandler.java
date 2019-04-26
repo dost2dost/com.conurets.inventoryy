@@ -26,7 +26,7 @@ public class InventoryExceptionHandler {
     public ResponseEntity<ErrorResponse> handleMarta(InventoryException e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(e.getPosition(), e.getMessage());
 
-        logger.error(""+ e);
+        logger.error("handleMarta: "+ e);
 
         return ResponseEntity.ok(response);
     }
@@ -35,12 +35,16 @@ public class InventoryExceptionHandler {
     public ResponseEntity<ErrorResponse> handleConfiguration(ConfigurationException e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(e.getPosition(), e.getMessage());
 
+        logger.error("handleMarta: "+ e);
+
         return ResponseEntity.ok(response);
     }
 
     @ExceptionHandler(InvalidDataException.class)
     public ResponseEntity<ErrorResponse> handleInvalidData(InvalidDataException e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(e.getPosition(), e.getMessage());
+
+        logger.error("handleInvalidData: "+ e);
 
         return ResponseEntity.ok(response);
     }
@@ -49,7 +53,7 @@ public class InventoryExceptionHandler {
     public ResponseEntity<ErrorResponse> handleEntityNotFound(EntityNotFoundException e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(e.getPosition(), e.getMessage());
 
-        logger.error("error: "+ e);
+        logger.error("handleEntityNotFound: "+ e);
 
         return ResponseEntity.ok(response);
     }
@@ -59,6 +63,8 @@ public class InventoryExceptionHandler {
     public ResponseEntity<ErrorResponse> handleBadRequest(SQLException e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(InventoryConstants.STATUS_CODE_INVALID_DATA, e.getMessage());
 
+        logger.error("handleBadRequest: "+ e);
+
         return ResponseEntity.ok(response);
     }
 
@@ -67,6 +73,8 @@ public class InventoryExceptionHandler {
     public ResponseEntity<ErrorResponse> handleException(Exception e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(InventoryConstants.STATUS_CODE_UNKONWN, e.getMessage());
 
+        logger.error("handleException: "+ e);
+
         return ResponseEntity.ok(response);
     }
 
@@ -74,6 +82,8 @@ public class InventoryExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidation(MethodArgumentNotValidException e) {
         ErrorResponse response = InventoryUtil.setErrorResponse(InventoryConstants.STATUS_CODE_INVALID_INPUT_DATA, e.getBindingResult());
+
+        logger.error("handleValidation: "+ e);
 
         return ResponseEntity.ok(response);
     }

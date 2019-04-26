@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.thymeleaf.util.DateUtils;
 import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.text.ParseException;
@@ -200,8 +201,9 @@ public class BasicInfoConverter {
         return entity;
     }
 
-    public List<BasicInfoVO> toReportController(List<BasicInformation> entity) {
+    public List<BasicInfoVO> toReportController(List<BasicInformation> entity) throws InventoryException {
 
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
         List<BasicInfoVO> basicInfoVOList = null;
 
         if(entity!=null){
@@ -212,15 +214,44 @@ public class BasicInfoConverter {
 
                 BasicInfoVO basicVO = new BasicInfoVO();
 
+
                 basicVO.setEntryDate(entity.get(i).getEntryDate());
                 basicVO.setUserName(daoFactory.getUserDAO().findById(entity.get(i).getUserId().getUserId()).getUsername());
+                basicVO.setUserId(entity.get(i).getUserId().getUserId());
                 basicVO.setLocationName(daoFactory.getLocationDAO().findById(entity.get(i).getLocationId().getLoginUserId()).getLocation()) ;
+                basicVO.setLocationId(entity.get(i).getLocationId().getLoginUserId());
                 basicVO.setCompanyName(daoFactory.getCompanyDAO().findById(entity.get(i).getCompanyId().getCompanyId()).getCompany());
+                basicVO.setCompanyId(entity.get(i).getCompanyId().getCompanyId());
                 basicVO.setItemName(daoFactory.getItemDAO().findById(entity.get(i).getItem().getItemId()).getItemDescription()) ;
                 basicVO.setItemId(daoFactory.getItemDAO().findById(entity.get(i).getItem().getItemId()).getItemId());
 
                 basicVO.setSerialNumber(entity.get(i).getSerialNumber());
                 basicVO.setQty(entity.get(i).getQty());
+                basicVO.setApproxWeight(String.valueOf(entity.get(i).getApproxWeight()));
+                basicVO.setCabnetShelfNo(String.valueOf(entity.get(i).getCabinetShelfNo()));
+                basicVO.setCalibratedDate(String.valueOf(entity.get(i).getCalibratedDate()));
+                basicVO.setCalibrationDueDate(String.valueOf(entity.get(i).getCalibrationDueDate()));
+                basicVO.setCalibrationValidity(String.valueOf(entity.get(i).getValidityOfCalibration()));
+                basicVO.setItemCondition(String.valueOf(entity.get(i).getItemCondition()));
+
+
+                basicVO.setStorageLocation(String.valueOf(entity.get(i).getItemStorageLocation()));
+                basicVO.setStorageOnShelf(String.valueOf(entity.get(i).getStoredOnShelf()));
+                basicVO.setShelfByNo(String.valueOf(entity.get(i).getShelfBayNumber()));
+                basicVO.setStoredInCabnet(String.valueOf(entity.get(i).getStoredInCabinet()));
+                basicVO.setSpcialHandlinReq(String.valueOf(entity.get(i).getSpecialHandlingRequired()));
+                basicVO.setSpecialHandlingNotes(String.valueOf(entity.get(i).getSpecialHandlingNotes()));
+                basicVO.setCalibrationRequired(String.valueOf(entity.get(i).getCaliberation_Required()));
+
+                //supplier information
+                if(entity.get(i).getSupplierInformation()!=null){
+                    basicVO.setSupplierName(String.valueOf(entity.get(i).getSupplierInformation().getSupplier()));
+                    basicVO.setSupplierRepresentative(String.valueOf(entity.get(i).getSupplierInformation().getRepresentative()));
+                    basicVO.setSupplierRepresentativeMobile(String.valueOf(entity.get(i).getSupplierInformation().getMobile()));
+                    basicVO.setSupplierRepresentativeEmail(String.valueOf(entity.get(i).getSupplierInformation().getEmail()));
+                    basicVO.setWarranty_Expiration(entity.get(i).getWarranty_Expiration());
+                }
+
 
                 basicInfoVOList.add(basicVO);
             }
@@ -253,6 +284,9 @@ public class BasicInfoConverter {
                  basicVO.setCalibrationDueDate(caliberationduedate);
                  basicVO.setCalibratedDate(caliberatedDate);
                  basicVO.setId(entity.getBasicInformationId());
+                 basicVO.setItemDescription(entity.getItem().getItemDescription());
+                 basicVO.setItemCode(entity.getItem().getItemCode());
+
 
              }catch (Exception ex){
                  ex.printStackTrace();
@@ -264,7 +298,7 @@ public class BasicInfoConverter {
             basicVO.setCompany(daoFactory.getCompanyDAO().findById(entity.getCompanyId().getCompanyId()).getCompany());
             //basicVO.setItem_description(daoFactory.getItemDAO().findById(entity.getItem().getItemId()).getItemDescription());
             basicVO.setItemId(daoFactory.getItemDAO().findById(entity.getItem().getItemId()).getItemId());
-            basicVO.setSerialNo(Integer.valueOf(entity.getSerialNumber()));
+            basicVO.setSerialNo(entity.getSerialNumber());
             basicVO.setQty(Integer.valueOf(String.valueOf(entity.getQty())));
             basicVO.setApproxWeight(String.valueOf(entity.getApproxWeight()));
             basicVO.setCabnetShelfNo(entity.getCabinetShelfNo());

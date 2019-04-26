@@ -22,9 +22,8 @@
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- datepicker-->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.13/daterangepicker.min.css"/>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
 </head>
 
 <body ng-app="CIMS">
@@ -35,6 +34,7 @@
 <!--<report-left-panel></report-left-panel>-->
 
 <!-- start content -->
+<div  ng-controller="reportCtrl">
 <section class="content">
 
     <div class="title border-bottom">
@@ -78,11 +78,16 @@
 
 <div ng-include="'footer'"></div>
 
-
+</div>
+<!-- Pdf liberary -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 <!-- Optional JavaScript Angular -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.angularjs.org/1.7.5/angular.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js'></script>
+
 <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>-->
 <script src="/inventory-management/js/main.js"></script>
 <script src="/inventory-management/js/directive.js"></script>
@@ -99,30 +104,45 @@
         crossorigin="anonymous"></script>
 
 
+<!--  jspdf lib-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <!--  Datatable js-->
 <script src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
 
 <!-- Optional Datepicker-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.13/daterangepicker.min.js"></script>
-<!-- endbower -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script><!-- endbower -->
 
 <script src="https://fragaria.github.io/angular-daterangepicker/js/angular-daterangepicker.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 
 <script src="/inventory-management/js/controller/services/itemService.js" type="text/javascript"></script>
 <script src="/inventory-management/js/controller/services/locationService.js" type="text/javascript"></script>
 <script src="/inventory-management/js/controller/services/companyService.js" type="text/javascript"></script>
 <script src="/inventory-management/js/controller/services/basicInfoService.js" type="text/javascript"></script>
+<script src="/inventory-management/js/controller/services/reportService.js" type="text/javascript"></script>
 <script src="/inventory-management/js/controller/basicInfoController.js" type="text/javascript"></script>
+<script src="/inventory-management/js/controller/reportcontroller.js" type="text/javascript"></script>
+<script src="/inventory-management/js/dirPagination.js" type="text/javascript"></script>
+<script src="/inventory-management/js/ng-table.min.js" type="text/javascript"></script>
+
+
 
 
 </body>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function (){
         $('#filterBtn').click(function () {
             $('.showFilter').slideToggle();
+        });
+    });
+    $(function () {
+        $('input[name="daterange"]').daterangepicker({
+            opens: 'left'
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
         });
     });
 </script>

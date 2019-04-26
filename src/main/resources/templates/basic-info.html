@@ -12,7 +12,7 @@
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <div>Date</div>
-                <input type="Date" name="date" ng-model="basicInfo.entryDate" ng-bind="basicInfo.entryDate|date:'yyyy-MM-dd'" required class="form-control" id="datepicker"/>
+                <input type="text" name="date" ng-model="basicInfo.entryDate" ng-bind="basicInfo.entryDate|date:'yyyy-MM-dd'" required class="form-control" id="datepicker"/>
 
             </div>
         </div>
@@ -67,7 +67,7 @@
         <div class="col-xl-4 col-lg-6">
             <div class="form-group">
                 <div>Serial Number</div>
-                <input type="number" name="serialNo" ng-model="basicInfo.serialNo" required class="form-control"/>
+                <input type="text" name="serialNo" ng-model="basicInfo.serialNo" required class="form-control"/>
 
             </div>
         </div>
@@ -387,7 +387,7 @@
             <div class="float-right">
                 <buttton class="btn btn-secondary " ><i class="fas fa-times mr-1"></i>Cancel </buttton>
                 <buttton class="btn btn-secondary" id="btnupdate" ng-click="updateBasicInformation()" style="display: none;"><i class="fas fa-times mr-1"></i>Update </buttton>
-                <buttton class="btn btn-primary " ng-click="saveBasicInformation()"><i class="fas fa-check mr-1"></i>Submit</buttton>
+                <buttton class="btn btn-primary " id="btnSubmit" ng-click="saveBasicInformation()"><i class="fas fa-check mr-1"></i>Submit</buttton>
             </div>
         </div>
     </div>

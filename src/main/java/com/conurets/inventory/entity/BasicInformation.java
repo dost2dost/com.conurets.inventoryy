@@ -16,6 +16,7 @@ public class BasicInformation extends BaseEntity {
     private Long basicInformationId;
 
     @Column(name = "entry_date")
+    @Temporal(TemporalType.DATE)
     private Date entryDate;
 
     @ManyToOne(fetch=FetchType.EAGER)

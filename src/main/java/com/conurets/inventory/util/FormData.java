@@ -24,7 +24,7 @@ import java.util.Date;
 public class FormData {
 
     static SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-    static SimpleDateFormat simpleDateFormat2=new SimpleDateFormat("yyyy/MM/dd");
+    static SimpleDateFormat simpleDateFormat2=new SimpleDateFormat("dd/MMM/yyyy");
 
     @Autowired
     private DAOFactory daoFactory;
@@ -36,6 +36,7 @@ public class FormData {
         //SupplierInformation supplierInformation=daoFactory.getSupplierInformationDao().findById(1);
 
        // basicInformation.setSupplierInformation(supplierInformation);
+
         SupplierInformation supplierInformation=daoFactory.getSupplierInformationDao().findByKeyValue("representative",formDatain.getSupplierRepresentative());
 
         if(supplierInformation==null) {
@@ -76,10 +77,12 @@ public class FormData {
         //basicInformation.setItem(Integer.valueOf(formDatain.getItem_Id()));
         basicInformation.setQty(Integer.valueOf(formDatain.getQty()));
         basicInformation.setStorageLocation(formDatain.getVenue());
+
 //        if(formDatain.getDate_Item_Entered().equals("")  || formDatain.getDate_Item_Entered()==null){
 //
+//            basicInformation.setEntryDate(new SimpleDateFormat("yyyy-MM-dd").parse("2019-04-15"));
 //        }else {
-//            basicInformation.setEntryDate(simpleDateFormat2.parse(formDatain.getDate_Item_Entered()));
+//            basicInformation.setEntryDate(new SimpleDateFormat("yyyy-MM-dd").parse("2019-04-15"));
 //        }
 //        basicInformation.setWarranty(formDatain.getWarranty());
 //        basicInformation.setProduct_category(formDatain.getProduct_category());

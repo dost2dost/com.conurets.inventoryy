@@ -8,7 +8,7 @@ app.controller('basicInfoCtrl', function($scope,LocationService,CompanyService,I
 {
     $scope.basicInfo ={};
     $scope.basicInfo.entryDate =$( "#datepicker" ).val();;
-    $scope.basicInfo.userName ='Iraj Khan';
+    $scope.basicInfo.userName ='Dost M';
     $scope.basicInfo.userId= 1;
     $scope.basicInfo.Id='';
     $scope.basicInfo.location ='';

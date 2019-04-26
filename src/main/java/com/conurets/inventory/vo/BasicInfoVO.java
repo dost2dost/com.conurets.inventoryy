@@ -1,10 +1,18 @@
 package com.conurets.inventory.vo;
 
+import com.conurets.inventory.entity.SupplierInformation;
+import lombok.*;
+
 import java.util.Date;
 
 /**
- * Created by Iraj on 03/25/19.
+ * Created by Iraj on 03/25/19. Update by Dost M
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class BasicInfoVO {
 
     private Date entryDate;
@@ -22,94 +30,31 @@ public class BasicInfoVO {
 
     private String serialNumber;
     private Integer qty;
+    private String storageLocation;
+    private String storageOnShelf;
+    private String shelfByNo;
+    private String storedInCabnet;
+    private String cabnetShelfNo;
+    private String spcialHandlinReq;
+    private String specialHandlingNotes;
+    private String approxWeight;
+    private String calibrationRequired;
+    private String calibratedDate;
+    private String calibrationValidity;
+    private String calibrationDueDate;
+//    private String itemNew;
+//    private String itemUsed;
+    //private String itemReconditioned;
+    private String itemCondition;
+    //private String itemUseable;
+    private String  supplierName;
+    private String supplierRepresentative;
+    private String supplierRepresentativeMobile;
+    private String supplierRepresentativeEmail;
+
+    private Date warranty_Expiration;
 
 
-    public Date getEntryDate() {
-        return entryDate;
-    }
 
-    public void setEntryDate(Date entryDate) {
-        this.entryDate = entryDate;
-    }
-
-    public Long getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(Long locationId) {
-        this.locationId = locationId;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(Long companyId) {
-        this.companyId = companyId;
-    }
-
-    public Long getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
-    }
-
-    public String getSerialNumber() {
-        return serialNumber;
-    }
-
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
-    }
-
-    public Integer getQty() {
-        return qty;
-    }
-
-    public void setQty(Integer qty) {
-        this.qty = qty;
-    }
-
-    public String getLocationName() {
-        return locationName;
-    }
-
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
 
 }
